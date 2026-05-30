@@ -1,0 +1,1822 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# ARPGEssentialsX — weapons.yml
+# Passive test build — one weapon per passive type (17 total)
+# Star scaling:
+#   1★ → damage_bonus: 1.0   (below iron)
+#   2★ → damage_bonus: 2.0   (iron-tier)
+#   3★ → damage_bonus: 3.5   (diamond-tier), basic passive
+#   4★ → damage_bonus: 5.5   (above netherite), strong passive + skill
+#   5★ → damage_bonus: 8.0   (2x netherite), excellent passive + burst skill
+# ─────────────────────────────────────────────────────────────────────────────
+
+weapons:
+
+  # ════════════════════════════════════════════════════════════════════════════
+  # PASSIVE TEST WEAPONS — one per type
+  # ════════════════════════════════════════════════════════════════════════════
+
+  # ── TEST: flat_damage ──────────────────────────────────────────────────────
+  test_flat_damage:
+    display_name: "&fFlat Damage Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: flat_damage passive"
+      - "&7Should add +3.0 flat damage on every hit"
+    effects_on_hit: []
+    passives:
+      - type: flat_damage
+        amount: 3.0
+    recipe:
+      shape:
+        - " I "
+        - " I "
+        - " S "
+      ingredients:
+        I: IRON_INGOT
+        S: STICK
+
+  # ── TEST: percent_damage ───────────────────────────────────────────────────
+  test_percent_damage:
+    display_name: "&fPercent Damage Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: percent_damage passive"
+      - "&7Should deal +20% more damage on every hit"
+    effects_on_hit: []
+    passives:
+      - type: percent_damage
+        bonus: 0.20
+    recipe:
+      shape:
+        - " G "
+        - " G "
+        - " S "
+      ingredients:
+        G: GOLD_INGOT
+        S: STICK
+
+  # ── TEST: hp_threshold_damage ─────────────────────────────────────────────
+  test_hp_threshold:
+    display_name: "&fThreshold Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: hp_threshold_damage passive"
+      - "&7+40% damage when YOU are below 40% HP"
+    effects_on_hit: []
+    passives:
+      - type: hp_threshold_damage
+        threshold: 0.4
+        above: false
+        bonus_multiplier: 1.4
+    recipe:
+      shape:
+        - " R "
+        - " R "
+        - " S "
+      ingredients:
+        R: REDSTONE
+        S: STICK
+
+  # ── TEST: execute ─────────────────────────────────────────────────────────
+  test_execute:
+    display_name: "&fExecute Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: execute passive"
+      - "&7Instantly kills targets below 20% HP"
+    effects_on_hit: []
+    passives:
+      - type: execute
+        threshold_percent: 20.0
+    recipe:
+      shape:
+        - " N "
+        - " N "
+        - " S "
+      ingredients:
+        N: NETHERITE_SCRAP
+        S: STICK
+
+  # ── TEST: consecutive_hit ─────────────────────────────────────────────────
+  test_consecutive_hit:
+    display_name: "&fConsecutive Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: consecutive_hit passive"
+      - "&7Stacks +10% damage per hit, max 5 stacks"
+      - "&7Resets after 2 seconds without hitting"
+    effects_on_hit: []
+    passives:
+      - type: consecutive_hit
+        bonus_per_stack: 0.1
+        max_stacks: 5
+        reset_window: 40
+    recipe:
+      shape:
+        - " C "
+        - " C "
+        - " S "
+      ingredients:
+        C: COPPER_INGOT
+        S: STICK
+
+  # ── TEST: debuff_exploiter ────────────────────────────────────────────────
+  test_debuff_exploiter:
+    display_name: "&fDebuff Exploiter Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: debuff_exploiter passive"
+      - "&7+30% damage against enemies with any debuff"
+      - "&7Poison the enemy first to proc this"
+    effects_on_hit:
+      - type: potion
+        effect: SLOWNESS
+        duration: 3.0
+        amplifier: 0
+    passives:
+      - type: debuff_exploiter
+        bonus_multiplier: 1.3
+    recipe:
+      shape:
+        - " P "
+        - " P "
+        - " S "
+      ingredients:
+        P: POISONOUS_POTATO
+        S: STICK
+
+  # ── TEST: surrounded_bonus ────────────────────────────────────────────────
+  test_surrounded_bonus:
+    display_name: "&fSurrounded Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: surrounded_bonus passive"
+      - "&7+35% damage when 3+ enemies are nearby"
+    effects_on_hit: []
+    passives:
+      - type: surrounded_bonus
+        enemy_count: 3
+        radius: 6.0
+        bonus_multiplier: 1.35
+    recipe:
+      shape:
+        - " M "
+        - " M "
+        - " S "
+      ingredients:
+        M: MOSSY_COBBLESTONE
+        S: STICK
+
+  # ── TEST: passive_lifesteal ───────────────────────────────────────────────
+  test_passive_lifesteal:
+    display_name: "&fLifesteal Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: passive_lifesteal passive"
+      - "&7Heals 15% of damage dealt on every hit"
+    effects_on_hit: []
+    passives:
+      - type: lifesteal
+        percent: 0.15
+    recipe:
+      shape:
+        - " H "
+        - " H "
+        - " S "
+      ingredients:
+        H: HEART_OF_THE_SEA
+        S: STICK
+
+  # ── TEST: kill_heal ───────────────────────────────────────────────────────
+  test_kill_heal:
+    display_name: "&fKill Heal Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: kill_heal passive"
+      - "&7Heals 2 hearts on kill"
+    effects_on_hit: []
+    passives:
+      - type: kill_heal
+        amount: 4.0
+    recipe:
+      shape:
+        - " E "
+        - " E "
+        - " S "
+      ingredients:
+        E: EMERALD
+        S: STICK
+
+  # ── TEST: low_hp_shield ───────────────────────────────────────────────────
+  test_low_hp_shield:
+    display_name: "&fShield Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: low_hp_shield passive"
+      - "&7Absorb shield when below 30% HP (30s cooldown)"
+      - "&7Take damage to trigger it"
+    effects_on_hit: []
+    passives:
+      - type: low_hp_shield
+        threshold: 0.3
+        shield_amount: 6.0
+        cooldown_ticks: 600
+    recipe:
+      shape:
+        - " D "
+        - " D "
+        - " S "
+      ingredients:
+        D: DIAMOND
+        S: STICK
+
+  # ── TEST: hp_to_damage ────────────────────────────────────────────────────
+  test_hp_to_damage:
+    display_name: "&fHP to Damage Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: hp_to_damage passive"
+      - "&7Adds 5% of max HP as flat damage bonus"
+      - "&7e.g. 20 HP = +1.0 bonus damage"
+    effects_on_hit: []
+    passives:
+      - type: hp_to_damage
+        conversion_rate: 0.05
+    recipe:
+      shape:
+        - " A "
+        - " A "
+        - " S "
+      ingredients:
+        A: AMETHYST_SHARD
+        S: STICK
+
+  # ── TEST: armor_to_damage ─────────────────────────────────────────────────
+  test_armor_to_damage:
+    display_name: "&fArmor to Damage Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: armor_to_damage passive"
+      - "&7Adds 8% of armor value as flat damage"
+      - "&7Wear armor to boost damage"
+    effects_on_hit: []
+    passives:
+      - type: armor_to_damage
+        conversion_rate: 0.08
+    recipe:
+      shape:
+        - " T "
+        - " T "
+        - " S "
+      ingredients:
+        T: IRON_NUGGET
+        S: STICK
+
+  # ── TEST: speed_to_damage ─────────────────────────────────────────────────
+  test_speed_to_damage:
+    display_name: "&fSpeed to Damage Sword"
+    weapon_type: sword
+    stars: 3
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: IRON_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: speed_to_damage passive"
+      - "&7Converts movement speed to damage"
+      - "&7Fast classes hit harder"
+    effects_on_hit: []
+    passives:
+      - type: speed_to_damage
+        conversion_rate: 8.0
+    recipe:
+      shape:
+        - " F "
+        - " F "
+        - " S "
+      ingredients:
+        F: FEATHER
+        S: STICK
+
+  # ── TEST: cooldown_reduction ──────────────────────────────────────────────
+  test_cooldown_reduction:
+    display_name: "&fCooldown Reduction Sword"
+    weapon_type: sword
+    stars: 4
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: DIAMOND_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 5.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: cooldown_reduction passive"
+      - "&7Reduces skill cooldown by 3s on kill"
+      - "&7Skill cooldown is 30s — kill to reduce it"
+    effects_on_hit: []
+    passives:
+      - type: cooldown_reduction
+        reduction: 3.0
+    skill:
+      name: "&aCooldown Test Skill"
+      cooldown: 30.0
+      class_tag: -1
+      effects:
+        - type: aoe_damage
+          radius: 3.0
+          damage: 4.0
+        - type: play_sound
+          sound: ENTITY_PLAYER_LEVELUP
+          volume: 1.0
+          pitch: 1.0
+    recipe:
+      shape:
+        - " Q "
+        - " Q "
+        - " S "
+      ingredients:
+        Q: QUARTZ
+        S: STICK
+
+  # ── TEST: mana_on_kill ────────────────────────────────────────────────────
+  test_mana_on_kill:
+    display_name: "&fMana on Kill Sword"
+    weapon_type: catalyst
+    stars: 3
+    natural_classes: [2]
+    base_item: BLAZE_ROD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 3.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: mana_on_kill passive"
+      - "&7Restores 2 mana levels on kill"
+      - "&9Mage only"
+    effects_on_hit: []
+    passives:
+      - type: mana_on_kill
+        amount: 2
+    recipe:
+      shape:
+        - " L "
+        - " L "
+        - " S "
+      ingredients:
+        L: LAPIS_LAZULI
+        S: STICK
+
+  # ── TEST: ambush ──────────────────────────────────────────────────────────
+  test_ambush:
+    display_name: "&fAmbush Dagger"
+    weapon_type: dagger
+    stars: 4
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: GOLDEN_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 5.5
+      attack_speed_bonus: 4.0
+    lore:
+      - "&7TEST: ambush passive"
+      - "&7First hit after sneaking 2+ seconds = 2x damage"
+      - "&7Sneak, wait, then attack"
+    effects_on_hit: []
+    passives:
+      - type: ambush
+        sneak_duration: 2.0
+        bonus_multiplier: 2.0
+    recipe:
+      shape:
+        - " O "
+        - " O "
+        - " S "
+      ingredients:
+        O: OBSIDIAN
+        S: STICK
+
+  # ── TEST: random_buff ─────────────────────────────────────────────────────
+  test_random_buff:
+    display_name: "&fRandom Buff Sword"
+    weapon_type: sword
+    stars: 4
+    natural_classes: [1, 2, 3, 4, 5]
+    base_item: DIAMOND_SWORD
+    custom_model_data: -1
+    combat:
+      damage_bonus: 5.5
+      attack_speed_bonus: 0.0
+    lore:
+      - "&7TEST: random_buff passive"
+      - "&7ON EQUIP: randomly grants STR, SPD, or HASTE"
+      - "&7Re-equip to reroll the buff"
+    effects_on_hit: []
+    passives:
+      - type: random_buff
+        duration: 10.0
+        buffs:
+          - STRENGTH
+          - SPEED
+          - HASTE
+          - JUMP_BOOST
+          - REGENERATION
+    recipe:
+      shape:
+        - " W "
+        - " W "
+        - " S "
+      ingredients:
+        W: ECHO_SHARD
+        S: STICK
+
+  # ════════════════════════════════════════════════════════════════════════════
+  #  NEW PROGRESSION SETS (Custom Tier Balancing)
+  # ════════════════════════════════════════════════════════════════════════════
+
+  # ── ASTRA SWORD SERIES (Fighter / Balanced) ───────────────────────────────
+  # Swing Cooldown: 0.625 seconds
+
+  astra_sword_1:
+    display_name: "&fDull Meteorite Shard"
+    weapon_type: sword
+    stars: 1
+    durability: 250
+    natural_classes: [1, 4]
+    base_item: IRON_SWORD
+    custom_model_data: 1001
+    combat:
+      damage_bonus: 5.0
+      attack_speed_bonus: 1.6
+    lore:
+      - "&7A jagged fragment of a fallen star."
+      - "&7Crude, but noticeably heavier than iron."
+      - ""
+      - "&4Durability: 250 / 250"
+    effects_on_hit: []
+    passives: []
+    recipe:
+      shape:
+        - " M "
+        - " M "
+        - " S "
+      ingredients:
+        M: FLINT
+        S: STICK
+
+  astra_sword_2:
+    display_name: "&fAstral Falchion"
+    weapon_type: sword
+    stars: 2
+    durability: 500
+    natural_classes: [1, 4]
+    base_item: IRON_SWORD
+    custom_model_data: 1002
+    combat:
+      damage_bonus: 6.0
+      attack_speed_bonus: 1.6
+    lore:
+      - "&7Forged using refined starmetal ore."
+      - "&7Gleams with a faint, otherworldly silver hue."
+      - ""
+      - "&4Durability: 500 / 500"
+    effects_on_hit: []
+    passives: []
+    recipe:
+      shape:
+        - " I "
+        - " M "
+        - " S "
+      ingredients:
+        I: IRON_INGOT
+        M: AMETHYST_SHARD
+        S: STICK
+
+  astra_sword_3:
+    display_name: "&bStarlight Saber"
+    weapon_type: sword
+    stars: 3
+    durability: 1250
+    natural_classes: [1, 4]
+    base_item: DIAMOND_SWORD
+    custom_model_data: 1003
+    combat:
+      damage_bonus: 8.0
+      attack_speed_bonus: 1.6
+    lore:
+      - "&7A crystalline blade humming with stellar energy."
+      - "&7Cuts clean through mortal armor plates."
+      - ""
+      - "&bPassive: Deals +20% amplification on all strikes."
+      - ""
+      - "&4Durability: 1250 / 1250"
+    effects_on_hit:
+      - type: damage
+        amount: 1.0
+    passives:
+      - type: percent_damage
+        bonus: 0.20
+    recipe:
+      shape:
+        - " A "
+        - " A "
+        - " S "
+      ingredients:
+        A: AMETHYST_SHARD
+        S: STICK
+
+  astra_sword_4:
+    display_name: "&dCosmic Edge"
+    weapon_type: sword
+    stars: 4
+    durability: 1800
+    natural_classes: [1, 4]
+    base_item: DIAMOND_SWORD
+    custom_model_data: 1004
+    combat:
+      damage_bonus: 9.0
+      attack_speed_bonus: 1.6
+    lore:
+      - "&5A sword pulled straight from an ethereal nebula."
+      - "&5Allows the wielder to phase forward and strike down threats."
+      - ""
+      - "&bPassive: Inflicts bonus flat damage with every strike."
+      - ""
+      - "&4Durability: 1800 / 1800"
+    effects_on_hit:
+      - type: potion
+        effect: GLOWING
+        duration: 4.0
+        amplifier: 0
+    skill:
+      name: "&dNebula Dash"
+      cooldown: 12.0
+      class_tag: 1
+      effects:
+        - type: dash
+          speed: 1.8
+        - type: aoe_damage
+          radius: 3.5
+          damage: 5.0
+        - type: play_sound
+          sound: ENTITY_ILLUSIONER_MIRROR_MOVE
+          volume: 1.0
+          pitch: 1.2
+        - type: particle_burst
+          particle: CHERRY_LEAVES
+          count: 30
+          spread: 1.2
+          speed: 0.1
+    passives:
+      - type: flat_damage
+        amount: 3.0
+    recipe:
+      shape:
+        - " C "
+        - " A "
+        - " D "
+      ingredients:
+        C: CHORUS_FRUIT
+        A: AMETHYST_BLOCK
+        D: DIAMOND
+
+  astra_sword_5:
+    display_name: "&d&lSupernova"
+    weapon_type: sword
+    stars: 5
+    durability: 3000
+    natural_classes: [1, 4]
+    base_item: NETHERITE_SWORD
+    custom_model_data: 1005
+    combat:
+      damage_bonus: 11.0
+      attack_speed_bonus: 1.6
+    lore:
+      - "&6The ultimate culmination of stellar collapse."
+      - "&6Its absolute weight warps space-time around it."
+      - ""
+      - "&bPassive: Executes weak targets instantly."
+      - ""
+      - "&4Durability: 3000 / 3000"
+    effects_on_hit:
+      - type: ignite
+        duration: 3.0
+      - type: particle_burst
+        particle: FIREWORK
+        count: 12
+        spread: 0.4
+        speed: 0.15
+    skill:
+      name: "&e&lGalactic Collapse Burst"
+      cooldown: 22.0
+      class_tag: 1
+      effects:
+        - type: aoe_damage
+          radius: 7.0
+          damage: 16.0
+        - type: aoe_knockback
+          radius: 7.0
+          strength: 2.5
+          vertical: 0.4
+        - type: potion_self
+          effect: STRENGTH
+          duration: 6.0
+          amplifier: 1
+        - type: play_sound
+          sound: ENTITY_FIREWORK_ROCKET_LARGE_BLAST
+          volume: 1.5
+          pitch: 0.8
+        - type: play_sound
+          sound: ENTITY_WITHER_DEATH
+          volume: 1.0
+          pitch: 1.5
+        - type: particle_burst
+          particle: TRIAL_OMEGA_SPARKS
+          count: 150
+          spread: 4.5
+          speed: 0.4
+        - type: particle_burst
+          particle: PORTAL
+          count: 100
+          spread: 3.5
+          speed: 0.3
+    passives:
+      - type: execute
+        threshold_percent: 25.0
+    recipe:
+      shape:
+        - "NEN"
+        - "RAR"
+        - " S "
+      ingredients:
+        N: NETHERITE_INGOT
+        E: NETHER_STAR
+        R: RECOVERY_COMPASS
+        A: AMETHYST_BLOCK
+        S: STICK
+
+
+  # ── VOLCANIC POLEARM SERIES (Vanguard / Mid-Range) ────────────────────────
+  # Swing Cooldown: 0.670 seconds
+
+  volcano_polearm_1:
+    display_name: "&fCharred Harpoon"
+    weapon_type: polearm
+    stars: 1
+    durability: 250
+    natural_classes: [1, 5]
+    base_item: STONE_SPEAR
+    custom_model_data: 2001
+    combat:
+      damage_bonus: 4.0
+      attack_speed_bonus: 1.49
+    lore:
+      - "&7A simple wooden shaft topped with dense volcanic rock."
+      - ""
+      - "&4Durability: 250 / 250"
+    effects_on_hit: []
+    passives: []
+    recipe:
+      shape:
+        - " C "
+        - " S "
+        - " S "
+      ingredients:
+        C: COAL
+        S: STICK
+
+  volcano_polearm_2:
+    display_name: "&fMagma Pike"
+    weapon_type: polearm
+    stars: 2
+    durability: 500
+    natural_classes: [1, 5]
+    base_item: IRON_SPEAR
+    custom_model_data: 2002
+    combat:
+      damage_bonus: 5.0
+      attack_speed_bonus: 1.49
+    lore:
+      - "&7Forged inside subterranean lava streams."
+      - ""
+      - "&4Durability: 500 / 500"
+    effects_on_hit: []
+    passives: []
+    recipe:
+      shape:
+        - " M "
+        - " S "
+        - " S "
+      ingredients:
+        M: MAGMA_BLOCK
+        S: STICK
+
+  volcano_polearm_3:
+    display_name: "&6Pyre Glaive"
+    weapon_type: polearm
+    stars: 3
+    durability: 1250
+    natural_classes: [1, 5]
+    base_item: DIAMOND_SPEAR
+    custom_model_data: 2002
+    combat:
+      damage_bonus: 6.0
+      attack_speed_bonus: 1.49
+    lore:
+      - "&7A devastating poleaxe glowing with intense inner heat."
+      - ""
+      - "&bPassive: Ignite enemies on hit."
+      - ""
+      - "&4Durability: 1250 / 1250"
+    effects_on_hit:
+      - type: ignite
+        duration: 4.0
+    passives:
+      - type: percent_damage
+        bonus: 0.15
+    recipe:
+      shape:
+        - " B "
+        - " S "
+        - " S "
+      ingredients:
+        B: BLAZE_POWDER
+        S: STICK
+
+  volcano_polearm_4:
+    display_name: "&cEerupting Lance"
+    weapon_type: polearm
+    stars: 4
+    durability: 1800
+    natural_classes: [1, 5]
+    base_item: NETHERITE_SPEAR
+    custom_model_data: 2004
+    combat:
+      damage_bonus: 7.0
+      attack_speed_bonus: 1.49
+    lore:
+      - "&5A heavy partisan capable of triggering localized earthquakes."
+      - ""
+      - "&bPassive: Deals escalating damage based on consecutive hits."
+      - ""
+      - "&4Durability: 1800 / 1800"
+    effects_on_hit:
+      - type: ignite
+        duration: 5.0
+    skill:
+      name: "&cMagma Leap"
+      cooldown: 15.0
+      class_tag: 1
+      effects:
+        - type: leap
+          velocity: 1.5
+        - type: aoe_damage
+          radius: 4.0
+          damage: 6.5
+        - type: play_sound
+          sound: ENTITY_BLAZE_SHOOT
+          volume: 1.0
+          pitch: 0.9
+        - type: particle_burst
+          particle: FLAME
+          count: 40
+          spread: 1.5
+          speed: 0.1
+    passives:
+      - type: consecutive_hit
+        bonus_per_stack: 0.06
+        max_stacks: 5
+        reset_window: 40
+    recipe:
+      shape:
+        - " M "
+        - " S "
+        - " S "
+      ingredients:
+        M: MAGMA_CREAM
+        S: IRON_BLOCK
+
+  volcano_polearm_5:
+    display_name: "&4&lHellfire Trident"
+    weapon_type: polearm
+    stars: 5
+    durability: 3000
+    natural_classes: [1, 5]
+    base_item: NETHERITE_SPEAR
+    custom_model_data: 2005
+    combat:
+      damage_bonus: 9.0
+      attack_speed_bonus: 1.49
+    lore:
+      - "&6An ancient volcanic relic that opens deep fissures."
+      - "&6Unleashes unmatched fury when pinned down by enemies."
+      - ""
+      - "&bPassive: Amplifies attributes when entirely surrounded."
+      - ""
+      - "&4Durability: 3000 / 3000"
+    effects_on_hit:
+      - type: ignite
+        duration: 6.0
+      - type: knockback
+        strength: 0.4
+        vertical: 0.1
+    skill:
+      name: "&4&lCalamitous Eruption"
+      cooldown: 25.0
+      class_tag: 1
+      effects:
+        - type: smash
+          damage: 13.0
+        - type: aoe_knockback
+          radius: 6.5
+          strength: 2.2
+          vertical: 0.5
+        - type: play_sound
+          sound: ENTITY_GENERIC_EXPLODE
+          volume: 1.6
+          pitch: 0.5
+        - type: play_sound
+          sound: BLOCK_LAVA_EXTINGUISH
+          volume: 1.2
+          pitch: 0.7
+        - type: particle_burst
+          particle: LAVA
+          count: 100
+          spread: 4.0
+          speed: 0.5
+        - type: particle_burst
+          particle: FLAME
+          count: 150
+          spread: 5.0
+          speed: 0.3
+    passives:
+      - type: surrounded_bonus
+        enemy_count: 3
+        radius: 6.0
+        bonus_multiplier: 1.40
+    recipe:
+      shape:
+        - "NBN"
+        - " S "
+        - " S "
+      ingredients:
+        N: NETHERITE_BLOCK
+        B: BLAZE_ROD
+        S: STICK
+
+
+  # ── STORM BOW SERIES (Ranged DPS) ────────────────────────────────────────
+  # Cooldown: Applied on Fully Charged Bow Release
+
+  storm_bow_1:
+    display_name: "&fGale Longbow"
+    weapon_type: bow
+    stars: 1
+    durability: 250
+    natural_classes: [3]
+    base_item: BOW
+    custom_model_data: 3001
+    combat:
+      damage_bonus: 4.5
+      attack_speed_bonus: 4.0
+    lore:
+      - "&7Strung with reinforced hemp thread. Draws quickly."
+      - ""
+      - "&4Durability: 250 / 250"
+    effects_on_hit: []
+    passives: []
+    recipe:
+      shape:
+        - " WG"
+        - "W G"
+        - " WG"
+      ingredients:
+        W: WOODEN_SWORD
+        G: STRING
+
+  storm_bow_2:
+    display_name: "&fThunderstrike Bow"
+    weapon_type: bow
+    stars: 2
+    durability: 500
+    natural_classes: [3]
+    base_item: BOW
+    custom_model_data: 3002
+    combat:
+      damage_bonus: 5.5
+      attack_speed_bonus: 4.0
+    lore:
+      - "&7Crafted from lightning-struck oak wood."
+      - ""
+      - "&4Durability: 500 / 500"
+    effects_on_hit: []
+    passives: []
+    recipe:
+      shape:
+        - " IC"
+        - "I C"
+        - " IC"
+      ingredients:
+        I: IRON_INGOT
+        C: COPPER_INGOT
+
+  storm_bow_3:
+    display_name: "&bSquall Shortbow"
+    weapon_type: bow
+    stars: 3
+    durability: 1250
+    natural_classes: [3]
+    base_item: BOW
+    custom_model_data: 3003
+    combat:
+      damage_bonus: 7.0
+      attack_speed_bonus: 4.0
+    lore:
+      - "&7Fires compressed wind arrows that knock back targets."
+      - ""
+      - "&bPassive: Boosts damage based on movement speed."
+      - ""
+      - "&4Durability: 1250 / 1250"
+    effects_on_hit:
+      - type: knockback
+        strength: 0.5
+        vertical: 0.2
+    passives:
+      - type: speed_to_damage
+        conversion_rate: 6.0
+    recipe:
+      shape:
+        - " DF"
+        - "D F"
+        - " DF"
+      ingredients:
+        D: DIAMOND
+        F: FEATHER
+
+  storm_bow_4:
+    display_name: "&9Lightning Reflex"
+    weapon_type: bow
+    stars: 4
+    durability: 1800
+    natural_classes: [3]
+    base_item: BOW
+    custom_model_data: 3004
+    combat:
+      damage_bonus: 8.0
+      attack_speed_bonus: 4.0
+    lore:
+      - "&5Electrified string cycles kinetic potential cleanly."
+      - ""
+      - "&bPassive: Restores health upon securing a kill."
+      - ""
+      - "&4Durability: 1800 / 1800"
+    effects_on_hit:
+      - type: damage
+        amount: 2.0
+    skill:
+      name: "&9Volt Mark"
+      cooldown: 14.0
+      class_tag: 3
+      effects:
+        - type: mark_target
+          duration: 6.0
+        - type: play_sound
+          sound: ENTITY_LIGHTNING_BOLT_THUNDER
+          volume: 0.9
+          pitch: 1.4
+        - type: particle_burst
+          particle: ELECTRIC_SPARK
+          count: 35
+          spread: 1.0
+          speed: 0.2
+    passives:
+      - type: kill_heal
+        amount: 3.0
+    recipe:
+      shape:
+        - " LC"
+        - "L C"
+        - " LC"
+      ingredients:
+        L: LAPIS_BLOCK
+        C: LIGHTNING_ROD
+
+  storm_bow_5:
+    display_name: "&b&lZeus's Wrath"
+    weapon_type: bow
+    stars: 5
+    durability: 3000
+    natural_classes: [3]
+    base_item: BOW
+    custom_model_data: 3005
+    combat:
+      damage_bonus: 10.0
+      attack_speed_bonus: 4.0
+    lore:
+      - "&6A legendary weapon plucked from the heavens."
+      - "&6Shatters structural formations with high-voltage sound."
+      - ""
+      - "&bPassive: Inflicts amplified damage on targets above 75% HP."
+      - ""
+      - "&4Durability: 3000 / 3000"
+    effects_on_hit:
+      - type: damage
+        amount: 3.0
+      - type: knockback
+        strength: 0.8
+        vertical: 0.3
+    skill:
+      name: "&b&lThunderbolt Tempest"
+      cooldown: 20.0
+      class_tag: 3
+      effects:
+        - type: aoe_damage
+          radius: 6.0
+          damage: 12.0
+        - type: aoe_knockback
+          radius: 6.0
+          strength: 1.8
+          vertical: 0.6
+        - type: potion_target
+          effect: SLOWNESS
+          duration: 4.0
+          amplifier: 2
+        - type: play_sound
+          sound: ENTITY_LIGHTNING_BOLT_IMPACT
+          volume: 2.0
+          pitch: 0.6
+        - type: play_sound
+          sound: ENTITY_ENDER_DRAGON_FLAP
+          volume: 1.2
+          pitch: 1.6
+        - type: particle_burst
+          particle: GUST_EMITTER
+          count: 80
+          spread: 3.0
+          speed: 0.5
+        - type: particle_burst
+          particle: ELECTRIC_SPARK
+          count: 200
+          spread: 5.0
+          speed: 0.4
+    passives:
+      - type: percent_damage
+        bonus: 0.35
+    recipe:
+      shape:
+        - "NDN"
+        - "E D"
+        - "NDN"
+      ingredients:
+        N: NETHERITE_INGOT
+        D: DIAMOND_BLOCK
+        E: NETHER_STAR
+
+
+  # ── GLACIAL CATALYST SERIES (Mage Spells) ─────────────────────────────────
+  # Swing Cooldown: 0.500 seconds
+
+  frost_catalyst_1:
+    display_name: "&fChilled Twig"
+    weapon_type: catalyst
+    stars: 1
+    durability: 250
+    natural_classes: [2]
+    base_item: STICK
+    custom_model_data: 4001
+    combat:
+      damage_bonus: 2.0
+      attack_speed_bonus: 2.0
+    lore:
+      - "&7A frozen twig pulled from tundra zones."
+      - ""
+      - "&4Durability: 250 / 250"
+    effects_on_hit: []
+    passives: []
+    recipe:
+      shape:
+        - " I "
+        - " S "
+        - "   "
+      ingredients:
+        I: ICE
+        S: STICK
+
+  frost_catalyst_2:
+    display_name: "&fRime Core"
+    weapon_type: catalyst
+    stars: 2
+    durability: 500
+    natural_classes: [2]
+    base_item: AMETHYST_SHARD
+    custom_model_data: 4002
+    combat:
+      damage_bonus: 4.0
+      attack_speed_bonus: 2.0
+    lore:
+      - "&7An unmelting ice shard encased in geometric gold."
+      - ""
+      - "&4Durability: 500 / 500"
+    effects_on_hit: []
+    passives: []
+    recipe:
+      shape:
+        - " P "
+        - " G "
+        - "   "
+      ingredients:
+        P: PACKED_ICE
+        G: GOLD_INGOT
+
+  frost_catalyst_3:
+    display_name: "&bGlacial Scepter"
+    weapon_type: catalyst
+    stars: 3
+    durability: 1250
+    natural_classes: [2]
+    base_item: BLAZE_ROD
+    custom_model_data: 4003
+    combat:
+      damage_bonus: 6.0
+      attack_speed_bonus: 2.0
+    lore:
+      - "&7Channels hypothermic rays to freeze armor junctions."
+      - ""
+      - "&bPassive: Restores +2 mana pool points on kill."
+      - ""
+      - "&4Durability: 1250 / 1250"
+    effects_on_hit:
+      - type: potion
+        effect: SLOWNESS
+        duration: 3.0
+        amplifier: 1
+    passives:
+      - type: mana_on_kill
+        amount: 2
+    recipe:
+      shape:
+        - " B "
+        - " Q "
+        - "   "
+      ingredients:
+        B: BLUE_ICE
+        Q: QUARTZ
+
+  frost_catalyst_4:
+    display_name: "&dBlizzard Grimoire"
+    weapon_type: catalyst
+    stars: 4
+    durability: 1800
+    natural_classes: [2]
+    base_item: BOOK
+    custom_model_data: 4004
+    combat:
+      damage_bonus: 8.0
+      attack_speed_bonus: 2.0
+    lore:
+      - "&5Spells inside permanently drop field temperatures."
+      - ""
+      - "&bPassive: Shaves 3s off skill cooldowns dynamically on kill."
+      - ""
+      - "&4Durability: 1800 / 1800"
+    effects_on_hit:
+      - type: potion
+        effect: SLOWNESS
+        duration: 4.0
+        amplifier: 1
+    skill:
+      name: "&bFrost Chains"
+      cooldown: 16.0
+      class_tag: 2
+      effects:
+        - type: potion_target
+          effect: SLOWNESS
+          duration: 5.0
+          amplifier: 3
+        - type: aoe_damage
+          radius: 4.0
+          damage: 6.0
+        - type: play_sound
+          sound: BLOCK_GLASS_BREAK
+          volume: 1.0
+          pitch: 0.5
+        - type: particle_burst
+          particle: SNOWFLAKE
+          count: 45
+          spread: 2.0
+          speed: 0.1
+    passives:
+      - type: cooldown_reduction
+        reduction: 3.0
+    recipe:
+      shape:
+        - " B "
+        - " O "
+        - " B "
+      ingredients:
+        B: BLUE_ICE
+        O: BOOK
+
+  frost_catalyst_5:
+    display_name: "&3&lAbsolute Zero"
+    weapon_type: catalyst
+    stars: 5
+    durability: 3000
+    natural_classes: [2]
+    base_item: BLAZE_ROD
+    custom_model_data: 4005
+    combat:
+      damage_bonus: 10.0
+      attack_speed_bonus: 2.0
+    lore:
+      - "&6Arrests all thermodynamic kinetic movement entirely."
+      - "&6Stops molecular interaction on impact."
+      - ""
+      - "&bPassive: Inflicts massive damage when your health drops low."
+      - ""
+      - "&4Durability: 3000 / 3000"
+    effects_on_hit:
+      - type: potion
+        effect: SLOWNESS
+        duration: 5.0
+        amplifier: 3
+      - type: bleed
+        damage_per_tick: 0.5
+        interval: 10
+        duration: 3.0
+    skill:
+      name: "&3&lGlacial Cataclysm Burst"
+      cooldown: 26.0
+      class_tag: 2
+      effects:
+        - type: aoe_damage
+          radius: 7.0
+          damage: 13.0
+        - type: potion_target
+          effect: SLOWNESS
+          duration: 6.0
+          amplifier: 4
+        - type: play_sound
+          sound: BLOCK_GLASS_BREAK
+          volume: 2.0
+          pitch: 0.2
+        - type: play_sound
+          sound: BLOCK_POWDER_SNOW_BREAK
+          volume: 1.5
+          pitch: 0.5
+        - type: particle_burst
+          particle: SNOWFLAKE
+          count: 200
+          spread: 6.0
+          speed: 0.4
+        - type: particle_burst
+          particle: INSTANT_EFFECT
+          count: 100
+          spread: 5.0
+          speed: 0.3
+    passives:
+      - type: hp_threshold_damage
+        threshold: 0.35
+        above: false
+        bonus_multiplier: 1.45
+    recipe:
+      shape:
+        - "NBN"
+        - "ECE"
+        - "NBN"
+      ingredients:
+        N: NETHER_STAR
+        B: BLUE_ICE
+        E: EMERALD_BLOCK
+        C: HEART_OF_THE_SEA
+
+
+  # ── TECTONIC CLAYMORE SERIES (Tank / Heavy Cleave) ────────────────────────
+  # Swing Cooldown: 1.2 seconds
+
+  abyss_claymore_1:
+    display_name: "&fHeavy Stone Slab"
+    weapon_type: claymore
+    stars: 1
+    durability: 250
+    natural_classes: [5, 1]
+    base_item: STONE_SWORD
+    custom_model_data: 5001
+    combat:
+      damage_bonus: 6.0
+      attack_speed_bonus: 0.833
+    lore:
+      - "&7An unrefined block of deepslate bound to iron rods."
+      - ""
+      - "&4Durability: 250 / 250"
+    effects_on_hit:
+      - type: knockback
+        strength: 0.4
+        vertical: 0.1
+    passives: []
+    recipe:
+      shape:
+        - " D "
+        - " D "
+        - " S "
+      ingredients:
+        D: COBBLED_DEEPSLATE
+        S: STICK
+
+  abyss_claymore_2:
+    display_name: "&fTectonic Greatsword"
+    weapon_type: claymore
+    stars: 2
+    durability: 500
+    natural_classes: [5, 1]
+    base_item: IRON_SWORD
+    custom_model_data: 5002
+    combat:
+      damage_bonus: 8.0
+      attack_speed_bonus: 0.833
+    lore:
+      - "&7Tempered under intense seismic mantle pressures."
+      - ""
+      - "&4Durability: 500 / 500"
+    effects_on_hit:
+      - type: knockback
+        strength: 0.5
+        vertical: 0.1
+    passives: []
+    recipe:
+      shape:
+        - " I "
+        - " D "
+        - " I "
+      ingredients:
+        I: IRON_BLOCK
+        D: COBBLED_DEEPSLATE
+
+  abyss_claymore_3:
+    display_name: "&cEarthshaker"
+    weapon_type: claymore
+    stars: 3
+    durability: 1250
+    natural_classes: [5, 1]
+    base_item: DIAMOND_SWORD
+    custom_model_data: 5003
+    combat:
+      damage_bonus: 10.0
+      attack_speed_bonus: 0.833
+    lore:
+      - "&7Splits earth lines cleanly when swung downward."
+      - ""
+      - "&bPassive: Converts 10% of total armor to flat damage."
+      - ""
+      - "&4Durability: 1250 / 1250"
+    effects_on_hit:
+      - type: knockback
+        strength: 0.6
+        vertical: 0.2
+    passives:
+      - type: armor_to_damage
+        conversion_rate: 0.10
+    recipe:
+      shape:
+        - " O "
+        - " D "
+        - " S "
+      ingredients:
+        O: OBSIDIAN
+        D: DIAMOND
+        S: STICK
+
+  abyss_claymore_4:
+    display_name: "&dAbyssal Anchor"
+    weapon_type: claymore
+    stars: 4
+    durability: 1800
+    natural_classes: [5, 1]
+    base_item: DIAMOND_SWORD
+    custom_model_data: 5004
+    combat:
+      damage_bonus: 11.0
+      attack_speed_bonus: 0.833
+    lore:
+      - "&5Pulled from structural deep ocean trenches."
+      - ""
+      - "&bPassive: Converts 6% of maximum health points to base damage."
+      - ""
+      - "&4Durability: 1800 / 1800"
+    effects_on_hit:
+      - type: knockback
+        strength: 0.7
+        vertical: 0.2
+    skill:
+      name: "&dFaultline Cleave"
+      cooldown: 16.0
+      class_tag: 5
+      effects:
+        - type: cleave
+          damage: 8.0
+        - type: aoe_knockback
+          radius: 4.5
+          strength: 1.8
+          vertical: 0.4
+        - type: play_sound
+          sound: ENTITY_IRON_GOLEM_ATTACK
+          volume: 1.1
+          pitch: 0.6
+        - type: particle_burst
+          particle: CRIT
+          count: 50
+          spread: 2.0
+          speed: 0.2
+    passives:
+      - type: hp_to_damage
+        conversion_rate: 0.06
+    recipe:
+      shape:
+        - " O "
+        - " N "
+        - " I "
+      ingredients:
+        O: OBSIDIAN
+        N: NETHERITE_SCRAP
+        I: IRON_BLOCK
+
+  abyss_claymore_5:
+    display_name: "&4&lThe World Breaker"
+    weapon_type: claymore
+    stars: 5
+    durability: 3000
+    natural_classes: [5, 1]
+    base_item: NETHERITE_SWORD
+    custom_model_data: 5005
+    combat:
+      damage_bonus: 12.0
+      attack_speed_bonus: 0.833
+    lore:
+      - "&6A world-ending monolithic slab of solid bedrock core."
+      - "&6Flatten frontlines with devastating kinetic execution force."
+      - ""
+      - "&bPassive: Inflicts massive damage multipliers at low HP."
+      - ""
+      - "&4Durability: 3000 / 3000"
+    effects_on_hit:
+      - type: knockback
+        strength: 1.1
+        vertical: 0.4
+      - type: damage
+        amount: 2.5
+    skill:
+      name: "&4&lTectonic Fracture Burst"
+      cooldown: 35.0
+      class_tag: 5
+      effects:
+        - type: smash
+          damage: 18.0
+        - type: aoe_knockback
+          radius: 8.0
+          strength: 3.5
+          vertical: 0.7
+        - type: potion_self
+          effect: RESISTANCE
+          duration: 8.0
+          amplifier: 3
+        - type: play_sound
+          sound: ENTITY_DRAGON_FIREBALL_EXPLODE
+          volume: 2.0
+          pitch: 0.4
+        - type: play_sound
+          sound: ENTITY_ZOMBIE_BREAK_WOODEN_DOOR
+          volume: 1.4
+          pitch: 0.5
+        - type: particle_burst
+          particle: EXPLOSION
+          count: 120
+          spread: 6.0
+          speed: 0.5
+        - type: particle_burst
+          particle: BLOCK
+          count: 180
+          spread: 5.5
+          speed: 0.4
+    passives:
+      - type: hp_threshold_damage
+        threshold: 0.40
+        above: false
+        bonus_multiplier: 1.50
+    recipe:
+      shape:
+        - "NNN"
+        - "NON"
+        - " I "
+      ingredients:
+        N: NETHERITE_BLOCK
+        O: CRYING_OBSIDIAN
+        I: IRON_BLOCK
+
+
+  # ── PLAGUE DAGGER SERIES (Assassin / Attack-Speed) ────────────────────────
+  # Swing Cooldown: 0.250 seconds
+
+  toxic_dagger_1:
+    display_name: "&fRusty Needle"
+    weapon_type: dagger
+    stars: 1
+    durability: 250
+    natural_classes: [4, 3]
+    base_item: GOLDEN_SWORD
+    custom_model_data: 6001
+    combat:
+      damage_bonus: 3.0
+      attack_speed_bonus: 4.0
+    lore:
+      - "&7An old, oxidized needle tip. Tetanus hazard."
+      - ""
+      - "&4Durability: 250 / 250"
+    effects_on_hit: []
+    passives: []
+    recipe:
+      shape:
+        - " I "
+        - " S "
+        - "   "
+      ingredients:
+        I: IRON_NUGGET
+        S: STICK
+
+  toxic_dagger_2:
+    display_name: "&fVenomous Bodkin"
+    weapon_type: dagger
+    stars: 2
+    durability: 500
+    natural_classes: [4, 3]
+    base_item: GOLDEN_SWORD
+    custom_model_data: 6002
+    combat:
+      damage_bonus: 4.0
+      attack_speed_bonus: 4.0
+    lore:
+      - "&7Coated in basic cave spider venom extracts."
+      - ""
+      - "&4Durability: 500 / 500"
+    effects_on_hit: []
+    passives: []
+    recipe:
+      shape:
+        - " S "
+        - " G "
+        - "   "
+      ingredients:
+        S: SPIDER_EYE
+        G: GOLD_INGOT
+
+  toxic_dagger_3:
+    display_name: "&aViper Fang"
+    weapon_type: dagger
+    stars: 3
+    durability: 1250
+    natural_classes: [4, 3]
+    base_item: GOLDEN_SWORD
+    custom_model_data: 6003
+    combat:
+      damage_bonus: 5.0
+      attack_speed_bonus: 4.0
+    lore:
+      - "&7Fast strikes introduce necrotic biological liquefaction."
+      - ""
+      - "&bPassive: Heals the wielder for 12% of physical damage dealt."
+      - ""
+      - "&4Durability: 1250 / 1250"
+    effects_on_hit:
+      - type: potion
+        effect: POISON
+        duration: 3.0
+        amplifier: 0
+    passives:
+      - type: lifesteal
+        percent: 0.12
+    recipe:
+      shape:
+        - " F "
+        - " D "
+        - "   "
+      ingredients:
+        F: FERMENTED_SPIDER_EYE
+        D: DIAMOND
+
+  toxic_dagger_4:
+    display_name: "&2Plague Carver"
+    weapon_type: dagger
+    stars: 4
+    durability: 1800
+    natural_classes: [4, 3]
+    base_item: GOLDEN_SWORD
+    custom_model_data: 6004
+    combat:
+      damage_bonus: 6.0
+      attack_speed_bonus: 4.0
+    lore:
+      - "&5Saturated in biological toxic waste cultures."
+      - ""
+      - "&bPassive: Inflicts massive damage to targets when striking from sneak."
+      - ""
+      - "&4Durability: 1800 / 1800"
+    effects_on_hit:
+      - type: bleed
+        damage_per_tick: 0.5
+        interval: 12
+        duration: 3.0
+    skill:
+      name: "&2Contagious Dash"
+      cooldown: 12.0
+      class_tag: 4
+      effects:
+        - type: dash
+          speed: 1.6
+        - type: potion_target
+          effect: POISON
+          duration: 5.0
+          amplifier: 1
+        - type: play_sound
+          sound: ENTITY_SPIDER_DEATH
+          volume: 1.0
+          pitch: 1.3
+        - type: particle_burst
+          particle: HAPPY_VILLAGER
+          count: 30
+          spread: 1.0
+          speed: 0.1
+    passives:
+      - type: ambush
+        sneak_duration: 2.0
+        bonus_multiplier: 2.0
+    recipe:
+      shape:
+        - " P "
+        - " E "
+        - " S "
+      ingredients:
+        P: POISONOUS_POTATO
+        E: EMERALD
+        S: STICK
+
+  toxic_dagger_5:
+    display_name: "&5&lMiasma Shard"
+    weapon_type: dagger
+    stars: 5
+    durability: 3000
+    natural_classes: [4, 3]
+    base_item: NETHERITE_SWORD
+    custom_model_data: 6005
+    combat:
+      damage_bonus: 7.0
+      attack_speed_bonus: 4.0
+    lore:
+      - "&6An infected relic containing condensed lethal pandemic strains."
+      - "&6Unleashes absolute apocalyptic ruin onto infected hosts."
+      - ""
+      - "&bPassive: Deals +35% damage against enemies with any debuff."
+      - ""
+      - "&4Durability: 3000 / 3000"
+    effects_on_hit:
+      - type: potion
+        effect: WITHER
+        duration: 4.0
+        amplifier: 1
+      - type: bleed
+        damage_per_tick: 0.8
+        interval: 10
+        duration: 4.0
+    skill:
+      name: "&5&lOutbreak Surge"
+      cooldown: 18.0
+      class_tag: 4
+      effects:
+        - type: parry
+          duration: 2.0
+        - type: aoe_damage
+          radius: 4.5
+          damage: 9.0
+        - type: potion_target
+          effect: WITHER
+          duration: 6.0
+          amplifier: 2
+        - type: potion_target
+          effect: SLOWNESS
+          duration: 4.0
+          amplifier: 2
+        - type: play_sound
+          sound: ENTITY_WITHER_SHOOT
+          volume: 1.5
+          pitch: 0.7
+        - type: play_sound
+          sound: ENTITY_ZOMBIE_VILLAGER_CURE
+          volume: 1.1
+          pitch: 1.5
+        - type: particle_burst
+          particle: INSTANT_EFFECT
+          count: 140
+          spread: 3.5
+          speed: 0.4
+        - type: particle_burst
+          particle: SQUID_INK
+          count: 100
+          spread: 3.0
+          speed: 0.3
+    passives:
+      - type: debuff_exploiter
+        bonus_multiplier: 1.35
+    recipe:
+      shape:
+        - "NDN"
+        - "XPX"
+        - " S "
+      ingredients:
+        N: NETHERITE_INGOT
+        D: DRAGON_BREATH
+        X: FERMENTED_SPIDER_EYE
+        P: POISONOUS_POTATO
+        S: STICK

@@ -1,0 +1,3190 @@
+# ==========================================
+# Mage Spells — spells.yml (Balanced Scaling Edition)
+# ==========================================
+# Casting: Right-click to charge → "fully charged!" → right-click again to cast.
+# Balance Theory: Low tiers are spammable bread-and-butter.
+# High tiers are high-cost, long-cooldown tactical field wipers.
+# ==========================================
+
+spells:
+
+  # ── FIRE SPELLS (FIREBALL) ────────────────────────────────────────────────
+
+  tag2offensive1_t1:
+    display_name: "&cFireball &7(I)"
+    stars: 1
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 3
+    charge_time: 1.5
+    cooldown: 5.0
+    uses: 25
+    effects:
+      - type: launch_projectile
+        projectile: SMALL_FIREBALL
+        speed: 1.0
+        yield: 1.5
+      - type: play_sound
+        sound: ENTITY_BLAZE_SHOOT
+        volume: 0.8
+        pitch: 1.2
+    lore:
+      - "&7A simple, quick spark of conjured flame."
+      - ""
+      - "&f▸ &cMana Cost: &f3 Levels"
+      - "&f▸ &eCharge Time: &f1.5s"
+      - "&f▸ &bCooldown: &f5.0s"
+      - "&f▸ &7Uses: &f25/25"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " C "
+        - "LBL"
+        - " C "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        C: COAL
+
+  tag2offensive1_t2:
+    display_name: "&c&lEmbershot &7(II)"
+    stars: 2
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 5
+    charge_time: 2.0
+    cooldown: 8.0
+    max_uses: 35
+    effects:
+      - type: launch_projectile
+        projectile: FIREBALL
+        speed: 1.3
+        yield: 2.2
+      - type: projectile_particle_trail
+        particle: FLAME
+        count: 5
+        spread: 0.1
+        speed: 0.01
+      - type: play_sound
+        sound: ENTITY_BLAZE_SHOOT
+        volume: 1.0
+        pitch: 1.0
+      - type: particle_burst
+        particle: FLAME
+        count: 20
+        radius: 0.3
+    lore:
+      - "&7A more condensed fireball that packs a punch."
+      - ""
+      - "&f▸ &cMana Cost: &f5 Levels"
+      - "&f▸ &eCharge Time: &f2.0s"
+      - "&f▸ &bCooldown: &f8.0s"
+      - "&f▸ &7Uses: &f35/35"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "R R"
+        - "LBL"
+        - "R R"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        R: BLAZE_ROD
+
+  tag2offensive1_t3:
+    display_name: "&e&lIgnited Meteor &7(III)"
+    stars: 3
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 8
+    charge_time: 2.8
+    cooldown: 14.0
+    max_uses: 45
+    effects:
+      - type: launch_projectile
+        projectile: FIREBALL
+        speed: 1.6
+        yield: 3.5
+      - type: projectile_particle_trail
+        particle: FLAME
+        count: 12
+        spread: 0.2
+        speed: 0.01
+      - type: projectile_particle_trail
+        particle: SMOKE
+        count: 4
+        spread: 0.1
+        speed: 0.01
+      - type: play_sound
+        sound: ENTITY_BLAZE_SHOOT
+        volume: 1.0
+        pitch: 0.8
+      - type: play_sound
+        sound: ITEM_FIRECHARGE_USE
+        volume: 0.8
+        pitch: 1.0
+      - type: particle_burst
+        particle: FLAME
+        count: 45
+        radius: 0.6
+    lore:
+      - "&7Hurls a volatile fiery mass at enemies."
+      - ""
+      - "&f▸ &cMana Cost: &f8 Levels"
+      - "&f▸ &eCharge Time: &f2.8s"
+      - "&f▸ &bCooldown: &f14.0s"
+      - "&f▸ &7Uses: &f45/45"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "FDF"
+        - "LBL"
+        - "FDF"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        F: FIRE_CHARGE
+        D: DIAMOND
+
+  tag2offensive1_t4:
+    display_name: "&d&lHellfire Blast &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 14
+    charge_time: 3.8
+    cooldown: 22.0
+    max_uses: 55
+    effects:
+      - type: launch_projectile
+        projectile: FIREBALL
+        speed: 2.0
+        yield: 5.0
+      - type: projectile_particle_trail
+        particle: FLAME
+        count: 22
+        spread: 0.3
+        speed: 0.02
+      - type: projectile_particle_trail
+        particle: LAVA
+        count: 6
+        spread: 0.15
+        speed: 0.05
+      - type: play_sound
+        sound: ENTITY_DRAGON_FIREBALL_EXPLODE
+        volume: 1.1
+        pitch: 1.1
+      - type: play_sound
+        sound: ENTITY_GHAST_SHOOT
+        volume: 0.7
+        pitch: 0.5
+      - type: particle_burst
+        particle: LAVA
+        count: 35
+        radius: 1.0
+      - type: particle_burst
+        particle: FLAME
+        count: 70
+        radius: 1.5
+      - type: screen_shake
+        radius: 8.0
+        duration: 0.4
+        shake_caster: true
+    lore:
+      - "&7A destructive, high-impact heavy explosion."
+      - ""
+      - "&f▸ &cMana Cost: &f14 Levels"
+      - "&f▸ &eCharge Time: &f3.8s"
+      - "&f▸ &bCooldown: &f22.0s"
+      - "&f▸ &7Uses: &f55/55"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "ONO"
+        - "LBL"
+        - "ONO"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        O: OBSIDIAN
+        N: NETHERITE_SCRAP
+
+  tag2offensive1_t5:
+    display_name: "&6&lPyroclasm Apocalypse &5(V)"
+    stars: 5
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 22
+    charge_time: 4.5
+    cooldown: 35.0
+    max_uses: 75
+    effects:
+      - type: launch_projectile
+        projectile: FIREBALL
+        speed: 2.5
+        yield: 7.0
+      - type: projectile_particle_trail
+        particle: FLAME
+        count: 40
+        spread: 0.4
+        speed: 0.02
+      - type: projectile_particle_trail
+        particle: LAVA
+        count: 15
+        spread: 0.2
+        speed: 0.05
+      - type: projectile_particle_trail
+        particle: LARGE_SMOKE
+        count: 10
+        spread: 0.3
+        speed: 0.01
+      - type: aoe_damage
+        radius: 5.0
+        damage: 8.0
+      - type: play_sound
+        sound: ENTITY_ENDER_DRAGON_GROWL
+        volume: 1.3
+        pitch: 0.7
+      - type: play_sound
+        sound: ENTITY_GENERIC_EXPLODE
+        volume: 1.5
+        pitch: 0.5
+      - type: play_sound
+        sound: ITEM_FIRECHARGE_USE
+        volume: 1.2
+        pitch: 0.4
+      - type: particle_burst
+        particle: FLAME
+        count: 150
+        radius: 3.5
+      - type: particle_burst
+        particle: LAVA
+        count: 60
+        radius: 2.0
+      - type: particle_burst
+        particle: LARGE_SMOKE
+        count: 40
+        radius: 3.0
+      - type: screen_shake
+        radius: 15.0
+        duration: 1.0
+        shake_caster: true
+    lore:
+      - "&7Legendary strategic nuke. Incinerates the zone."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &cMana Cost: &f22 Levels"
+      - "&f▸ &eCharge Time: &f4.5s"
+      - "&f▸ &bCooldown: &f35.0s"
+      - "&f▸ &7Uses: &f75/75"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NNN"
+        - "NBN"
+        - "NNN"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+
+
+  # ── FIRE SPELLS (INFERNO LANCE) ───────────────────────────────────────────
+
+  tag2offensive2_t1:
+    display_name: "&cFlame Needle &7(I)"
+    stars: 1
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 2
+    charge_time: 1.0
+    cooldown: 4.0
+    max_uses: 15
+    effects:
+      - type: launch_projectile
+        projectile: ARROW
+        speed: 2.0
+        yield: 1.0
+      - type: ignite
+        fire_ticks: 40
+      - type: play_sound
+        sound: BLOCK_FIRE_AMBIENT
+        volume: 1.0
+        pitch: 1.5
+    lore:
+      - "&7Fires a rapid, cheap spark that kindles targets."
+      - ""
+      - "&f▸ &cMana Cost: &f2 Levels"
+      - "&f▸ &eCharge Time: &f1.0s"
+      - "&f▸ &bCooldown: &f4.0s"
+      - "&f▸ &7Uses: &f15/15"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " F "
+        - "LBL"
+        - " F "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        F: FLINT
+
+  tag2offensive2_t2:
+    display_name: "&cSearing Bolt &7(II)"
+    stars: 2
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 4
+    charge_time: 1.5
+    cooldown: 7.0
+    max_uses: 20
+    effects:
+      - type: launch_projectile
+        projectile: ARROW
+        speed: 2.4
+        yield: 1.2
+      - type: ignite
+        fire_ticks: 60
+      - type: projectile_particle_trail
+        particle: FLAME
+        count: 6
+        spread: 0.1
+        speed: 0.01
+      - type: play_sound
+        sound: ENTITY_BLAZE_SHOOT
+        volume: 0.8
+        pitch: 1.6
+    lore:
+      - "&7An accelerated, reliable lance of magic flame."
+      - ""
+      - "&f▸ &cMana Cost: &f4 Levels"
+      - "&f▸ &eCharge Time: &f1.5s"
+      - "&f▸ &bCooldown: &f7.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " I "
+        - "LBL"
+        - " I "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        I: IRON_INGOT
+
+  tag2offensive2_t3:
+    display_name: "&e&lInferno Lance &7(III)"
+    stars: 3
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 7
+    charge_time: 2.2
+    cooldown: 12.0
+    max_uses: 20
+    effects:
+      - type: launch_projectile
+        projectile: ARROW
+        speed: 3.0
+        yield: 1.5
+      - type: projectile_particle_trail
+        particle: FLAME
+        count: 16
+        spread: 0.15
+        speed: 0.01
+      - type: projectile_particle_trail
+        particle: CRIT
+        count: 4
+        spread: 0.1
+        speed: 0.02
+      - type: ignite
+        fire_ticks: 100
+      - type: play_sound
+        sound: ENTITY_BLAZE_SHOOT
+        volume: 1.0
+        pitch: 1.4
+      - type: play_sound
+        sound: ITEM_FIRECHARGE_USE
+        volume: 0.9
+        pitch: 1.1
+    lore:
+      - "&7A flame heavily condensed with refined mana."
+      - ""
+      - "&f▸ &cMana Cost: &f7 Levels"
+      - "&f▸ &eCharge Time: &f2.2s"
+      - "&f▸ &bCooldown: &f12.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "RRR"
+        - "LBL"
+        - "RRR"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        R: BLAZE_ROD
+
+  tag2offensive2_t4:
+    display_name: "&d&lMagma Javelin &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 12
+    charge_time: 3.0
+    cooldown: 18.0
+    max_uses: 25
+    effects:
+      - type: launch_projectile
+        projectile: SMALL_FIREBALL
+        speed: 3.5
+        yield: 2.0
+      - type: projectile_particle_trail
+        particle: LAVA
+        count: 10
+        spread: 0.05
+        speed: 0.02
+      - type: projectile_particle_trail
+        particle: FLAME
+        count: 26
+        spread: 0.2
+        speed: 0.01
+      - type: ignite
+        fire_ticks: 160
+      - type: play_sound
+        sound: ITEM_FIRECHARGE_USE
+        volume: 1.2
+        pitch: 0.8
+      - type: play_sound
+        sound: ENTITY_WITHER_SHOOT
+        volume: 0.6
+        pitch: 1.8
+    lore:
+      - "&7Pierces single targets with overwhelming heat."
+      - ""
+      - "&f▸ &cMana Cost: &f12 Levels"
+      - "&f▸ &eCharge Time: &f3.0s"
+      - "&f▸ &bCooldown: &f18.0s"
+      - "&f▸ &7Uses: &f25/25"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "DDD"
+        - "LBL"
+        - "DDD"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        D: DIAMOND_BLOCK
+
+  tag2offensive2_t5:
+    display_name: "&6&lGungnir Flare &5(V)"
+    stars: 5
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 18
+    charge_time: 3.5
+    cooldown: 26.0
+    max_uses: 35
+    effects:
+      - type: launch_projectile
+        projectile: SMALL_FIREBALL
+        speed: 4.5
+        yield: 3.0
+      - type: projectile_particle_trail
+        particle: FLAME
+        count: 45
+        spread: 0.25
+        speed: 0.02
+      - type: projectile_particle_trail
+        particle: LAVA
+        count: 20
+        spread: 0.1
+        speed: 0.05
+      - type: projectile_particle_trail
+        particle: SMALL_SMOKE
+        count: 15
+        spread: 0.3
+        speed: 0.01
+      - type: ignite
+        fire_ticks: 240
+      - type: play_sound
+        sound: ENTITY_WITHER_SHOOT
+        volume: 1.2
+        pitch: 1.4
+      - type: play_sound
+        sound: ENTITY_DRAGON_FIREBALL_EXPLODE
+        volume: 1.0
+        pitch: 0.6
+      - type: dot
+        duration: 5.0
+        damage: 2.0
+      - type: screen_shake
+        radius: 6.0
+        duration: 0.5
+        shake_caster: true
+    lore:
+      - "&7The ultimate blazing pike. High burn executioner."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &cMana Cost: &f18 Levels"
+      - "&f▸ &eCharge Time: &f3.5s"
+      - "&f▸ &bCooldown: &f26.0s"
+      - "&f▸ &7Uses: &f35/35"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NDN"
+        - "DBD"
+        - "NDN"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        D: DIAMOND_BLOCK
+
+  # ── FIRE SPELLS (FLAME NOVA) ──────────────────────────────────────────────
+  # Mechanics: Point-blank radial bursts centered on the caster. Great for crowd control.
+
+  tag2offensive3_t1:
+    display_name: "&cFlame Pulse &7(I)"
+    stars: 1
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 3
+    charge_time: 0.8
+    cooldown: 5.0
+    max_uses: 20
+    effects:
+      - type: aoe_damage
+        radius: 3.5
+        damage: 2.0
+      - type: ignite
+        fire_ticks: 40
+      - type: particle_burst
+        particle: FLAME
+        count: 15
+        radius: 1.5
+      - type: play_sound
+        sound: ITEM_FIRECHARGE_USE
+        volume: 0.8
+        pitch: 1.5
+    lore:
+      - "&7Releases a quick, hot shockwave around you."
+      - ""
+      - "&f▸ &cMana Cost: &f3 Levels"
+      - "&f▸ &eCharge Time: &f0.8s"
+      - "&f▸ &bCooldown: &f5.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " C "
+        - "LBL"
+        - " C "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        C: CHARCOAL
+
+  tag2offensive3_t2:
+    display_name: "&c&lCombustion Wave &7(II)"
+    stars: 2
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 5
+    charge_time: 1.4
+    cooldown: 8.0
+    max_uses: 30
+    effects:
+      - type: aoe_damage
+        radius: 4.5
+        damage: 3.5
+      - type: ignite
+        fire_ticks: 70
+      - type: particle_burst
+        particle: FLAME
+        count: 35
+        radius: 3.0
+      - type: play_sound
+        sound: ENTITY_GENERIC_EXPLODE
+        volume: 0.7
+        pitch: 1.4
+    lore:
+      - "&7A violent burst of heat that pushes back the dark."
+      - ""
+      - "&f▸ &cMana Cost: &f5 Levels"
+      - "&f▸ &eCharge Time: &f1.4s"
+      - "&f▸ &bCooldown: &f8.0s"
+      - "&f▸ &7Uses: &f30/30"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " M "
+        - "LBL"
+        - " M "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        M: MAGMA_CREAM
+
+  tag2offensive3_t3:
+    display_name: "&e&lInfernal Ring &7(III)"
+    stars: 3
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 9
+    charge_time: 2.0
+    cooldown: 13.0
+    max_uses: 40
+    effects:
+      - type: aoe_damage
+        radius: 6.0
+        damage: 5.5
+      - type: ignite
+        fire_ticks: 100
+      - type: particle_burst
+        particle: FLAME
+        count: 60
+        radius: 5.0
+      - type: particle_burst
+        particle: LAVA
+        count: 15
+        radius: 2.5
+      - type: play_sound
+        sound: ENTITY_BLAZE_HURT
+        volume: 1.0
+        pitch: 0.8
+    lore:
+      - "&7An expanding circle of compressed volcanic fury."
+      - ""
+      - "&f▸ &cMana Cost: &f9 Levels"
+      - "&f▸ &eCharge Time: &f2.0s"
+      - "&f▸ &bCooldown: &f13.0s"
+      - "&f▸ &7Uses: &f40/40"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "P P"
+        - "LBL"
+        - "P P"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        P: BLAZE_POWDER
+
+  tag2offensive3_t4:
+    display_name: "&d&lSupernova Blast &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 15
+    charge_time: 2.8
+    cooldown: 20.0
+    max_uses: 50
+    effects:
+      - type: aoe_damage
+        radius: 8.5
+        damage: 8.0
+      - type: ignite
+        fire_ticks: 150
+      - type: particle_burst
+        particle: FLAME
+        count: 100
+        radius: 7.0
+      - type: particle_burst
+        particle: LARGE_SMOKE
+        count: 25
+        radius: 5.0
+      - type: screen_shake
+        radius: 10.0
+        duration: 0.5
+        shake_caster: true
+      - type: play_sound
+        sound: ENTITY_DRAGON_FIREBALL_EXPLODE
+        volume: 1.2
+        pitch: 0.8
+    lore:
+      - "&7Improvises a localized star collapse. Do not blink."
+      - ""
+      - "&f▸ &cMana Cost: &f15 Levels"
+      - "&f▸ &eCharge Time: &f2.8s"
+      - "&f▸ &bCooldown: &f20.0s"
+      - "&f▸ &7Uses: &f50/50"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "FCF"
+        - "LBL"
+        - "FCF"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        F: FIRE_CHARGE
+        C: CRYING_OBSIDIAN
+
+  tag2offensive3_t5:
+    display_name: "&6&lCosmic Conflagration &5(V)"
+    stars: 5
+    class_tag: 2
+    type: offensive
+    element: fire
+    mana_cost: 25
+    charge_time: 3.5
+    cooldown: 32.0
+    max_uses: 60
+    effects:
+      - type: aoe_damage
+        radius: 13.0
+        damage: 12.0
+      - type: ignite
+        fire_ticks: 240
+      - type: particle_burst
+        particle: FLAME
+        count: 200
+        radius: 11.0
+      - type: particle_burst
+        particle: LAVA
+        count: 50
+        radius: 6.0
+      - type: particle_burst
+        particle: SONIC_BOOM
+        count: 1
+        radius: 0.5
+      - type: screen_shake
+        radius: 18.0
+        duration: 1.2
+        shake_caster: true
+      - type: play_sound
+        sound: ENTITY_GENERIC_EXPLODE
+        volume: 1.5
+        pitch: 0.4
+      - type: play_sound
+        sound: ENTITY_WITHER_DEATH
+        volume: 1.0
+        pitch: 1.2
+    lore:
+      - "&7The absolute apex of close-quarters destruction."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &cMana Cost: &f25 Levels"
+      - "&f▸ &eCharge Time: &f3.5s"
+      - "&f▸ &bCooldown: &f32.0s"
+      - "&f▸ &7Uses: &f60/60"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NMN"
+        - "MBM"
+        - "NMN"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        M: MAGMA_BLOCK
+
+
+  # ── FIRE SPELLS (PYROTIC AEGIS) ───────────────────────────────────────────
+  # Mechanics: Self-buffing protection utility. Grants immunity and burns melee attackers.
+
+  tag2support2_t1:
+    display_name: "&cHeat Veil &7(I)"
+    stars: 1
+    class_tag: 2
+    type: support
+    element: fire
+    mana_cost: 2
+    charge_time: 0.5
+    cooldown: 8.0
+    max_uses: 15
+    effects:
+      - type: potion_self
+        effect: FIRE_RESISTANCE
+        duration: 5.0
+        amplifier: 0
+      - type: particle_trail
+        particle: FLAME
+        duration: 5.0
+      - type: play_sound
+        sound: ITEM_ARMOR_EQUIP_LEATHER
+        volume: 1.0
+        pitch: 1.2
+    lore:
+      - "&7Wreathes the caster in a light shimmer of warmth."
+      - ""
+      - "&f▸ &aMana Cost: &f2 Levels"
+      - "&f▸ &eCharge Time: &f0.5s"
+      - "&f▸ &bCooldown: &f8.0s"
+      - "&f▸ &7Uses: &f15/15"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " T "
+        - "LBL"
+        - " T "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        T: TORCH
+
+  tag2support2_t2:
+    display_name: "&cSearing Carapace &7(II)"
+    stars: 2
+    class_tag: 2
+    type: support
+    element: fire
+    mana_cost: 4
+    charge_time: 1.0
+    cooldown: 12.0
+    max_uses: 20
+    effects:
+      - type: potion_self
+        effect: FIRE_RESISTANCE
+        duration: 8.0
+        amplifier: 0
+      - type: potion_self
+        effect: SPEED
+        duration: 4.0
+        amplifier: 0
+      - type: aoe_damage
+        radius: 2.0
+        damage: 1.5
+      - type: particle_trail
+        particle: FLAME
+        duration: 8.0
+      - type: play_sound
+        sound: ITEM_ARMOR_EQUIP_IRON
+        volume: 1.0
+        pitch: 1.0
+    lore:
+      - "&7Forms a protective crust that burns adjacent bugs."
+      - ""
+      - "&f▸ &aMana Cost: &f4 Levels"
+      - "&f▸ &eCharge Time: &f1.0s"
+      - "&f▸ &bCooldown: &f12.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " B "
+        - "LBL"
+        - " B "
+      ingredients:
+        B: BRICK
+        L: LAPIS_LAZULI
+
+  tag2support2_t3:
+    display_name: "&e&lPyrotic Aegis &7(III)"
+    stars: 3
+    class_tag: 2
+    type: support
+    element: fire
+    mana_cost: 6
+    charge_time: 1.5
+    cooldown: 18.0
+    max_uses: 25
+    effects:
+      - type: potion_self
+        effect: FIRE_RESISTANCE
+        duration: 12.0
+        amplifier: 0
+      - type: potion_self
+        effect: SPEED
+        duration: 6.0
+        amplifier: 1
+      - type: potion_self
+        effect: RESISTANCE
+        duration: 6.0
+        amplifier: 0
+      - type: aoe_damage
+        radius: 3.0
+        damage: 2.5
+      - type: particle_burst
+        particle: FLAME
+        count: 25
+        radius: 2.0
+      - type: play_sound
+        sound: ITEM_ARMOR_EQUIP_GOLD
+        volume: 1.0
+        pitch: 0.9
+    lore:
+      - "&7Hardens your mana into a blazing tactical shield."
+      - ""
+      - "&f▸ &aMana Cost: &f6 Levels"
+      - "&f▸ &eCharge Time: &f1.5s"
+      - "&f▸ &bCooldown: &f18.0s"
+      - "&f▸ &7Uses: &f25/25"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "IGI"
+        - "LBL"
+        - "IGI"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        G: GOLD_INGOT
+        I: IRON_INGOT
+
+  tag2support2_t4:
+    display_name: "&d&lMagma Core Armor &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: support
+    element: fire
+    mana_cost: 10
+    charge_time: 2.0
+    cooldown: 24.0
+    max_uses: 30
+    effects:
+      - type: potion_self
+        effect: FIRE_RESISTANCE
+        duration: 18.0
+        amplifier: 0
+      - type: potion_self
+        effect: SPEED
+        duration: 10.0
+        amplifier: 1
+      - type: potion_self
+        effect: RESISTANCE
+        duration: 10.0
+        amplifier: 1
+      - type: aoe_damage
+        radius: 4.0
+        damage: 4.0
+      - type: ignite
+        fire_ticks: 60
+      - type: play_sound
+        sound: ITEM_ARMOR_EQUIP_DIAMOND
+        volume: 1.2
+        pitch: 0.8
+      - type: play_sound
+        sound: BLOCK_LAVA_EXTINGUISH
+        volume: 0.5
+        pitch: 1.5
+    lore:
+      - "&7Condenses mantle-pressure heat around your frame."
+      - ""
+      - "&f▸ &aMana Cost: &f10 Levels"
+      - "&f▸ &eCharge Time: &f2.0s"
+      - "&f▸ &bCooldown: &f24.0s"
+      - "&f▸ &7Uses: &f30/30"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "MOM"
+        - "LBL"
+        - "MOM"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        O: OBSIDIAN
+        M: MAGMA_BLOCK
+
+  tag2support2_t5:
+    display_name: "&6&lAvatar of Vulcan &5(V)"
+    stars: 5
+    class_tag: 2
+    type: support
+    element: fire
+    mana_cost: 18
+    charge_time: 2.5
+    cooldown: 35.0
+    max_uses: 35
+    effects:
+      - type: potion_self
+        effect: FIRE_RESISTANCE
+        duration: 30.0
+        amplifier: 0
+      - type: potion_self
+        effect: SPEED
+        duration: 15.0
+        amplifier: 2
+      - type: potion_self
+        effect: RESISTANCE
+        duration: 15.0
+        amplifier: 2
+      - type: invulnerability
+        duration: 1.0
+      - type: aoe_damage
+        radius: 5.5
+        damage: 6.0
+      - type: ignite
+        fire_ticks: 120
+      - type: play_sound
+        sound: ITEM_ARMOR_EQUIP_NETHERITE
+        volume: 1.5
+        pitch: 0.5
+      - type: play_sound
+        sound: ENTITY_ENDER_DRAGON_GROWL
+        volume: 0.8
+        pitch: 1.5
+    lore:
+      - "&7Become the forge god. Brief immunity, permanent terror."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &aMana Cost: &f18 Levels"
+      - "&f▸ &eCharge Time: &f2.5s"
+      - "&f▸ &bCooldown: &f35.0s"
+      - "&f▸ &7Uses: &f35/35"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NUN"
+        - "UBU"
+        - "NUN"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        U: NETHERITE_INGOT
+
+  # ── ICE SPELLS (BLIZZARD) ─────────────────────────────────────────────────
+
+  # ── ICE SPELLS (AOE BLIZZARD / CC) ─────────────────────────────────────────
+  # Mechanics: Point-blank zone control that inflicts massive, long-lasting cripples and freezes.
+
+  tag2ice1_t1:
+    display_name: "&bFrost Snap &7(I)"
+    stars: 1
+    class_tag: 2
+    type: offensive
+    element: ice
+    mana_cost: 3
+    charge_time: 1.2
+    cooldown: 6.0
+    max_uses: 10
+    effects:
+      - type: aoe_damage
+        radius: 3.0
+        damage: 1.5
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 8.0
+        amplifier: 1
+        radius: 3.0
+      - type: particle_burst
+        particle: SNOWFLAKE
+        count: 35
+        radius: 2.5
+      - type: particle_burst
+        particle: CLOUD
+        count: 15
+        radius: 2.0
+      - type: play_sound
+        sound: BLOCK_GLASS_HIT
+        volume: 1.0
+        pitch: 1.5
+      - type: play_sound
+        sound: WEATHER_RAIN
+        volume: 0.4
+        pitch: 1.8
+    lore:
+      - "&7Flash-freezes the air, leaving a long-lasting"
+      - "&7chill that slows enemies down."
+      - ""
+      - "&f▸ &cMana Cost: &f3 Levels"
+      - "&f▸ &eCharge Time: &f1.2s"
+      - "&f▸ &bCooldown: &f6.0s"
+      - "&f▸ &7Uses: &f10/10"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " S "
+        - "LBL"
+        - " S "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        S: SNOWBALL
+
+  tag2ice1_t2:
+    display_name: "&bGlacial Chime &7(II)"
+    stars: 2
+    class_tag: 2
+    type: offensive
+    element: ice
+    mana_cost: 5
+    charge_time: 1.8
+    cooldown: 10.0
+    max_uses: 15
+    effects:
+      - type: aoe_damage
+        radius: 4.0
+        damage: 2.2
+      - type: freeze
+        radius: 4.0
+        duration: 4.0
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 15.0
+        amplifier: 1
+        radius: 4.0
+      - type: particle_burst
+        particle: SNOWFLAKE
+        count: 75
+        radius: 4.0
+      - type: particle_burst
+        particle: SNOWBALL
+        count: 35
+        radius: 3.5
+      - type: particle_burst
+        particle: CLOUD
+        count: 30
+        radius: 3.5
+      - type: play_sound
+        sound: BLOCK_GLASS_BREAK
+        volume: 0.8
+        pitch: 1.8
+      - type: play_sound
+        sound: WEATHER_RAIN
+        volume: 0.7
+        pitch: 1.4
+    lore:
+      - "&7Spreads a deep frost that locks foes in place"
+      - "&7and slows them long after they break free."
+      - ""
+      - "&f▸ &cMana Cost: &f5 Levels"
+      - "&f▸ &eCharge Time: &f1.8s"
+      - "&f▸ &bCooldown: &f10.0s"
+      - "&f▸ &7Uses: &f15/15"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " I "
+        - "LBL"
+        - " I "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        I: PACKED_ICE
+
+  tag2ice1_t3:
+    display_name: "&b&lBlizzard &7(III)"
+    stars: 3
+    class_tag: 2
+    type: offensive
+    element: ice
+    mana_cost: 9
+    charge_time: 2.6
+    cooldown: 18.0
+    max_uses: 20
+    effects:
+      - type: aoe_damage
+        radius: 5.0
+        damage: 3.0
+      - type: freeze
+        radius: 5.0
+        duration: 7.0
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 25.0
+        amplifier: 2
+        radius: 5.0
+      - type: potion_target
+        effect: WEAKNESS
+        duration: 15.0
+        amplifier: 0
+        radius: 5.0
+      - type: particle_burst
+        particle: SNOWFLAKE
+        count: 180
+        radius: 5.0
+      - type: particle_burst
+        particle: CLOUD
+        count: 80
+        radius: 4.5
+      - type: particle_burst
+        particle: WHITE_SMOKE
+        count: 40
+        radius: 4.0
+      - type: play_sound
+        sound: WEATHER_RAIN
+        pitch: 1.0
+        volume: 1.2
+      - type: play_sound
+        sound: ENTITY_PLAYER_HURT_FREEZE
+        pitch: 1.4
+        volume: 0.8
+    lore:
+      - "&7Erupts a localized blinding storm. Heavy frost"
+      - "&7numbs weapons, leaving targets weak and slowed."
+      - ""
+      - "&f▸ &cMana Cost: &f9 Levels"
+      - "&f▸ &eCharge Time: &f2.6s"
+      - "&f▸ &bCooldown: &f18.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "ILI"
+        - "LBL"
+        - "ILI"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        I: BLUE_ICE
+
+  tag2ice1_t4:
+    display_name: "&d&lPermafrost Gale &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: offensive
+    element: ice
+    mana_cost: 14
+    charge_time: 3.5
+    cooldown: 25.0
+    max_uses: 25
+    effects:
+      - type: aoe_damage
+        radius: 6.5
+        damage: 4.5
+      - type: freeze
+        radius: 6.5
+        duration: 11.0
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 35.0
+        amplifier: 3
+        radius: 6.5
+      - type: potion_target
+        effect: WEAKNESS
+        duration: 25.0
+        amplifier: 1
+        radius: 6.5
+      - type: particle_burst
+        particle: SNOWFLAKE
+        count: 320
+        radius: 6.5
+      - type: particle_burst
+        particle: SNOWBALL
+        count: 110
+        radius: 5.5
+      - type: particle_burst
+        particle: CLOUD
+        count: 140
+        radius: 6.0
+      - type: particle_burst
+        particle: WHITE_SMOKE
+        count: 70
+        radius: 5.0
+      - type: play_sound
+        sound: ENTITY_PLAYER_HURT_FREEZE
+        pitch: 0.8
+        volume: 1.4
+      - type: play_sound
+        sound: BLOCK_GLASS_BREAK
+        pitch: 1.2
+        volume: 1.2
+      - type: play_sound
+        sound: WEATHER_RAIN
+        pitch: 0.6
+        volume: 1.5
+      - type: screen_shake
+        radius: 8.0
+        duration: 0.5
+        shake_caster: false
+    lore:
+      - "&7A violent sub-zero squall that inflicts long-term"
+      - "&7hypothermia on large waves of combatants."
+      - ""
+      - "&f▸ &cMana Cost: &f14 Levels"
+      - "&f▸ &eCharge Time: &f3.5s"
+      - "&f▸ &bCooldown: &f25.0s"
+      - "&f▸ &7Uses: &f25/25"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "Q Q"
+        - "LBL"
+        - "Q Q"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        Q: QUARTZ_BLOCK
+
+  tag2ice1_t5:
+    display_name: "&6&lNiflheim Judgment &5(V)"
+    stars: 5
+    class_tag: 2
+    type: offensive
+    element: ice
+    mana_cost: 20
+    charge_time: 4.2
+    cooldown: 34.0
+    max_uses: 35
+    effects:
+      - type: aoe_damage
+        radius: 8.0
+        damage: 6.5
+      - type: freeze
+        radius: 8.0
+        duration: 16.0
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 50.0
+        amplifier: 4
+        radius: 8.0
+      - type: blind
+        radius: 8.0
+        duration: 15.0
+      - type: potion_target
+        effect: WEAKNESS
+        duration: 40.0
+        amplifier: 2
+        radius: 8.0
+      - type: particle_burst
+        particle: SNOWFLAKE
+        count: 550
+        radius: 8.0
+      - type: particle_burst
+        particle: SNOWBALL
+        count: 220
+        radius: 7.0
+      - type: particle_burst
+        particle: CLOUD
+        count: 250
+        radius: 8.0
+      - type: particle_burst
+        particle: WHITE_SMOKE
+        count: 120
+        radius: 7.5
+      - type: particle_burst
+        particle: GLOW
+        count: 60
+        radius: 8.0
+      - type: play_sound
+        sound: BLOCK_GLASS_BREAK
+        pitch: 0.5
+        volume: 1.5
+      - type: play_sound
+        sound: ENTITY_ENDER_DRAGON_AMBIENT
+        pitch: 1.3
+        volume: 1.2
+      - type: play_sound
+        sound: WEATHER_RAIN
+        pitch: 0.4
+        volume: 2.0
+      - type: screen_shake
+        radius: 14.0
+        duration: 1.5
+        shake_caster: true
+    lore:
+      - "&7Absolute zero catastrophic whiteout spell."
+      - "&7Blinds, freezes, and cripples targets permanently."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &cMana Cost: &f20 Levels"
+      - "&f▸ &eCharge Time: &f4.2s"
+      - "&f▸ &bCooldown: &f34.0s"
+      - "&f▸ &7Uses: &f35/35"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NIN"
+        - "IBI"
+        - "NIN"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        I: BLUE_ICE
+
+
+  # ── EARTH SPELLS (STONE PILLAR) ───────────────────────────────────────────
+
+  tag2utility1_t1:
+    display_name: "&6Stone Ridge &7(I)"
+    stars: 1
+    class_tag: 2
+    type: utility
+    element: earth
+    mana_cost: 2
+    charge_time: 0.8
+    cooldown: 5.0
+    max_uses: 40
+    effects:
+      - type: pillar
+        block: COBBLESTONE
+        height: 2
+        duration: 4.0
+      - type: play_sound
+        sound: BLOCK_STONE_HIT
+        volume: 1.0
+        pitch: 1.0
+    lore:
+      - "&7Raises a swift, craggy stone tactical block."
+      - ""
+      - "&f▸ &cMana Cost: &f2 Levels"
+      - "&f▸ &eCharge Time: &f0.8s"
+      - "&f▸ &bCooldown: &f5.0s"
+      - "&f▸ &7Uses: &f40/40"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " C "
+        - "LBL"
+        - " C "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        C: COBBLESTONE
+
+  tag2utility1_t2:
+    display_name: "&6Earthen Mount &7(II)"
+    stars: 2
+    class_tag: 2
+    type: utility
+    element: earth
+    mana_cost: 3
+    charge_time: 1.2
+    cooldown: 7.0
+    max_uses: 60
+    effects:
+      - type: pillar
+        block: STONE
+        height: 2
+        duration: 6.0
+      - type: particle_burst
+        particle: BLOCK
+        count: 20
+        radius: 1.0
+      - type: play_sound
+        sound: BLOCK_STONE_PLACE
+        volume: 1.2
+        pitch: 0.8
+    lore:
+      - "&7A fast, clean pillar defensive structure."
+      - ""
+      - "&f▸ &cMana Cost: &f3 Levels"
+      - "&f▸ &eCharge Time: &f1.2s"
+      - "&f▸ &bCooldown: &f7.0s"
+      - "&f▸ &7Uses: &f60/60"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " S "
+        - "LBL"
+        - " S "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        S: STONE
+
+  tag2utility1_t3:
+    display_name: "&6&lStone Pillar &7(III)"
+    stars: 3
+    class_tag: 2
+    type: utility
+    element: earth
+    mana_cost: 5
+    charge_time: 1.6
+    cooldown: 10.0
+    max_uses: 75
+    effects:
+      - type: pillar
+        block: SMOOTH_STONE
+        height: 3
+        duration: 8.0
+      - type: particle_burst
+        particle: BLOCK
+        count: 40
+        radius: 1.5
+      - type: play_sound
+        sound: BLOCK_STONE_PLACE
+        volume: 1.2
+        pitch: 0.5
+      - type: play_sound
+        sound: ENTITY_ZOMBIE_ATTACK_WOODEN_DOOR
+        volume: 0.5
+        pitch: 0.6
+    lore:
+      - "&7Raises a solid column of stone beneath you."
+      - ""
+      - "&f▸ &cMana Cost: &f5 Levels"
+      - "&f▸ &eCharge Time: &f1.6s"
+      - "&f▸ &bCooldown: &f10.0s"
+      - "&f▸ &7Uses: &f75/75"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "RLR"
+        - "LBL"
+        - "RLR"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        R: SMOOTH_STONE
+
+  tag2utility1_t4:
+    display_name: "&d&lObelisk Spires &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: utility
+    element: earth
+    mana_cost: 8
+    charge_time: 2.2
+    cooldown: 14.0
+    max_uses: 90
+    effects:
+      - type: pillar
+        block: DEEPSLATE
+        height: 4
+        duration: 12.0
+      - type: launch_target
+        direction: away
+        power: 1.0
+        radius: 2.0
+      - type: particle_burst
+        particle: BLOCK
+        count: 70
+        radius: 2.0
+      - type: particle_burst
+        particle: LARGE_SMOKE
+        count: 20
+        radius: 1.5
+      - type: play_sound
+        sound: ENTITY_WITHER_BREAK_BLOCK
+        volume: 0.8
+        pitch: 1.2
+      - type: play_sound
+        sound: BLOCK_DEEPSLATE_BREAK
+        volume: 1.2
+        pitch: 0.6
+      - type: screen_shake
+        radius: 6.0
+        duration: 0.3
+        shake_caster: true
+    lore:
+      - "&7Erects a dark structural column, shoving pests aside."
+      - ""
+      - "&f▸ &cMana Cost: &f8 Levels"
+      - "&f▸ &eCharge Time: &f2.2s"
+      - "&f▸ &bCooldown: &f14.0s"
+      - "&f▸ &7Uses: &f90/90"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "TTT"
+        - "LBL"
+        - "TTT"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        T: TUFF
+
+  tag2utility1_t5:
+    display_name: "&6&lMonolith of Gaia &5(V)"
+    stars: 5
+    class_tag: 2
+    type: utility
+    element: earth
+    mana_cost: 12
+    charge_time: 2.8
+    cooldown: 18.0
+    max_uses: 120
+    effects:
+      - type: pillar
+        block: OBSIDIAN
+        height: 5
+        duration: 20.0
+      - type: launch_target
+        direction: away
+        power: 1.8
+        radius: 3.0
+      - type: particle_burst
+        particle: BLOCK
+        count: 120
+        radius: 3.0
+      - type: particle_burst
+        particle: LARGE_SMOKE
+        count: 45
+        radius: 2.5
+      - type: particle_burst
+        particle: CRIT
+        count: 50
+        radius: 2.0
+      - type: play_sound
+        sound: ENTITY_WITHER_BREAK_BLOCK
+        volume: 1.2
+        pitch: 0.5
+      - type: play_sound
+        sound: ENTITY_ZOMBIE_BREAK_WOODEN_DOOR
+        volume: 1.0
+        pitch: 0.5
+      - type: screen_shake
+        radius: 10.0
+        duration: 0.7
+        shake_caster: true
+    lore:
+      - "&7Summons a long-lasting protective obsidian obelisk."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &cMana Cost: &f12 Levels"
+      - "&f▸ &eCharge Time: &f2.8s"
+      - "&f▸ &bCooldown: &f18.0s"
+      - "&f▸ &7Uses: &f120/120"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NON"
+        - "OBO"
+        - "NON"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        O: OBSIDIAN
+
+  # ── EARTH SPELLS (EARTH WALLS) ────────────────────────────────────────────
+  # Mechanics: Creates wide horizontal barricades perpendicular to the caster to completely block paths.
+
+  tag2utility2_t1:
+    display_name: "&6Cobble Barricade &7(I)"
+    stars: 1
+    class_tag: 2
+    type: utility
+    element: earth
+    mana_cost: 3
+    charge_time: 1.0
+    cooldown: 7.0
+    max_uses: 40
+    effects:
+      - type: wall
+        block: COBBLESTONE
+        width: 3
+        height: 2
+        duration: 5.0
+      - type: play_sound
+        sound: BLOCK_STONE_HIT
+        volume: 1.0
+        pitch: 0.8
+    lore:
+      - "&7Erects a temporary 3x2 cobblestone barrier"
+      - "&7to stop pursuing enemies in their tracks."
+      - ""
+      - "&f▸ &cMana Cost: &f3 Levels"
+      - "&f▸ &eCharge Time: &f1.0s"
+      - "&f▸ &bCooldown: &f7.0s"
+      - "&f▸ &7Uses: &f40/40"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "CCC"
+        - " L "
+        - " B "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        C: COBBLESTONE
+
+  tag2utility2_t2:
+    display_name: "&6Earthen Rampart &7(II)"
+    stars: 2
+    class_tag: 2
+    type: utility
+    element: earth
+    mana_cost: 4
+    charge_time: 1.4
+    cooldown: 10.0
+    max_uses: 50
+    effects:
+      - type: wall
+        block: STONE
+        width: 3
+        height: 2
+        duration: 8.0
+      - type: particle_burst
+        particle: BLOCK
+        count: 30
+        radius: 1.5
+      - type: play_sound
+        sound: BLOCK_STONE_PLACE
+        volume: 1.2
+        pitch: 0.7
+    lore:
+      - "&7Raises a smooth 3x2 stone barricade that"
+      - "&7lingers longer to buy precious time."
+      - ""
+      - "&f▸ &cMana Cost: &f4 Levels"
+      - "&f▸ &eCharge Time: &f1.4s"
+      - "&f▸ &bCooldown: &f10.0s"
+      - "&f▸ &7Uses: &f50/50"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "SSS"
+        - " L "
+        - " B "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        S: STONE
+
+  tag2utility2_t3:
+    display_name: "&6&lStone Bastion &7(III)"
+    stars: 3
+    class_tag: 2
+    type: utility
+    element: earth
+    mana_cost: 7
+    charge_time: 1.8
+    cooldown: 14.0
+    max_uses: 65
+    effects:
+      - type: wall
+        block: SMOOTH_STONE
+        width: 5
+        height: 3
+        duration: 12.0
+      - type: launch_target
+        direction: away
+        power: 0.8
+        radius: 3.0
+      - type: particle_burst
+        particle: BLOCK
+        count: 60
+        radius: 2.5
+      - type: play_sound
+        sound: BLOCK_STONE_PLACE
+        volume: 1.4
+        pitch: 0.5
+      - type: play_sound
+        sound: ENTITY_ZOMBIE_ATTACK_WOODEN_DOOR
+        volume: 0.6
+        pitch: 0.5
+    lore:
+      - "&7Summons a massive 5x3 smooth stone fortifications."
+      - "&7Shoves targets back as the ground fractures."
+      - ""
+      - "&f▸ &cMana Cost: &f7 Levels"
+      - "&f▸ &eCharge Time: &f1.8s"
+      - "&f▸ &bCooldown: &f14.0s"
+      - "&f▸ &7Uses: &f65/65"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "RRR"
+        - "LBL"
+        - "RRR"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        R: SMOOTH_STONE
+
+  tag2utility2_t4:
+    display_name: "&d&lDeepslate Bulwark &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: utility
+    element: earth
+    mana_cost: 10
+    charge_time: 2.4
+    cooldown: 18.0
+    max_uses: 80
+    effects:
+      - type: wall
+        block: DEEPSLATE
+        width: 5
+        height: 4
+        duration: 18.0
+      - type: launch_target
+        direction: away
+        power: 1.4
+        radius: 4.0
+      - type: particle_burst
+        particle: BLOCK
+        count: 90
+        radius: 3.5
+      - type: particle_burst
+        particle: LARGE_SMOKE
+        count: 30
+        radius: 2.5
+      - type: play_sound
+        sound: ENTITY_WITHER_BREAK_BLOCK
+        volume: 1.0
+        pitch: 1.0
+      - type: play_sound
+        sound: BLOCK_DEEPSLATE_BREAK
+        volume: 1.4
+        pitch: 0.5
+      - type: screen_shake
+        radius: 8.0
+        duration: 0.4
+        shake_caster: false
+    lore:
+      - "&7Erects a dense, 5x4 dark deepslate barrier."
+      - "&7Violently repels anyone standing in its path."
+      - ""
+      - "&f▸ &cMana Cost: &f10 Levels"
+      - "&f▸ &eCharge Time: &f2.4s"
+      - "&f▸ &bCooldown: &f18.0s"
+      - "&f▸ &7Uses: &f80/80"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "TTT"
+        - "LBL"
+        - "TTT"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        T: TUFF
+
+  tag2utility2_t5:
+    display_name: "&6&lFortress of Gaia &5(V)"
+    stars: 5
+    class_tag: 2
+    type: utility
+    element: earth
+    mana_cost: 16
+    charge_time: 3.2
+    cooldown: 24.0
+    max_uses: 100
+    effects:
+      - type: wall
+        block: OBSIDIAN
+        width: 7
+        height: 5
+        duration: 28.0
+      - type: launch_target
+        direction: away
+        power: 2.2
+        radius: 5.5
+      - type: particle_burst
+        particle: BLOCK
+        count: 150
+        radius: 5.0
+      - type: particle_burst
+        particle: LARGE_SMOKE
+        count: 60
+        radius: 4.0
+      - type: particle_burst
+        particle: EXPLOSION
+        count: 5
+        radius: 3.0
+      - type: play_sound
+        sound: ENTITY_WITHER_BREAK_BLOCK
+        volume: 1.5
+        pitch: 0.4
+      - type: play_sound
+        sound: ENTITY_GENERIC_EXPLODE
+        volume: 1.0
+        pitch: 0.6
+      - type: screen_shake
+        radius: 12.0
+        duration: 0.9
+        shake_caster: true
+    lore:
+      - "&7The ultimate earthwork. Conjures an unbreakable"
+      - "&77x5 obsidian castle wall that lasts nearly 30s."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &cMana Cost: &f16 Levels"
+      - "&f▸ &eCharge Time: &f3.2s"
+      - "&f▸ &bCooldown: &f24.0s"
+      - "&f▸ &7Uses: &f100/100"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "OOO"
+        - "NBN"
+        - "OOO"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        O: OBSIDIAN
+
+  # ── WIND SPELLS (GALEFORCE) ───────────────────────────────────────────────
+
+  tag2wind1_t1:
+    display_name: "&fDraft Step &7(I)"
+    stars: 1
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 2
+    charge_time: 0.4
+    cooldown: 6.0
+    max_uses: 30
+    effects:
+      - type: launch_self
+        direction: forward
+        power: 1.5
+      - type: play_sound
+        sound: ENTITY_PLAYER_ATTACK_SWEEP
+        volume: 1.0
+        pitch: 1.2
+    lore:
+      - "&7A subtle, swift tailwind that pushes you forward."
+      - ""
+      - "&f▸ &cMana Cost: &f2 Levels"
+      - "&f▸ &eCharge Time: &f0.4s"
+      - "&f▸ &bCooldown: &f6.0s"
+      - "&f▸ &7Uses: &f30/30"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " P "
+        - "LBL"
+        - " P "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        P: PAPER
+
+  tag2wind1_t2:
+    display_name: "&fBreeze Burst &7(II)"
+    stars: 2
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 3
+    charge_time: 0.7
+    cooldown: 9.0
+    max_uses: 40
+    effects:
+      - type: launch_self
+        direction: forward
+        power: 2.2
+      - type: launch_target
+        direction: away
+        power: 1.0
+        radius: 2.0
+      - type: particle_burst
+        particle: CLOUD
+        count: 15
+        radius: 1.0
+      - type: play_sound
+        sound: ENTITY_PHANTOM_FLAP
+        volume: 0.8
+        pitch: 1.6
+    lore:
+      - "&7Dashes forward while creating separation vectors."
+      - ""
+      - "&f▸ &cMana Cost: &f3 Levels"
+      - "&f▸ &eCharge Time: &f0.7s"
+      - "&f▸ &bCooldown: &f9.0s"
+      - "&f▸ &7Uses: &f40/40"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " W "
+        - "LBL"
+        - " W "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        W: WHITE_WOOL
+
+  tag2wind1_t3:
+    display_name: "&f&lGaleforce &7(III)"
+    stars: 3
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 5
+    charge_time: 1.0
+    cooldown: 13.0
+    max_uses: 50
+    effects:
+      - type: launch_self
+        direction: forward
+        power: 3.0
+      - type: launch_target
+        direction: away
+        power: 2.0
+        radius: 3.0
+      - type: potion_self
+        effect: SPEED
+        duration: 3.0
+        amplifier: 1
+      - type: particle_trail
+        particle: CLOUD
+        duration: 2.0
+      - type: particle_burst
+        particle: CLOUD
+        count: 40
+        radius: 2.0
+      - type: play_sound
+        sound: ENTITY_PHANTOM_FLAP
+        pitch: 1.5
+        volume: 1.0
+    lore:
+      - "&7Dashes you forward, blasting nearby enemies away."
+      - ""
+      - "&f▸ &cMana Cost: &f5 Levels"
+      - "&f▸ &eCharge Time: &f1.0s"
+      - "&f▸ &bCooldown: &f13.0s"
+      - "&f▸ &7Uses: &f50/50"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "FLF"
+        - "LBL"
+        - "FLF"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        F: FEATHER
+
+  tag2wind1_t4:
+    display_name: "&d&lZephyr Flight &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 8
+    charge_time: 1.4
+    cooldown: 18.0
+    max_uses: 65
+    effects:
+      - type: launch_self
+        direction: forward
+        power: 3.8
+      - type: launch_target
+        direction: away
+        power: 3.0
+        radius: 4.5
+      - type: potion_self
+        effect: SPEED
+        duration: 5.0
+        amplifier: 2
+      - type: particle_burst
+        particle: CLOUD
+        count: 75
+        radius: 3.0
+      - type: particle_burst
+        particle: POOF
+        count: 30
+        radius: 2.0
+      - type: play_sound
+        sound: ENTITY_FIREWORK_ROCKET_BLAST
+        volume: 1.0
+        pitch: 1.2
+      - type: play_sound
+        sound: ENTITY_PHANTOM_FLAP
+        volume: 1.2
+        pitch: 0.8
+      - type: screen_shake
+        radius: 5.0
+        duration: 0.3
+        shake_caster: true
+    lore:
+      - "&7High-velocity repositioning maneuver."
+      - ""
+      - "&f▸ &cMana Cost: &f8 Levels"
+      - "&f▸ &eCharge Time: &f1.4s"
+      - "&f▸ &bCooldown: &f18.0s"
+      - "&f▸ &7Uses: &f65/65"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "PPP"
+        - "LBL"
+        - "PPP"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        P: PHANTOM_MEMBRANE
+
+  tag2wind1_t5:
+    display_name: "&6&lSonic Singularity &5(V)"
+    stars: 5
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 12
+    charge_time: 1.8
+    cooldown: 24.0
+    max_uses: 80
+    effects:
+      - type: launch_self
+        direction: forward
+        power: 4.5
+      - type: launch_target
+        direction: away
+        power: 4.0
+        radius: 6.0
+      - type: potion_self
+        effect: SPEED
+        duration: 7.0
+        amplifier: 3
+      - type: invulnerability
+        duration: 0.5
+      - type: particle_burst
+        particle: SONIC_BOOM
+        count: 1
+        radius: 0.5
+      - type: particle_burst
+        particle: CLOUD
+        count: 130
+        radius: 5.0
+      - type: particle_burst
+        particle: POOF
+        count: 60
+        radius: 4.0
+      - type: play_sound
+        sound: ENTITY_FIREWORK_ROCKET_LARGE_BLAST
+        volume: 1.3
+        pitch: 0.5
+      - type: play_sound
+        sound: ENTITY_ENDER_DRAGON_FLAP
+        volume: 1.5
+        pitch: 1.2
+      - type: screen_shake
+        radius: 10.0
+        duration: 0.6
+        shake_caster: true
+    lore:
+      - "&7Breaks the barrier. Grand escape with safe frames."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &cMana Cost: &f12 Levels"
+      - "&f▸ &eCharge Time: &f1.8s"
+      - "&f▸ &bCooldown: &f24.0s"
+      - "&f▸ &7Uses: &f80/80"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NPN"
+        - "PBP"
+        - "NPN"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        P: PHANTOM_MEMBRANE
+
+  # ── WIND SPELLS (VORTEX SINGULARITY) ──────────────────────────────────────
+  # Mechanics: Creates imploding vacuum pockets using pull_target to gather and trap enemy groups.
+
+  tag2wind2_t1:
+    display_name: "&fZephyr Vacuum &7(I)"
+    stars: 1
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 3
+    charge_time: 0.5
+    cooldown: 7.0
+    max_uses: 30
+    effects:
+      - type: pull_target
+        radius: 4.5
+        power: 1.2
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 3.0
+        amplifier: 0
+        radius: 4.5
+      - type: particle_burst
+        particle: POOF
+        count: 20
+        radius: 3.0
+      - type: play_sound
+        sound: ENTITY_PLAYER_ATTACK_SWEEP
+        volume: 1.0
+        pitch: 1.5
+    lore:
+      - "&7Generates a brief low-pressure pocket"
+      - "&7that yanks nearby targets toward you."
+      - ""
+      - "&f▸ &cMana Cost: &f3 Levels"
+      - "&f▸ &eCharge Time: &f0.5s"
+      - "&f▸ &bCooldown: &f7.0s"
+      - "&f▸ &7Uses: &f30/30"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " S "
+        - "LBL"
+        - " S "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        S: STRING
+
+  tag2wind2_t2:
+    display_name: "&fCyclone Pull &7(II)"
+    stars: 2
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 4
+    charge_time: 0.9
+    cooldown: 10.0
+    max_uses: 40
+    effects:
+      - type: pull_target
+        radius: 6.5
+        power: 1.8
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 4.5
+        amplifier: 1
+        radius: 6.5
+      - type: particle_burst
+        particle: CLOUD
+        count: 35
+        radius: 5.0
+      - type: play_sound
+        sound: ENTITY_PHANTOM_FLAP
+        volume: 1.0
+        pitch: 1.3
+    lore:
+      - "&7A sudden swirl of atmospheric suction"
+      - "&7that groups up wandering packs."
+      - ""
+      - "&f▸ &cMana Cost: &f4 Levels"
+      - "&f▸ &eCharge Time: &f0.9s"
+      - "&f▸ &bCooldown: &f10.0s"
+      - "&f▸ &7Uses: &f40/40"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " W "
+        - "LBL"
+        - " W "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        W: COBWEB
+
+  tag2wind2_t3:
+    display_name: "&f&lVortex Singularity &7(III)"
+    stars: 3
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 6
+    charge_time: 1.3
+    cooldown: 14.0
+    max_uses: 50
+    effects:
+      - type: pull_target
+        radius: 9.0
+        power: 2.5
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 6.0
+        amplifier: 2
+        radius: 9.0
+      - type: particle_burst
+        particle: CLOUD
+        count: 65
+        radius: 7.0
+      - type: particle_burst
+        particle: POOF
+        count: 30
+        radius: 4.0
+      - type: play_sound
+        sound: ENTITY_PHANTOM_FLAP
+        volume: 1.2
+        pitch: 0.8
+    lore:
+      - "&7Collapses wind vectors inward to drag a wide"
+      - "&7perimeter of enemies into a tight, helpless cluster."
+      - ""
+      - "&f▸ &cMana Cost: &f6 Levels"
+      - "&f▸ &eCharge Time: &f1.3s"
+      - "&f▸ &bCooldown: &f14.0s"
+      - "&f▸ &7Uses: &f50/50"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "HLH"
+        - "LBL"
+        - "HLH"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        H: HOPPER
+
+  tag2wind2_t4:
+    display_name: "&d&lTyphoon Clutch &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 10
+    charge_time: 1.8
+    cooldown: 20.0
+    max_uses: 65
+    effects:
+      - type: pull_target
+        radius: 12.5
+        power: 3.5
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 8.0
+        amplifier: 3
+        radius: 12.5
+      - type: particle_burst
+        particle: CLOUD
+        count: 110
+        radius: 10.0
+      - type: particle_burst
+        particle: SQUID_INK
+        count: 25
+        radius: 3.0
+      - type: play_sound
+        sound: ENTITY_FIREWORK_ROCKET_BLAST
+        volume: 1.2
+        pitch: 0.6
+      - type: play_sound
+        sound: ENTITY_PHANTOM_FLAP
+        volume: 1.4
+        pitch: 0.5
+      - type: screen_shake
+        radius: 8.0
+        duration: 0.4
+        shake_caster: false
+    lore:
+      - "&7A violent storm vortex that forcefully reels in"
+      - "&7everything nearby, leaving them heavily slowed."
+      - ""
+      - "&f▸ &cMana Cost: &f10 Levels"
+      - "&f▸ &eCharge Time: &f1.8s"
+      - "&f▸ &bCooldown: &f20.0s"
+      - "&f▸ &7Uses: &f65/65"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "DDD"
+        - "LBL"
+        - "DDD"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        DDD: DISPENSER
+
+  tag2wind2_t5:
+    display_name: "&6&lMaelstrom Vortex &5(V)"
+    stars: 5
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 15
+    charge_time: 2.2
+    cooldown: 28.0
+    max_uses: 80
+    effects:
+      - type: pull_target
+        radius: 17.0
+        power: 5.0
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 12.0
+        amplifier: 4
+        radius: 17.0
+      - type: particle_burst
+        particle: SONIC_BOOM
+        count: 2
+        radius: 1.0
+      - type: particle_burst
+        particle: CLOUD
+        count: 200
+        radius: 14.0
+      - type: particle_burst
+        particle: POOF
+        count: 90
+        radius: 8.0
+      - type: play_sound
+        sound: ENTITY_ENDER_DRAGON_FLAP
+        volume: 1.5
+        pitch: 0.5
+      - type: play_sound
+        sound: ENTITY_GENERIC_EXPLODE
+        volume: 1.0
+        pitch: 1.4
+      - type: screen_shake
+        radius: 14.0
+        duration: 0.8
+        shake_caster: true
+    lore:
+      - "&7The absolute event horizon. Completely rewires"
+      - "&7battlefield geometry by dragging all targets into point zero."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &cMana Cost: &f15 Levels"
+      - "&f▸ &eCharge Time: &f2.2s"
+      - "&f▸ &bCooldown: &f28.0s"
+      - "&f▸ &7Uses: &f80/80"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NCN"
+        - "CBC"
+        - "NCN"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        C: CHORUS_FRUIT
+
+  # ── WIND SPELLS (TEMPEST REPULSION) ───────────────────────────────────────
+  # Mechanics: Tiers 1-2 utilize precise line-of-sight blasts ("on_look").
+  #            Tiers 3-5 erupt into massive defensive radial knockbacks.
+
+  tag2wind3_t1:
+    display_name: "&fGust Shot &7(I)"
+    stars: 1
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 2
+    charge_time: 0.5
+    cooldown: 5.5
+    max_uses: 35
+    effects:
+      - type: launch_target
+        target: look_direction
+        direction: away
+        power: 1.6
+        radius: 2.5
+      - type: play_sound
+        sound: ENTITY_PLAYER_ATTACK_SWEEP
+        volume: 0.9
+        pitch: 1.4
+    lore:
+      - "&7Fires a concentrated jet of high pressure air"
+      - "&7to knock back enemies in your line of sight."
+      - ""
+      - "&f▸ &cMana Cost: &f2 Levels"
+      - "&f▸ &eCharge Time: &f0.5s"
+      - "&f▸ &bCooldown: &f5.5s"
+      - "&f▸ &7Uses: &f35/35"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " P "
+        - "LBL"
+        - " P "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        P: PISTON
+
+  tag2wind3_t2:
+    display_name: "&fPressure Wave &7(II)"
+    stars: 2
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 4
+    charge_time: 0.8
+    cooldown: 8.0
+    max_uses: 45
+    effects:
+      - type: launch_target
+        target: look_direction
+        direction: away
+        power: 2.4
+        radius: 4.0
+      - type: particle_burst
+        particle: CLOUD
+        count: 20
+        radius: 1.5
+      - type: play_sound
+        sound: ENTITY_PHANTOM_FLAP
+        volume: 0.9
+        pitch: 1.6
+    lore:
+      - "&7Projects an invisible wave of air forward,"
+      - "&7clearing out narrow corridors or paths."
+      - ""
+      - "&f▸ &cMana Cost: &f4 Levels"
+      - "&f▸ &eCharge Time: &f0.8s"
+      - "&f▸ &bCooldown: &f8.0s"
+      - "&f▸ &7Uses: &f45/45"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " P "
+        - "LBL"
+        - " P "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        P: STICKY_PISTON
+
+  tag2wind3_t3:
+    display_name: "&f&lCyclone Burst &7(III)"
+    stars: 3
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 6
+    charge_time: 1.2
+    cooldown: 13.0
+    max_uses: 50
+    effects:
+      - type: launch_target
+        direction: away
+        power: 3.0
+        radius: 5.5
+      - type: particle_burst
+        particle: CLOUD
+        count: 55
+        radius: 3.5
+      - type: play_sound
+        sound: ENTITY_PHANTOM_FLAP
+        volume: 1.1
+        pitch: 1.1
+    lore:
+      - "&7Detonates a localized blast centered on yourself,"
+      - "&7shoving all nearby enemies outward in a full circle."
+      - ""
+      - "&f▸ &cMana Cost: &f6 Levels"
+      - "&f▸ &eCharge Time: &f1.2s"
+      - "&f▸ &bCooldown: &f13.0s"
+      - "&f▸ &7Uses: &f50/50"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "TLT"
+        - "LBL"
+        - "TLT"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        T: TNT
+
+  tag2wind3_t4:
+    display_name: "&d&lTyphoon Field &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 10
+    charge_time: 1.6
+    cooldown: 19.0
+    max_uses: 60
+    effects:
+      - type: launch_target
+        direction: away
+        power: 4.2
+        radius: 8.0
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 4.0
+        amplifier: 2
+        radius: 8.0
+      - type: particle_burst
+        particle: CLOUD
+        count: 95
+        radius: 5.5
+      - type: particle_burst
+        particle: POOF
+        count: 40
+        radius: 3.5
+      - type: play_sound
+        sound: ENTITY_FIREWORK_ROCKET_BLAST
+        volume: 1.2
+        pitch: 0.9
+      - type: screen_shake
+        radius: 7.0
+        duration: 0.4
+        shake_caster: true
+    lore:
+      - "&7An oppressive storm aura that hurls all threats"
+      - "&7away and heavily disorients their movement."
+      - ""
+      - "&f▸ &cMana Cost: &f10 Levels"
+      - "&f▸ &eCharge Time: &f1.6s"
+      - "&f▸ &bCooldown: &f19.0s"
+      - "&f▸ &7Uses: &f60/60"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "FFF"
+        - "LBL"
+        - "FFF"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        F: FIREWORK_ROCKET
+
+  tag2wind3_t5:
+    display_name: "&6&lTempest Repulsion &5(V)"
+    stars: 5
+    class_tag: 2
+    type: utility
+    element: wind
+    mana_cost: 16
+    charge_time: 2.2
+    cooldown: 26.0
+    max_uses: 75
+    effects:
+      - type: launch_target
+        direction: away
+        power: 5.8
+        radius: 12.0
+      - type: potion_target
+        effect: SLOWNESS
+        duration: 6.0
+        amplifier: 4
+        radius: 12.0
+      - type: particle_burst
+        particle: SONIC_BOOM
+        count: 2
+        radius: 1.0
+      - type: particle_burst
+        particle: CLOUD
+        count: 170
+        radius: 9.0
+      - type: play_sound
+        sound: ENTITY_FIREWORK_ROCKET_LARGE_BLAST
+        volume: 1.4
+        pitch: 0.6
+      - type: play_sound
+        sound: ENTITY_ENDER_DRAGON_FLAP
+        volume: 1.5
+        pitch: 0.8
+      - type: screen_shake
+        radius: 13.0
+        duration: 0.8
+        shake_caster: true
+    lore:
+      - "&7Legendary kinetic air collapse. Completely resets"
+      - "&7your spacing by throwing all threats miles away."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &cMana Cost: &f16 Levels"
+      - "&f▸ &eCharge Time: &f2.2s"
+      - "&f▸ &bCooldown: &f26.0s"
+      - "&f▸ &7Uses: &f75/75"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NFN"
+        - "FBF"
+        - "NFN"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        F: FEATHER
+
+  # ── LIGHTNING SPELLS (THUNDERGOD'S WRATH) ──────────────────────────────────
+
+  tag2lightning1_t1:
+    display_name: "&eStatic Discharge &7(I)"
+    stars: 1
+    class_tag: 2
+    type: offensive
+    element: lightning
+    mana_cost: 4
+    charge_time: 1.5
+    cooldown: 6.0
+    max_uses: 8
+    effects:
+      - type: chain_lightning
+        jumps: 2
+        damage_per_jump: 2.0
+        jump_radius: 4.0
+        falloff: 0.90
+      - type: play_sound
+        sound: BLOCK_COPPER_BREAK
+        volume: 1.0
+        pitch: 1.6
+    lore:
+      - "&7A quick spark linking between two close targets."
+      - ""
+      - "&f▸ &cMana Cost: &f4 Levels"
+      - "&f▸ &eCharge Time: &f1.5s"
+      - "&f▸ &bCooldown: &f6.0s"
+      - "&f▸ &7Uses: &f8/8"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " C "
+        - "LBL"
+        - " C "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        C: COPPER_INGOT
+
+  tag2lightning1_t2:
+    display_name: "&eStorm Strike &7(II)"
+    stars: 2
+    class_tag: 2
+    type: offensive
+    element: lightning
+    mana_cost: 6
+    charge_time: 2.2
+    cooldown: 11.0
+    max_uses: 12
+    effects:
+      - type: lightning_strike
+        target: look_direction
+        damage: true
+      - type: chain_lightning
+        jumps: 2
+        damage_per_jump: 2.5
+        jump_radius: 5.0
+        falloff: 0.80
+      - type: particle_burst
+        particle: ELECTRIC_SPARK
+        count: 20
+        radius: 1.5
+    lore:
+      - "&7Calls a direct precision shock down onto a target."
+      - ""
+      - "&f▸ &cMana Cost: &f6 Levels"
+      - "&f▸ &eCharge Time: &f2.2s"
+      - "&f▸ &bCooldown: &f11.0s"
+      - "&f▸ &7Uses: &f12/12"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " I "
+        - "LBL"
+        - " I "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        I: IRON_BLOCK
+
+  tag2lightning1_t3:
+    display_name: "&e&lThundergod's Wrath &7(III)"
+    stars: 3
+    class_tag: 2
+    type: offensive
+    element: lightning
+    mana_cost: 10
+    charge_time: 3.0
+    cooldown: 18.0
+    max_uses: 15
+    effects:
+      - type: lightning_strike
+        target: look_direction
+        damage: true
+      - type: chain_lightning
+        jumps: 4
+        damage_per_jump: 3.0
+        jump_radius: 6.0
+        falloff: 0.75
+      - type: aoe_damage
+        radius: 3.0
+        damage: 5.0
+      - type: screen_shake
+        radius: 12.0
+        duration: 0.5
+        shake_caster: false
+      - type: play_sound
+        sound: ENTITY_LIGHTNING_BOLT_THUNDER
+        pitch: 0.8
+        volume: 1.5
+      - type: particle_burst
+        particle: ELECTRIC_SPARK
+        count: 60
+        radius: 3.0
+    lore:
+      - "&7Calls down heavy fury jumping between enemy packs."
+      - ""
+      - "&f▸ &cMana Cost: &f10 Levels"
+      - "&f▸ &eCharge Time: &f3.0s"
+      - "&f▸ &bCooldown: &f18.0s"
+      - "&f▸ &7Uses: &f15/15"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "GLG"
+        - "LBL"
+        - "GLG"
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        G: GOLD_INGOT
+
+  tag2lightning1_t4:
+    display_name: "&d&lVolt Vortex &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: offensive
+    element: lightning
+    mana_cost: 16
+    charge_time: 3.8
+    cooldown: 26.0
+    max_uses: 20
+    effects:
+      - type: lightning_strike
+        target: look_direction
+        damage: true
+      - type: chain_lightning
+        jumps: 5
+        damage_per_jump: 4.0
+        jump_radius: 8.0
+        falloff: 0.70
+      - type: aoe_damage
+        radius: 4.5
+        damage: 7.0
+      - type: particle_burst
+        particle: ELECTRIC_SPARK
+        count: 120
+        radius: 5.0
+      - type: particle_burst
+        particle: ENCHANTED_HIT
+        count: 40
+        radius: 4.0
+      - type: play_sound
+        sound: ENTITY_LIGHTNING_BOLT_THUNDER
+        pitch: 0.6
+        volume: 1.8
+      - type: play_sound
+        sound: ITEM_TRIDENT_THUNDER
+        volume: 1.0
+        pitch: 1.2
+      - type: screen_shake
+        radius: 15.0
+        duration: 0.8
+        shake_caster: true
+    lore:
+      - "&7High voltage catastrophic zone clearing damage."
+      - ""
+      - "&f▸ &cMana Cost: &f16 Levels"
+      - "&f▸ &eCharge Time: &f3.8s"
+      - "&f▸ &bCooldown: &f26.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "CCC"
+        - "LBL"
+        - "CCC"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        C: COPPER_BLOCK
+
+  tag2lightning1_t5:
+    display_name: "&6&lKeraunos Cataclysm &5(V)"
+    stars: 5
+    class_tag: 2
+    type: offensive
+    element: lightning
+    mana_cost: 24
+    charge_time: 4.8
+    cooldown: 38.0
+    max_uses: 30
+    effects:
+      - type: lightning_strike
+        target: look_direction
+        damage: true
+      - type: chain_lightning
+        jumps: 7
+        damage_per_jump: 6.0
+        jump_radius: 10.0
+        falloff: 0.60
+      - type: aoe_damage
+        radius: 6.0
+        damage: 10.0
+      - type: silence
+        radius: 6.0
+        duration: 3.0
+      - type: particle_burst
+        particle: ELECTRIC_SPARK
+        count: 250
+        radius: 7.0
+      - type: particle_burst
+        particle: ENCHANTED_HIT
+        count: 100
+        radius: 6.0
+      - type: particle_burst
+        particle: FIREWORK
+        count: 30
+        radius: 5.0
+      - type: play_sound
+        sound: ENTITY_LIGHTNING_BOLT_THUNDER
+        pitch: 0.4
+        volume: 2.0
+      - type: play_sound
+        sound: ITEM_TRIDENT_THUNDER
+        volume: 1.5
+        pitch: 0.6
+      - type: play_sound
+        sound: ENTITY_LIGHTNING_BOLT_IMPACT
+        volume: 1.5
+        pitch: 0.5
+      - type: screen_shake
+        radius: 22.0
+        duration: 1.4
+        shake_caster: true
+    lore:
+      - "&7Godlike tactical shock that silences whole groups."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &cMana Cost: &f24 Levels"
+      - "&f▸ &eCharge Time: &f4.8s"
+      - "&f▸ &bCooldown: &f38.0s"
+      - "&f▸ &7Uses: &f30/30"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NGN"
+        - "GBG"
+        - "NGN"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        G: GOLD_BLOCK
+
+
+  # ── NATURE SPELLS (HEALING CIRCLE) ────────────────────────────────────────
+
+  tag2heal1_t1:
+    display_name: "&aSoothing Dew &7(I)"
+    stars: 1
+    class_tag: 2
+    type: support
+    element: nature
+    mana_cost: 3
+    charge_time: 1.0
+    cooldown: 8.0
+    max_uses: 8
+    effects:
+      - type: aoe_heal
+        radius: 3.0
+        amount: 2.0
+      - type: play_sound
+        sound: BLOCK_GLASS_HIT
+        volume: 0.5
+        pitch: 1.2
+    lore:
+      - "&7Shed a minor, cheap droplet of healing energy."
+      - ""
+      - "&f▸ &aMana Cost: &f3 Levels"
+      - "&f▸ &eCharge Time: &f1.0s"
+      - "&f▸ &bCooldown: &f8.0s"
+      - "&f▸ &7Uses: &f8/8"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " S "
+        - "LBL"
+        - " S "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        S: SUGAR
+
+  tag2heal1_t2:
+    display_name: "&aBloom Pulse &7(II)"
+    stars: 2
+    class_tag: 2
+    type: support
+    element: nature
+    mana_cost: 5
+    charge_time: 1.5
+    cooldown: 14.0
+    max_uses: 12
+    effects:
+      - type: aoe_heal
+        radius: 4.5
+        amount: 4.0
+      - type: particle_burst
+        particle: HAPPY_VILLAGER
+        count: 15
+        radius: 2.0
+      - type: play_sound
+        sound: ENTITY_PLAYER_LEVELUP
+        volume: 0.5
+        pitch: 1.6
+    lore:
+      - "&7Mends minor injuries across a fast footprint."
+      - ""
+      - "&f▸ &aMana Cost: &f5 Levels"
+      - "&f▸ &eCharge Time: &f1.5s"
+      - "&f▸ &bCooldown: &f14.0s"
+      - "&f▸ &7Uses: &f12/12"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - " M "
+        - "LBL"
+        - " M "
+      ingredients:
+        B: BOOK
+        L: LAPIS_LAZULI
+        M: MELON_SLICE
+
+  tag2heal1_t3:
+    display_name: "&a&lHealing Circle &7(III)"
+    stars: 3
+    class_tag: 2
+    type: support
+    element: nature
+    mana_cost: 8
+    charge_time: 2.2
+    cooldown: 22.0
+    max_uses: 15
+    effects:
+      - type: aoe_heal
+        radius: 6.0
+        amount: 6.0
+      - type: particle_burst
+        particle: HEART
+        count: 30
+        spread: 2.5
+        speed: 0.05
+      - type: particle_burst
+        particle: HAPPY_VILLAGER
+        count: 20
+        spread: 3.0
+        speed: 0.02
+      - type: play_sound
+        sound: ENTITY_PLAYER_LEVELUP
+        volume: 0.8
+        pitch: 1.4
+      - type: play_sound
+        sound: BLOCK_AMETHYST_BLOCK_CHIME
+        volume: 1.0
+        pitch: 1.2
+    lore:
+      - "&7Mends the wounds of nearby party members."
+      - ""
+      - "&f▸ &aMana Cost: &f8 Levels"
+      - "&f▸ &eCharge Time: &f2.2s"
+      - "&f▸ &bCooldown: &f22.0s"
+      - "&f▸ &7Uses: &f15/15"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "LGL"
+        - "GBG"
+        - "LGL"
+      ingredients:
+        L: LAPIS_LAZULI
+        G: GLISTERING_MELON_SLICE
+        B: BOOK
+
+  tag2heal1_t4:
+    display_name: "&d&lGilded Sanctuary &7(IV)"
+    stars: 4
+    class_tag: 2
+    type: support
+    element: nature
+    mana_cost: 14
+    charge_time: 3.0
+    cooldown: 32.0
+    max_uses: 20
+    effects:
+      - type: aoe_heal
+        radius: 8.0
+        amount: 9.0
+      - type: potion_self
+        effect: REGENERATION
+        duration: 4.0
+        amplifier: 1
+      - type: particle_burst
+        particle: HEART
+        count: 65
+        spread: 4.0
+        speed: 0.05
+      - type: particle_burst
+        particle: HAPPY_VILLAGER
+        count: 50
+        spread: 4.5
+        speed: 0.02
+      - type: particle_burst
+        particle: ENCHANTED_HIT
+        count: 35
+        spread: 3.5
+        speed: 0.05
+      - type: play_sound
+        sound: ENTITY_PLAYER_LEVELUP
+        volume: 1.0
+        pitch: 1.0
+      - type: play_sound
+        sound: BLOCK_BEACON_ACTIVATE
+        volume: 0.8
+        pitch: 1.5
+    lore:
+      - "&7Floods the perimeter with highly restorative lifeforce."
+      - ""
+      - "&f▸ &aMana Cost: &f14 Levels"
+      - "&f▸ &eCharge Time: &f3.0s"
+      - "&f▸ &bCooldown: &f32.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "GGG"
+        - "LBL"
+        - "GGG"
+      ingredients:
+        B: BOOK
+        L: LAPIS_BLOCK
+        G: GOLDEN_APPLE
+
+  tag2heal1_t5:
+    display_name: "&6&lYggdrasil Blessing &5(V)"
+    stars: 5
+    class_tag: 2
+    type: support
+    element: nature
+    mana_cost: 22
+    charge_time: 4.0
+    cooldown: 45.0
+    max_uses: 30
+    effects:
+      - type: aoe_heal
+        radius: 11.0
+        amount: 14.0
+      - type: potion_target
+        effect: REGENERATION
+        duration: 6.0
+        amplifier: 2
+        radius: 11.0
+      - type: particle_burst
+        particle: HEART
+        count: 140
+        spread: 6.0
+        speed: 0.06
+      - type: particle_burst
+        particle: HAPPY_VILLAGER
+        count: 90
+        spread: 7.0
+        speed: 0.03
+      - type: particle_burst
+        particle: INSTANT_EFFECT
+        count: 40
+        spread: 5.0
+        speed: 0.01
+      - type: play_sound
+        sound: UI_TOAST_CHALLENGE_COMPLETE
+        volume: 1.0
+        pitch: 1.1
+      - type: play_sound
+        sound: BLOCK_BEACON_ACTIVATE
+        volume: 1.5
+        pitch: 0.8
+      - type: play_sound
+        sound: BLOCK_AMETHYST_BLOCK_CHIME
+        volume: 1.5
+        pitch: 0.6
+    lore:
+      - "&7Full party recovery wave. Requires backline casting safety."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &aMana Cost: &f22 Levels"
+      - "&f▸ &eCharge Time: &f4.0s"
+      - "&f▸ &bCooldown: &f45.0s"
+      - "&f▸ &7Uses: &f30/30"
+      - "&8&l[Mage Only]"
+    recipe:
+      shape:
+        - "NGN"
+        - "GBG"
+        - "NGN"
+      ingredients:
+        B: BOOK
+        N: NETHER_STAR
+        G: GOLDEN_APPLE

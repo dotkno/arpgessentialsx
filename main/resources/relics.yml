@@ -1,0 +1,925 @@
+# ==========================================
+# Class Relics — relics.yml (Balanced Scaling Edition)
+# ==========================================
+# Rules:
+#   - Every single relic is a completely unique tool. No linear duplicate tiers.
+#   - Star levels (1-5) strictly scale the EPICNESS of the visuals, sounds, and particles.
+#   - Strictly class-restricted and tailored perfectly to their core gameplay fantasy.
+# ==========================================
+
+relics:
+
+  # ──────────────────────────────────────────────────────────
+  #  FIGHTER (class-tag: 1) — Frontline Combat Specialists
+  # ──────────────────────────────────────────────────────────
+
+  # 1 STAR: Blood Vial — Quick minor clutch heal to stay in the fray. Small splash of hearts.
+  tag1_blood_vial:
+    display_name: "&cBlood Vial"
+    stars: 1
+    class_tag: 1
+    type: offensive
+    base_item: POTION
+    cooldown: 15.0
+    max_uses: 40
+    custom_model_data: -1
+    effects:
+      - type: heal_self
+        amount: 3.0
+      - type: play_sound
+        sound: ENTITY_GENERIC_DRINK
+        volume: 0.8
+        pitch: 1.2
+      - type: particle_burst
+        particle: HEART
+        count: 8
+        radius: 0.5
+        speed: 0.05
+    lore:
+      - "&7A quick draft of preserved vitality."
+      - "&7Instantly restores 1.5 hearts."
+      - ""
+      - "&f▸ &bCooldown: &f15.0s"
+      - "&f▸ &7Uses: &f40/40"
+      - "&8&l[Fighter Only]"
+    recipe:
+      shape:
+        - " R "
+        - " G "
+        - "   "
+      ingredients:
+        R: REDSTONE
+        G: GLASS_BOTTLE
+
+  # 2 STAR: Sunder Axe — Breaks the target's posture, exposing them to more pain.
+  tag1_sunder_axe:
+    display_name: "&c&lSunder Axe"
+    stars: 2
+    class_tag: 1
+    type: offensive
+    base_item: IRON_AXE
+    cooldown: 22.0
+    max_uses: 30
+    custom_model_data: -1
+    effects:
+      - type: potion_target
+        effect: MINING_FATIGUE
+        duration: 5.0
+        amplifier: 1
+        radius: 3.0
+      - type: aoe_damage
+        radius: 3.0
+        damage: 4.0
+      - type: play_sound
+        sound: ITEM_SHIELD_BREAK
+        volume: 1.0
+        pitch: 0.8
+      - type: particle_burst
+        particle: ITEM_CRACK
+        material: IRON_BLOCK
+        count: 30
+        radius: 1.5
+        speed: 0.2
+    lore:
+      - "&7A heavy overhead swing that shatters"
+      - "&7enemy guards and slows their strikes."
+      - ""
+      - "&f▸ &bCooldown: &f22.0s"
+      - "&f▸ &7Uses: &f30/30"
+      - "&8&l[Fighter Only]"
+    recipe:
+      shape:
+        - "II "
+        - "IS "
+        - " S "
+      ingredients:
+        I: IRON_INGOT
+        S: STICK
+
+  # 3 STAR: Battle Cry — Your classic AoE knockback & crowd clearing shout. Mid-tier flashiness.
+  tag1_battle_cry:
+    display_name: "&e&lBattle Cry"
+    stars: 3
+    class_tag: 1
+    type: offensive
+    base_item: GOAT_HORN
+    cooldown: 32.0
+    max_uses: 25
+    custom_model_data: -1
+    effects:
+      - type: aoe_knockback
+        radius: 5.5
+        strength: 1.8
+        vertical: 0.35
+      - type: aoe_damage
+        radius: 5.5
+        damage: 5.0
+      - type: play_sound
+        sound: ITEM_GOAT_HORN_SOUND_0
+        volume: 1.4
+        pitch: 0.6
+      - type: particle_burst
+        particle: CLOUD
+        count: 60
+        radius: 4.0
+        speed: 0.2
+    lore:
+      - "&7A roaring war shout that clears out"
+      - "&7swarming targets and asserts dominance."
+      - ""
+      - "&f▸ &bCooldown: &f32.0s"
+      - "&f▸ &7Uses: &f25/25"
+      - "&8&l[Fighter Only]"
+    recipe:
+      shape:
+        - "SGS"
+        - " S "
+        - " S "
+      ingredients:
+        S: STRING
+        G: GOAT_HORN
+
+  # 4 STAR: Berserker Rage — High risk, high reward. Extreme buffs, loud audio cues.
+  tag1_berserker_rage:
+    display_name: "&d&lBerserker Rage"
+    stars: 4
+    class_tag: 1
+    type: offensive
+    base_item: BLAZE_POWDER
+    cooldown: 45.0
+    max_uses: 20
+    custom_model_data: -1
+    effects:
+      - type: potion_self
+        effect: STRENGTH
+        duration: 6.0
+        amplifier: 2
+      - type: potion_self
+        effect: HASTE
+        duration: 6.0
+        amplifier: 2
+      - type: play_sound
+        sound: ENTITY_RAVAGER_ROAR
+        volume: 1.6
+        pitch: 0.7
+      - type: particle_burst
+        particle: FLAME
+        count: 85
+        radius: 2.0
+        speed: 0.2
+      - type: particle_burst
+        particle: LAVA
+        count: 20
+        radius: 1.5
+        speed: 0.1
+    lore:
+      - "&7Channels pure bloodlust into your weapons."
+      - "&7Grants devastating Strength III and Haste III."
+      - ""
+      - "&f▸ &bCooldown: &f45.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Fighter Only]"
+    recipe:
+      shape:
+        - "DBD"
+        - "B B"
+        - "DBD"
+      ingredients:
+        D: DIAMOND
+        B: BLAZE_POWDER
+
+  # 5 STAR: Ruinous Overlord — The ultimate fighter artifact. Explosive visual shockwaves.
+  tag1_ruinous_overlord:
+    display_name: "&6&lRuinous Overlord"
+    stars: 5
+    class_tag: 1
+    type: offensive
+    base_item: NETHERITE_AXE
+    cooldown: 60.0
+    max_uses: 12
+    custom_model_data: -1
+    effects:
+      - type: aoe_damage
+        radius: 8.0
+        damage: 14.0
+      - type: aoe_knockback
+        radius: 8.0
+        strength: 2.5
+        vertical: 0.4
+      - type: potion_self
+        effect: SPEED
+        duration: 5.0
+        amplifier: 1
+      - type: play_sound
+        sound: ENTITY_ENDER_DRAGON_GROWL
+        volume: 1.8
+        pitch: 0.5
+      - type: play_sound
+        sound: ENTITY_GENERIC_EXPLODE
+        volume: 1.5
+        pitch: 0.6
+      - type: particle_burst
+        particle: EXPLOSION
+        count: 12
+        radius: 5.0
+        speed: 0.1
+      - type: particle_burst
+        particle: CRIT
+        count: 150
+        radius: 7.0
+        speed: 0.35
+    lore:
+      - "&7Slam the ground with cataclysmic weight."
+      - "&7Devastates a massive area around you."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &bCooldown: &f60.0s"
+      - "&f▸ &7Uses: &f12/12"
+      - "&8&l[Fighter Only]"
+    recipe:
+      shape:
+        - "NAN"
+        - " N "
+        - " N "
+      ingredients:
+        N: NETHER_STAR
+        A: NETHERITE_AXE
+
+
+  # ──────────────────────────────────────────────────────────
+  #  MARKSMAN (class-tag: 3) — Spacing & Ranged Control
+  # ──────────────────────────────────────────────────────────
+
+  # 1 STAR: Barbed Wire — Simple escape drop. Small puff of particles.
+  tag3_barbed_wire:
+    display_name: "&8Barbed Wire"
+    stars: 1
+    class_tag: 3
+    type: utility
+    base_item: IRON_NUGGET
+    cooldown: 12.0
+    max_uses: 40
+    custom_model_data: -1
+    effects:
+      - type: aoe_root
+        radius: 3.0
+        duration: 1.5
+      - type: play_sound
+        sound: BLOCK_CHAIN_PLACE
+        volume: 0.8
+        pitch: 1.4
+      - type: particle_burst
+        particle: SMOKE
+        count: 15
+        radius: 1.5
+        speed: 0.05
+    lore:
+      - "&7Drops a tiny trap to tangle moving targets."
+      - ""
+      - "&f▸ &bCooldown: &f12.0s"
+      - "&f▸ &7Uses: &f40/40"
+      - "&8&l[Marksman Only]"
+    recipe:
+      shape:
+        - "NNN"
+        - "   "
+        - "   "
+      ingredients:
+        N: IRON_NUGGET
+
+  # 2 STAR: Pocket Sand — A quick flash to buy yourself a couple of seconds.
+  tag3_pocket_sand:
+    display_name: "&8&lPocket Sand"
+    stars: 2
+    class_tag: 3
+    type: utility
+    base_item: SAND
+    cooldown: 18.0
+    max_uses: 30
+    custom_model_data: -1
+    effects:
+      - type: aoe_potion
+        effect: BLINDNESS
+        duration: 3.0
+        amplifier: 0
+        radius: 4.0
+      - type: play_sound
+        sound: BLOCK_SAND_BREAK
+        volume: 1.0
+        pitch: 1.2
+      - type: particle_burst
+        particle: BLOCK
+        material: SAND
+        count: 40
+        radius: 2.0
+        speed: 0.15
+    lore:
+      - "&7Throw gritty sand into the eyes of attackers."
+      - ""
+      - "&f▸ &bCooldown: &f18.0s"
+      - "&f▸ &7Uses: &f30/30"
+      - "&8&l[Marksman Only]"
+    recipe:
+      shape:
+        - " S "
+        - " G "
+        - "   "
+      ingredients:
+        S: SAND
+        G: GUNPOWDER
+
+  # 3 STAR: Caltrops — Spreads iron obstacles to root and slow a wide group.
+  tag3_caltrops:
+    display_name: "&e&lCaltrops"
+    stars: 3
+    class_tag: 3
+    type: utility
+    base_item: CUT_COPPER
+    cooldown: 26.0
+    max_uses: 25
+    custom_model_data: -1
+    effects:
+      - type: aoe_root
+        radius: 5.0
+        duration: 3.0
+      - type: aoe_potion
+        effect: SLOWNESS
+        duration: 5.0
+        amplifier: 2
+        radius: 5.0
+      - type: play_sound
+        sound: BLOCK_ANVIL_LAND
+        volume: 0.8
+        pitch: 1.5
+      - type: particle_burst
+        particle: CRIT
+        count: 55
+        radius: 3.5
+        speed: 0.1
+    lore:
+      - "&7Scatters sharp metal bits that cripple"
+      - "&7the positioning of anyone chasing you."
+      - ""
+      - "&f▸ &bCooldown: &f26.0s"
+      - "&f▸ &7Uses: &f25/25"
+      - "&8&l[Marksman Only]"
+    recipe:
+      shape:
+        - "INI"
+        - "N N"
+        - "INI"
+      ingredients:
+        I: IRON_INGOT
+        N: IRON_NUGGET
+
+  # 4 STAR: Smoke Bomb — Full area visual eclipse. Dense ink and escape clouds.
+  tag3_smoke_bomb:
+    display_name: "&d&lSmoke Bomb"
+    stars: 4
+    class_tag: 3
+    type: utility
+    base_item: FIRE_CHARGE
+    cooldown: 40.0
+    max_uses: 20
+    custom_model_data: -1
+    effects:
+      - type: aoe_potion
+        effect: BLINDNESS
+        duration: 5.0
+        amplifier: 0
+        radius: 6.5
+      - type: aoe_potion
+        effect: SLOWNESS
+        duration: 4.5
+        amplifier: 3
+        radius: 6.5
+      - type: particle_burst
+        particle: SQUID_INK
+        count: 110
+        radius: 5.0
+        speed: 0.25
+      - type: particle_burst
+        particle: SMOKE
+        count: 80
+        radius: 4.0
+        speed: 0.1
+      - type: play_sound
+        sound: BLOCK_FIRE_EXTINGUISH
+        volume: 1.2
+        pitch: 1.0
+    lore:
+      - "&7Detonates a massive chemical smoke cloud."
+      - "&7Blinds and heavily slows all nearby enemies."
+      - ""
+      - "&f▸ &bCooldown: &f40.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Marksman Only]"
+    recipe:
+      shape:
+        - "CGC"
+        - "G G"
+        - "CGC"
+      ingredients:
+        C: CHARCOAL
+        G: GUNPOWDER
+
+  # 5 STAR: Phantom Hunter Grid — The pinnacle. Locks down entire screens in a beautiful matrix.
+  tag3_phantom_grid:
+    display_name: "&6&lPhantom Hunter Grid"
+    stars: 5
+    class_tag: 3
+    type: utility
+    base_item: SPIDER_EYE
+    cooldown: 60.0
+    max_uses: 12
+    custom_model_data: -1
+    effects:
+      - type: aoe_root
+        radius: 9.0
+        duration: 5.0
+      - type: aoe_potion
+        effect: SLOWNESS
+        duration: 8.0
+        amplifier: 4
+        radius: 9.0
+      - type: play_sound
+        sound: BLOCK_BEACON_DEACTIVATE
+        volume: 1.4
+        pitch: 1.5
+      - type: play_sound
+        sound: ENTITY_WITHER_SHOOT
+        volume: 1.0
+        pitch: 1.8
+      - type: particle_burst
+        particle: TRIAL_SPAWNER_DETECTION
+        count: 160
+        radius: 8.5
+        speed: 0.3
+      - type: particle_burst
+        particle: PORTAL
+        count: 70
+        radius: 6.0
+        speed: 0.1
+    lore:
+      - "&7Deploy an advanced optical tracking grid."
+      - "&7Paralyzes everything in a colossal radius."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &bCooldown: &f60.0s"
+      - "&f▸ &7Uses: &f12/12"
+      - "&8&l[Marksman Only]"
+    recipe:
+      shape:
+        - "SFS"
+        - "FNF"
+        - "SFS"
+      ingredients:
+        S: STRING
+        F: FIRE_CHARGE
+        N: NETHER_STAR
+
+
+  # ──────────────────────────────────────────────────────────
+  #  ASSASSIN (class-tag: 4) — High Risk Infiltration Tools
+  # ──────────────────────────────────────────────────────────
+
+  # 1 STAR: Throwing Dagger — Quick poke that inflicts a minor bleed. Cleans up runners.
+  tag4_throwing_dagger:
+    display_name: "&8Throwing Dagger"
+    stars: 1
+    class_tag: 4
+    type: utility
+    base_item: FLINT
+    cooldown: 10.0
+    max_uses: 50
+    custom_model_data: -1
+    effects:
+      - type: bleed
+        duration: 4.0
+        damage: 1.5
+      - type: play_sound
+        sound: ENTITY_ARROW_SHOOT
+        volume: 0.8
+        pitch: 1.4
+      - type: particle_burst
+        particle: CRIT
+        count: 12
+        radius: 0.5
+        speed: 0.1
+    lore:
+      - "&7A balanced flint knife tossed at a target."
+      - "&7Causes light bleeding over 4 seconds."
+      - ""
+      - "&f▸ &bCooldown: &f10.0s"
+      - "&f▸ &7Uses: &f50/50"
+      - "&8&l[Assassin Only]"
+    recipe:
+      shape:
+        - " F "
+        - " S "
+        - "   "
+      ingredients:
+        F: FLINT
+        S: STICK
+
+  # 2 STAR: Cloak Token — Short panic burst of speed and temporary stealth.
+  tag4_cloak_token:
+    display_name: "&8&lCloak Token"
+    stars: 2
+    class_tag: 4
+    type: utility
+    base_item: PRISMARINE_SHARD
+    cooldown: 24.0
+    max_uses: 30
+    custom_model_data: -1
+    effects:
+      - type: potion_self
+        effect: INVISIBILITY
+        duration: 3.5
+        amplifier: 0
+      - type: play_sound
+        sound: ENTITY_ILLUSIONER_MIRROR_MOVE
+        volume: 0.9
+        pitch: 1.1
+      - type: particle_burst
+        particle: ENCHANT
+        count: 30
+        radius: 1.0
+        speed: 0.05
+    lore:
+      - "&7Break line of sight instantly with a"
+      - "&7brief pulse of absolute camouflage."
+      - ""
+      - "&f▸ &bCooldown: &f24.0s"
+      - "&f▸ &7Uses: &f30/30"
+      - "&8&l[Assassin Only]"
+    recipe:
+      shape:
+        - " P "
+        - " I "
+        - "   "
+      ingredients:
+        P: PRISMARINE_SHARD
+        I: IRON_INGOT
+
+  # 3 STAR: Smoke Screen — Vanish into speed and shadows with elegant execution.
+  tag4_smoke_screen:
+    display_name: "&e&lSmoke Screen"
+    stars: 3
+    class_tag: 4
+    type: utility
+    base_item: PHANTOM_MEMBRANE
+    cooldown: 35.0
+    max_uses: 25
+    custom_model_data: -1
+    effects:
+      - type: potion_self
+        effect: INVISIBILITY
+        duration: 5.0
+        amplifier: 0
+      - type: potion_self
+        effect: SPEED
+        duration: 4.0
+        amplifier: 2
+      - type: particle_burst
+        particle: SQUID_INK
+        count: 50
+        radius: 1.5
+        speed: 0.2
+      - type: play_sound
+        sound: BLOCK_FIRE_EXTINGUISH
+        volume: 0.8
+        pitch: 1.5
+    lore:
+      - "&7Vanish completely into an ink cloud."
+      - "&7Grants Invisibility and Speed III."
+      - ""
+      - "&f▸ &bCooldown: &f35.0s"
+      - "&f▸ &7Uses: &f25/25"
+      - "&8&l[Assassin Only]"
+    recipe:
+      shape:
+        - "PGP"
+        - "G G"
+        - "PGP"
+      ingredients:
+        P: PHANTOM_MEMBRANE
+        G: GUNPOWDER
+
+  # 4 STAR: Adrenaline — Speed that scales dramatically based on how close you are to dying.
+  tag4_adrenaline:
+    display_name: "&d&lAdrenaline"
+    stars: 4
+    class_tag: 4
+    type: utility
+    base_item: FERMENTED_SPIDER_EYE
+    cooldown: 45.0
+    max_uses: 20
+    custom_model_data: -1
+    effects:
+      - type: speed_from_missing_hp
+        duration: 5.0
+        max_amplifier: 5
+        min_amplifier: 1
+      - type: play_sound
+        sound: ENTITY_SPIDER_AMBIENT
+        volume: 1.2
+        pitch: 1.8
+      - type: particle_burst
+        particle: SOUL_FIRE_FLAME
+        count: 65
+        radius: 1.2
+        speed: 0.2
+      - type: particle_burst
+        particle: ANGRY_VILLAGER
+        count: 15
+        radius: 1.0
+        speed: 0.1
+    lore:
+      - "&7Forces your heart rate into a frenzy."
+      - "&7Speed spikes violently the lower your current health."
+      - ""
+      - "&f▸ &bCooldown: &f45.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Assassin Only]"
+    recipe:
+      shape:
+        - "SFS"
+        - "F F"
+        - "SFS"
+      ingredients:
+        S: SPIDER_EYE
+        F: FERMENTED_SPIDER_EYE
+
+  # 5 STAR: Shadow Dance — Absolute endgame masterpiece. Mind-bending sonic visual triggers.
+  tag4_shadow_dance:
+    display_name: "&6&lShadow Dance"
+    stars: 5
+    class_tag: 4
+    type: utility
+    base_item: NETHER_BRICK
+    cooldown: 65.0
+    max_uses: 12
+    custom_model_data: -1
+    effects:
+      - type: potion_self
+        effect: INVISIBILITY
+        duration: 8.0
+        amplifier: 0
+      - type: potion_self
+        effect: SPEED
+        duration: 6.0
+        amplifier: 4
+      - type: speed_from_missing_hp
+        duration: 6.0
+        max_amplifier: 2
+        min_amplifier: 0
+      - type: play_sound
+        sound: ENTITY_WITHER_SPAWN
+        volume: 1.0
+        pitch: 1.6
+      - type: play_sound
+        sound: ENTITY_WARDEN_HEARTBEAT
+        volume: 1.5
+        pitch: 1.2
+      - type: particle_burst
+        particle: TRIAL_SPAWNER_DETECTION_OMINOUS
+        count: 140
+        radius: 2.0
+        speed: 0.25
+      - type: particle_burst
+        particle: SONIC_BOOM
+        count: 1
+        radius: 0.2
+        speed: 0.0
+    lore:
+      - "&7Become an untraceable specter of death."
+      - "&7Grants unmatched operational movement options."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &bCooldown: &f65.0s"
+      - "&f▸ &7Uses: &f12/12"
+      - "&8&l[Assassin Only]"
+    recipe:
+      shape:
+        - "SFS"
+        - "FNF"
+        - "SFS"
+      ingredients:
+        S: FERMENTED_SPIDER_EYE
+        F: PHANTOM_MEMBRANE
+        N: NETHER_STAR
+
+
+  # ──────────────────────────────────────────────────────────
+  #  TANK (class-tag: 5) — Crowd Control & Absolute Fortresses
+  # ──────────────────────────────────────────────────────────
+
+  # 1 STAR: Mocking Shout — Simple short-range poke to force mobs onto you. Clean visual indicators.
+  tag5_mocking_shout:
+    display_name: "&6Mocking Shout"
+    stars: 1
+    class_tag: 5
+    type: utility
+    base_item: BRICK
+    cooldown: 10.0
+    max_uses: 50
+    custom_model_data: -1
+    effects:
+      - type: taunt
+        radius: 5.0
+      - type: play_sound
+        sound: ENTITY_VILLAGER_NO
+        volume: 1.0
+        pitch: 0.8
+      - type: particle_burst
+        particle: VILLAGER_ANGRY
+        count: 8
+        radius: 2.5
+        speed: 0.05
+    lore:
+      - "&7Hurl an insult that pulls local hostility."
+      - ""
+      - "&f▸ &bCooldown: &f10.0s"
+      - "&f▸ &7Uses: &f50/50"
+      - "&8&l[Tank Only]"
+    recipe:
+      shape:
+        - " B "
+        - "   "
+        - "   "
+      ingredients:
+        B: BRICK
+
+  # 2 STAR: Stonewall Stance — Grants a slight burst of armor protection.
+  tag5_stonewall_stance:
+    display_name: "&6&lStonewall Stance"
+    stars: 2
+    class_tag: 5
+    type: defensive
+    base_item: COBBLESTONE
+    cooldown: 20.0
+    max_uses: 35
+    custom_model_data: -1
+    effects:
+      - type: potion_self
+        effect: RESISTANCE
+        duration: 4.0
+        amplifier: 0
+      - type: play_sound
+        sound: ITEM_ARMOR_EQUIP_LEATHER
+        volume: 0.9
+        pitch: 0.8
+      - type: particle_burst
+        particle: BLOCK
+        count: 25
+        radius: 1.0
+        speed: 0.05
+    lore:
+      - "&7Brace your footing, reducing impact damage."
+      - ""
+      - "&f▸ &bCooldown: &f20.0s"
+      - "&f▸ &7Uses: &f35/35"
+      - "&8&l[Tank Only]"
+    recipe:
+      shape:
+        - "CCC"
+        - "C C"
+        - "CCC"
+      ingredients:
+        C: COBBLESTONE
+
+  # 3 STAR: Taunt — The definitive, heavy pull. Forces all nearby mobs to face you.
+  tag5_taunt:
+    display_name: "&e&lTaunt"
+    stars: 3
+    class_tag: 5
+    type: utility
+    base_item: SHIELD
+    cooldown: 30.0
+    max_uses: 25
+    custom_model_data: -1
+    effects:
+      - type: taunt
+        radius: 12.0
+      - type: play_sound
+        sound: ENTITY_RAVAGER_ROAR
+        volume: 1.5
+        pitch: 0.6
+      - type: particle_burst
+        particle: ANGRY_VILLAGER
+        count: 35
+        radius: 6.0
+        speed: 0.1
+    lore:
+      - "&7Bellow an undeniable challenge that forces"
+      - "&7all nearby mobs to attack you immediately."
+      - ""
+      - "&f▸ &bCooldown: &f30.0s"
+      - "&f▸ &7Uses: &f25/25"
+      - "&8&l[Tank Only]"
+    recipe:
+      shape:
+        - "ISI"
+        - "S S"
+        - "ISI"
+      ingredients:
+        I: IRON_INGOT
+        S: SHIELD
+
+  # 4 STAR: Fortify — Massive absorption shield and resistance. Highly visible enchants.
+  tag5_fortify:
+    display_name: "&d&lFortify"
+    stars: 4
+    class_tag: 5
+    type: defensive
+    base_item: IRON_BLOCK
+    cooldown: 45.0
+    max_uses: 20
+    custom_model_data: -1
+    effects:
+      - type: shield
+        amount: 8.0
+      - type: potion_self
+        effect: RESISTANCE
+        duration: 6.0
+        amplifier: 1
+      - type: play_sound
+        sound: ITEM_ARMOR_EQUIP_IRON
+        volume: 1.2
+        pitch: 0.7
+      - type: particle_burst
+        particle: ENCHANT
+        count: 75
+        radius: 1.5
+        speed: 0.1
+    lore:
+      - "&7Steel your body, generating temporary"
+      - "&7absorption shielding and high resistance."
+      - ""
+      - "&f▸ &bCooldown: &f45.0s"
+      - "&f▸ &7Uses: &f20/20"
+      - "&8&l[Tank Only]"
+    recipe:
+      shape:
+        - "III"
+        - "IBI"
+        - "III"
+      ingredients:
+        I: IRON_INGOT
+        B: IRON_BLOCK
+
+  # 5 STAR: Bastion of Immortals — Unbelievable legendary presence. Beacon signals and glowing armor runes.
+  tag5_bastion:
+    display_name: "&6&lBastion of Immortals"
+    stars: 5
+    class_tag: 5
+    type: defensive
+    base_item: NETHERITE_BLOCK
+    cooldown: 75.0
+    max_uses: 10
+    custom_model_data: -1
+    effects:
+      - type: shield
+        amount: 16.0
+      - type: potion_self
+        effect: RESISTANCE
+        duration: 8.0
+        amplifier: 1  # Standardized to Level II (40% mitigation) so the tank remains dynamic, not fully immortal.
+      - type: taunt
+        radius: 15.0
+      - type: play_sound
+        sound: BLOCK_BEACON_ACTIVATE
+        volume: 1.6
+        pitch: 0.6
+      - type: play_sound
+        sound: ITEM_ARMOR_EQUIP_NETHERITE
+        volume: 1.4
+        pitch: 0.4
+      - type: particle_burst
+        particle: SHIELD
+        count: 45
+        radius: 2.0
+        speed: 0.05
+      - type: particle_burst
+        particle: GUST
+        count: 25
+        radius: 3.0
+        speed: 0.1
+    lore:
+      - "&7Become an unkillable deity on the field."
+      - "&7Taunts everything, yielding massive absorption health."
+      - "&a[Debug Recipe Enabled]"
+      - ""
+      - "&f▸ &bCooldown: &f75.0s"
+      - "&f▸ &7Uses: &f10/10"
+      - "&8&l[Tank Only]"
+    recipe:
+      shape:
+        - "INI"
+        - "NBN"
+        - "INI"
+      ingredients:
+        I: NETHERITE_SCRAP
+        N: NETHER_STAR
+        B: NETHERITE_BLOCK

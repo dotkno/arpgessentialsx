@@ -1,0 +1,169 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# ARPGEssentialsX — classes.yml
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# HOW ATTRIBUTES WORK
+# ───────────────────
+# Minecraft's health is measured in half-hearts internally.
+#   health: 2.0  = +1 heart  (e.g. 4.0 = +2 hearts)
+#   health: -2.0 = -1 heart
+#
+# movement_speed: Minecraft's internal speed attribute (vanilla = 0.1)
+#   speed: 0.01  = very slight boost
+#   speed: -0.025 = slightly slower
+#
+# damage: flat attack damage added to melee attacks
+#   damage: 1.0  = +1 attack damage
+#   damage: -1.0 = -1 attack damage
+#
+# armor / armor_toughness: flat armor points (same scale as armor bar)
+#
+# knockback_resistance: 0.0 = no resistance, 1.0 = full immunity
+#   0.05 = 5% knockback reduction
+#
+# HOW PASSIVES WORK
+# ─────────────────
+# Passives are numeric config values read by PassiveListener or PassiveTickTask.
+# A value of 0.0 (or omitting the key) means "this passive is inactive."
+#
+# Fighter:    regen_delay (seconds OOC before regen triggers), regen_amount (HP per tick)
+# Marksman:   ranged_damage_bonus (flat damage added to bow/crossbow hits)
+# Assassin:   crit_multiplier_bonus (added on top of vanilla 1.5x crit; 0.15 → 1.65x total)
+# Tank:       unbreakable_shields (1.0 = enabled, 0.0 = disabled)
+# Mage:       (handled by SpellCastManager and MageRestrictionListener — no numeric value needed)
+# ─────────────────────────────────────────────────────────────────────────────
+
+fighter:
+  display-name: "&c&lFighter"
+  tag: 1
+  icon: IRON_SWORD
+  custom-model-data: -1
+  lore:
+    - "&7A damage-focused melee combatant."
+    - "&7Durable enough to stay on the front line."
+    - ""
+    - "&f▸ &a+2 Hearts &8(+4 HP)"
+    - "&f▸ &a+1 Melee Damage"
+    - "&f▸ &a+2 Armor"
+    - "&f▸ &a5% Knockback Resistance"
+    - "&f▸ &6Passive: &eRegens 1 heart after 12s out of combat"
+    - ""
+    - "&8A solid all-rounder."
+  attributes:
+    health: 4.0              # +2 hearts
+    damage: 1.0              # +1 melee damage
+    speed: 0.0               # no change
+    armor: 2.0               # +2 armor points
+    armor_toughness: 0.0     # no change
+    knockback_resistance: 0.05 # 5% knockback reduction
+  passives:
+    regen_delay: 12.0        # seconds out-of-combat before regen starts
+    regen_amount: 2.0        # HP restored per regen tick (= 1 heart)
+
+mage:
+  display-name: "&5&lMage"
+  tag: 2
+  icon: BLAZE_ROD
+  custom-model-data: -1
+  lore:
+    - "&7A versatile ranged spellcaster."
+    - "&7Can attack, defend, and heal — but fragile."
+    - ""
+    - "&f▸ &c-2 Hearts &8(-4 HP)"
+    - "&f▸ &c-1 Melee Damage"
+    - "&f▸ &a+0.015 Movement Speed"
+    - "&f▸ &7No armor bonus"
+    - "&f▸ &5Passive: &dMana & Spells"
+    - "&f▸ &5Passive: &dCannot use Enchanting Tables"
+    - ""
+    - "&8Best support in team fights."
+  attributes:
+    health: -4.0             # -2 hearts
+    damage: -1.0             # -1 melee damage
+    speed: 0.015             # slight speed boost
+    armor: 0.0               # no change
+    armor_toughness: 0.0     # no change
+    knockback_resistance: 0.0 # no change
+  passives:
+  # Mage passives are handled by SpellCastManager and MageRestrictionListener.
+  # No numeric values needed here — the listeners check class tag directly.
+
+marksman:
+  display-name: "&e&lMarksman"
+  tag: 3
+  icon: BOW
+  custom-model-data: -1
+  lore:
+    - "&7A reliable ranged damage dealer."
+    - "&7Fragile up close, deadly from afar."
+    - ""
+    - "&f▸ &c-1 Heart &8(-2 HP)"
+    - "&f▸ &a+0.01 Movement Speed"
+    - "&f▸ &c-1 Armor"
+    - "&f▸ &7No armor toughness change"
+    - "&f▸ &ePassive: &6+2 damage with Bows and Crossbows"
+    - ""
+    - "&8High ranged damage, low survivability."
+  attributes:
+    health: -2.0             # -1 heart
+    damage: 0.0              # no melee change
+    speed: 0.01              # slight speed boost
+    armor: -1.0              # -1 armor point
+    armor_toughness: 0.0     # no change
+    knockback_resistance: 0.0 # no change
+  passives:
+    ranged_damage_bonus: 2.0 # flat damage added to bow/crossbow hits
+
+assassin:
+  display-name: "&8&lAssassin"
+  tag: 4
+  icon: FEATHER
+  custom-model-data: -1
+  lore:
+    - "&7An agile melee damage dealer."
+    - "&7Relies on speed and critical hits."
+    - ""
+    - "&f▸ &c-2 Hearts &8(-4 HP)"
+    - "&f▸ &a+1 Melee Damage"
+    - "&f▸ &a+0.03 Movement Speed"
+    - "&f▸ &c-2 Armor"
+    - "&f▸ &7Passive: &fCrits deal &a1.65x &fdamage &8(vanilla 1.5x)"
+    - ""
+    - "&8Glass cannon. Don't get hit."
+  attributes:
+    health: -4.0             # -2 hearts
+    damage: 3.0              # +3 melee damage
+    speed: 0.03              # fast movement
+    armor: -2.0              # -2 armor points
+    armor_toughness: 0.0     # no change
+    knockback_resistance: 0.0 # no change
+  passives:
+    crit_multiplier_bonus: 0.15  # adds to vanilla 1.5x → 1.65x total crit
+
+tank:
+  display-name: "&6&lTank"
+  tag: 5
+  icon: SHIELD
+  custom-model-data: -1
+  lore:
+    - "&7A defensive melee front-liner."
+    - "&7Built to absorb hits and protect teammates."
+    - ""
+    - "&f▸ &a+6 Hearts &8(+12 HP)"
+    - "&f▸ &c-2 Melee Damage"
+    - "&f▸ &c-0.025 Movement Speed"
+    - "&f▸ &a+4 Armor"
+    - "&f▸ &a+2 Armor Toughness"
+    - "&f▸ &a12% Knockback Resistance"
+    - "&f▸ &6Passive: &eShields are unbreakable while held"
+    - ""
+    - "&8An immovable wall."
+  attributes:
+    health: 12.0             # +6 hearts
+    damage: -2.0             # -2 melee damage
+    speed: -0.025            # slower movement
+    armor: 4.0               # +4 armor points
+    armor_toughness: 2.0     # +2 armor toughness
+    knockback_resistance: 0.12 # 12% knockback reduction
+  passives:
+    unbreakable_shields: 1.0 # 1.0 = enabled, 0.0 = disabled

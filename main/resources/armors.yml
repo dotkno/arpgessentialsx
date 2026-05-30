@@ -1,0 +1,3525 @@
+# Genshin-Inspired Custom Armors
+# Star Tier Rules:
+# - 1-Star: Base stats ONLY. No 2-piece, no 4-piece, no passive.
+# - 2-Star: Base stats + weak 2-piece bonus ONLY. No 4-piece, no passive.
+# - 3-Star: Base stats + standard 2-piece + basic 4-piece + Individual Passive.
+# - 4-Star: Base stats + strong 2-piece + complex/flawed 4-piece + strong Individual Passive.
+# - 5-Star: Base stats + strong 2-piece + game-changing 4-piece + strong Individual Passive.
+
+armors:
+  # ═══════════════════════════════════════════════════════════════════════════════
+  # ⚔️ FIGHTER (Melee, Attack Speed, Cleaving)
+  # ═══════════════════════════════════════════════════════════════════════════════
+
+  # 1-Star: Trainee's Leather (Base stats only)
+  trainee_leather_helmet:
+    display_name: "&fTrainee's Leather Helm"
+    armor_type: head
+    stars: 1
+    base_item: LEATHER_HELMET
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "A simple leather cap for novice fighters."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "LLL"
+        - "L L"
+        - "   "
+      ingredients:
+        L: LEATHER
+
+  trainee_leather_chestplate:
+    display_name: "&fTrainee's Leather Vest"
+    armor_type: chest
+    stars: 1
+    base_item: LEATHER_CHESTPLATE
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    lore:
+      - "A basic leather vest for novice fighters."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "L L"
+        - "LLL"
+        - "LLL"
+      ingredients:
+        L: LEATHER
+
+  trainee_leather_leggings:
+    display_name: "&fTrainee's Leather Pants"
+    armor_type: legs
+    stars: 1
+    base_item: LEATHER_LEGGINGS
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "Simple leather pants for novice fighters."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "LLL"
+        - "L L"
+        - "L L"
+      ingredients:
+        L: LEATHER
+
+  trainee_leather_boots:
+    display_name: "&fTrainee's Leather Boots"
+    armor_type: feet
+    stars: 1
+    base_item: LEATHER_BOOTS
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "Basic leather boots for novice fighters."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "   "
+        - "L L"
+        - "L L"
+      ingredients:
+        L: LEATHER
+
+  # 2-Star: Militia's Chainmail (Base stats + weak 2-piece)
+  militia_chainmail_helmet:
+    display_name: "&fMilitia's Chainmail Helm"
+    armor_type: head
+    stars: 2
+    set_name: militia_chainmail
+    base_item: CHAINMAIL_HELMET
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.05
+    lore:
+      - "Standard issue militia armor."
+      - "§72★"
+      - "§a2-Piece: +5% Melee Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "CCC"
+        - "C C"
+        - "   "
+      ingredients:
+        C: IRON_INGOT
+
+  militia_chainmail_chestplate:
+    display_name: "&fMilitia's Chainmail Vest"
+    armor_type: chest
+    stars: 2
+    set_name: militia_chainmail
+    base_item: CHAINMAIL_CHESTPLATE
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.05
+    lore:
+      - "Standard issue militia armor."
+      - "§72★"
+      - "§a2-Piece: +5% Melee Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "C C"
+        - "CCC"
+        - "CCC"
+      ingredients:
+        C: IRON_INGOT
+
+  militia_chainmail_leggings:
+    display_name: "&fMilitia's Chainmail Leggings"
+    armor_type: legs
+    stars: 2
+    set_name: militia_chainmail
+    base_item: CHAINMAIL_LEGGINGS
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.05
+    lore:
+      - "Standard issue militia armor."
+      - "§72★"
+      - "§a2-Piece: +5% Melee Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "CCC"
+        - "C C"
+        - "C C"
+      ingredients:
+        C: IRON_INGOT
+
+  militia_chainmail_boots:
+    display_name: "&fMilitia's Chainmail Boots"
+    armor_type: feet
+    stars: 2
+    set_name: militia_chainmail
+    base_item: CHAINMAIL_BOOTS
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.05
+    lore:
+      - "Standard issue militia armor."
+      - "§72★"
+      - "§a2-Piece: +5% Melee Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "   "
+        - "C C"
+        - "C C"
+      ingredients:
+        C: IRON_INGOT
+
+  # 3-Star: Berserker's Resolve (Base stats + 2-piece + 4-piece + Passive)
+  berserker_resolve_helmet:
+    display_name: "&bBerserker's Resolve Helm"
+    armor_type: head
+    stars: 3
+    set_name: berserker_resolve
+    base_item: IRON_HELMET
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+      four_piece:
+        type: conditional_attack_speed
+        health_threshold: 0.70
+        attack_speed_bonus: 0.15
+    passives:
+      - type: cleaving_strikes
+        chance: 0.25
+        aoe_damage_percentage: 0.40
+        aoe_radius: 3.0
+    lore:
+      - "Armor for those who fight with wild abandon."
+      - "§73★"
+      - "§a2-Piece: +10% Melee Damage"
+      - "§a4-Piece: +15% Attack Speed below 70% HP"
+      - "§ePassive: Cleaving Strikes"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "III"
+        - "I I"
+        - "   "
+      ingredients:
+        I: IRON_INGOT
+
+  berserker_resolve_chestplate:
+    display_name: "&bBerserker's Resolve Chestplate"
+    armor_type: chest
+    stars: 3
+    set_name: berserker_resolve
+    base_item: IRON_CHESTPLATE
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 5.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+      four_piece:
+        type: conditional_attack_speed
+        health_threshold: 0.70
+        attack_speed_bonus: 0.15
+    passives:
+      - type: cleaving_strikes
+        chance: 0.25
+        aoe_damage_percentage: 0.40
+        aoe_radius: 3.0
+    lore:
+      - "Armor for those who fight with wild abandon."
+      - "§73★"
+      - "§a2-Piece: +10% Melee Damage"
+      - "§a4-Piece: +15% Attack Speed below 70% HP"
+      - "§ePassive: Cleaving Strikes"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "I I"
+        - "III"
+        - "III"
+      ingredients:
+        I: IRON_INGOT
+
+  berserker_resolve_leggings:
+    display_name: "&bBerserker's Resolve Leggings"
+    armor_type: legs
+    stars: 3
+    set_name: berserker_resolve
+    base_item: IRON_LEGGINGS
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+      four_piece:
+        type: conditional_attack_speed
+        health_threshold: 0.70
+        attack_speed_bonus: 0.15
+    passives:
+      - type: cleaving_strikes
+        chance: 0.25
+        aoe_damage_percentage: 0.40
+        aoe_radius: 3.0
+    lore:
+      - "Armor for those who fight with wild abandon."
+      - "§73★"
+      - "§a2-Piece: +10% Melee Damage"
+      - "§a4-Piece: +15% Attack Speed below 70% HP"
+      - "§ePassive: Cleaving Strikes"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "III"
+        - "I I"
+        - "I I"
+      ingredients:
+        I: IRON_INGOT
+
+  berserker_resolve_boots:
+    display_name: "&bBerserker's Resolve Boots"
+    armor_type: feet
+    stars: 3
+    set_name: berserker_resolve
+    base_item: IRON_BOOTS
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+      four_piece:
+        type: conditional_attack_speed
+        health_threshold: 0.70
+        attack_speed_bonus: 0.15
+    passives:
+      - type: cleaving_strikes
+        chance: 0.25
+        aoe_damage_percentage: 0.40
+        aoe_radius: 3.0
+    lore:
+      - "Armor for those who fight with wild abandon."
+      - "§73★"
+      - "§a2-Piece: +10% Melee Damage"
+      - "§a4-Piece: +15% Attack Speed below 70% HP"
+      - "§ePassive: Cleaving Strikes"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "   "
+        - "I I"
+        - "I I"
+      ingredients:
+        I: IRON_INGOT
+
+  # 4-Star: Bloodstained Chivalry (Strong 2-piece + complex 4-piece + strong Passive)
+  bloodstained_chivalry_helmet:
+    display_name: "&aBloodstained Knight's Helm"
+    armor_type: head
+    stars: 4
+    set_name: bloodstained_chivalry
+    base_item: IRON_HELMET
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 3.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: stat_boost
+        stat: attack_damage
+        amount: 3.0
+    passives:
+      - type: bloodletting
+        chance: 0.15
+        bleed_duration: 4.0
+        bleed_damage_per_second: 2.0
+    lore:
+      - "Armor stained with the blood of countless foes."
+      - "§74★"
+      - "§a2-Piece: +15% Melee Damage"
+      - "§a4-Piece: Sprinting bonus (requires implementation)"
+      - "§ePassive: Bloodletting"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "   "
+      ingredients:
+        D: DIAMOND
+
+  bloodstained_chivalry_chestplate:
+    display_name: "&aBloodstained Knight's Chestplate"
+    armor_type: chest
+    stars: 4
+    set_name: bloodstained_chivalry
+    base_item: IRON_CHESTPLATE
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 6.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: stat_boost
+        stat: attack_damage
+        amount: 3.0
+    passives:
+      - type: bloodletting
+        chance: 0.15
+        bleed_duration: 4.0
+        bleed_damage_per_second: 2.0
+    lore:
+      - "Armor stained with the blood of countless foes."
+      - "§74★"
+      - "§a2-Piece: +15% Melee Damage"
+      - "§a4-Piece: Sprinting bonus (requires implementation)"
+      - "§ePassive: Bloodletting"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "D D"
+        - "DDD"
+        - "DDD"
+      ingredients:
+        D: DIAMOND
+
+  bloodstained_chivalry_leggings:
+    display_name: "&aBloodstained Knight's Leggings"
+    armor_type: legs
+    stars: 4
+    set_name: bloodstained_chivalry
+    base_item: IRON_LEGGINGS
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 5.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: stat_boost
+        stat: attack_damage
+        amount: 3.0
+    passives:
+      - type: bloodletting
+        chance: 0.15
+        bleed_duration: 4.0
+        bleed_damage_per_second: 2.0
+    lore:
+      - "Armor stained with the blood of countless foes."
+      - "§74★"
+      - "§a2-Piece: +15% Melee Damage"
+      - "§a4-Piece: Sprinting bonus (requires implementation)"
+      - "§ePassive: Bloodletting"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  bloodstained_chivalry_boots:
+    display_name: "&aBloodstained Knight's Boots"
+    armor_type: feet
+    stars: 4
+    set_name: bloodstained_chivalry
+    base_item: IRON_BOOTS
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 4.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: stat_boost
+        stat: attack_damage
+        amount: 3.0
+    passives:
+      - type: bloodletting
+        chance: 0.15
+        bleed_duration: 4.0
+        bleed_damage_per_second: 2.0
+    lore:
+      - "Armor stained with the blood of countless foes."
+      - "§74★"
+      - "§a2-Piece: +15% Melee Damage"
+      - "§a4-Piece: Sprinting bonus (requires implementation)"
+      - "§ePassive: Bloodletting"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "   "
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  # 5-Star: Gladiator's Finale (Strong 2-piece + game-changing 4-piece + strong Passive)
+  gladiators_finale_helmet:
+    display_name: "&6Gladiator's Finale Helm"
+    armor_type: head
+    stars: 5
+    set_name: gladiators_finale
+    base_item: DIAMOND_HELMET
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 4.0
+      armor_toughness: 2.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: momentum_stacks
+        max_stacks: 3
+        attack_speed_per_stack: 0.12
+        movement_speed_per_stack: 0.08
+        stack_duration: 5.0
+    passives:
+      - type: cleaving_strikes
+        chance: 0.40
+        aoe_damage_percentage: 0.60
+        aoe_radius: 4.0
+    lore:
+      - "The armor of a legendary gladiator."
+      - "§65★"
+      - "§a2-Piece: +18% Melee Damage"
+      - "§a4-Piece: Momentum stacks on hit"
+      - "§ePassive: Cleaving Strikes (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "   "
+      ingredients:
+        N: NETHERITE_INGOT
+
+  gladiators_finale_chestplate:
+    display_name: "&6Gladiator's Finale Chestplate"
+    armor_type: chest
+    stars: 5
+    set_name: gladiators_finale
+    base_item: DIAMOND_CHESTPLATE
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 8.0
+      armor_toughness: 2.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: momentum_stacks
+        max_stacks: 3
+        attack_speed_per_stack: 0.12
+        movement_speed_per_stack: 0.08
+        stack_duration: 5.0
+    passives:
+      - type: cleaving_strikes
+        chance: 0.40
+        aoe_damage_percentage: 0.60
+        aoe_radius: 4.0
+    lore:
+      - "The armor of a legendary gladiator."
+      - "§65★"
+      - "§a2-Piece: +18% Melee Damage"
+      - "§a4-Piece: Momentum stacks on hit"
+      - "§ePassive: Cleaving Strikes (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "N N"
+        - "NNN"
+        - "NNN"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  gladiators_finale_leggings:
+    display_name: "&6Gladiator's Finale Leggings"
+    armor_type: legs
+    stars: 5
+    set_name: gladiators_finale
+    base_item: DIAMOND_LEGGINGS
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 7.0
+      armor_toughness: 2.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: momentum_stacks
+        max_stacks: 3
+        attack_speed_per_stack: 0.12
+        movement_speed_per_stack: 0.08
+        stack_duration: 5.0
+    passives:
+      - type: cleaving_strikes
+        chance: 0.40
+        aoe_damage_percentage: 0.60
+        aoe_radius: 4.0
+    lore:
+      - "The armor of a legendary gladiator."
+      - "§65★"
+      - "§a2-Piece: +18% Melee Damage"
+      - "§a4-Piece: Momentum stacks on hit"
+      - "§ePassive: Cleaving Strikes (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  gladiators_finale_boots:
+    display_name: "&6Gladiator's Finale Boots"
+    armor_type: feet
+    stars: 5
+    set_name: gladiators_finale
+    base_item: DIAMOND_BOOTS
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 5.0
+      armor_toughness: 2.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: momentum_stacks
+        max_stacks: 3
+        attack_speed_per_stack: 0.12
+        movement_speed_per_stack: 0.08
+        stack_duration: 5.0
+    passives:
+      - type: cleaving_strikes
+        chance: 0.40
+        aoe_damage_percentage: 0.60
+        aoe_radius: 4.0
+    lore:
+      - "The armor of a legendary gladiator."
+      - "§65★"
+      - "§a2-Piece: +18% Melee Damage"
+      - "§a4-Piece: Momentum stacks on hit"
+      - "§ePassive: Cleaving Strikes (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "   "
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  # ═══════════════════════════════════════════════════════════════════════════════
+  # 🔥 MAGE (Spell Damage, Mana, Cooldowns)
+  # ═══════════════════════════════════════════════════════════════════════════════
+
+  # 1-Star: Novice's Linen (Base stats only)
+  novice_linen_helmet:
+    display_name: "&fNovice's Linen Hood"
+    armor_type: head
+    stars: 1
+    base_item: LEATHER_HELMET
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "A simple hood for apprentice mages."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "LLL"
+        - "L L"
+        - "   "
+      ingredients:
+        L: LEATHER
+
+  novice_linen_chestplate:
+    display_name: "&fNovice's Linen Robe"
+    armor_type: chest
+    stars: 1
+    base_item: LEATHER_CHESTPLATE
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    lore:
+      - "A basic robe for apprentice mages."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "L L"
+        - "LLL"
+        - "LLL"
+      ingredients:
+        L: LEATHER
+
+  novice_linen_leggings:
+    display_name: "&fNovice's Linen Pants"
+    armor_type: legs
+    stars: 1
+    base_item: LEATHER_LEGGINGS
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "Simple pants for apprentice mages."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "LLL"
+        - "L L"
+        - "L L"
+      ingredients:
+        L: LEATHER
+
+  novice_linen_boots:
+    display_name: "&fNovice's Linen Boots"
+    armor_type: feet
+    stars: 1
+    base_item: LEATHER_BOOTS
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "Basic boots for apprentice mages."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "   "
+        - "L L"
+        - "L L"
+      ingredients:
+        L: LEATHER
+
+  # 2-Star: Acolyte's Robes (Base stats + weak 2-piece)
+  acolyte_robes_helmet:
+    display_name: "&fAcolyte's Hood"
+    armor_type: head
+    stars: 2
+    set_name: acolyte_robes
+    base_item: LEATHER_HELMET
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.06
+    lore:
+      - "Robes worn by temple acolytes."
+      - "§72★"
+      - "§a2-Piece: +6% Spell Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "CCC"
+        - "C C"
+        - "   "
+      ingredients:
+        C: IRON_INGOT
+
+  acolyte_robes_chestplate:
+    display_name: "&fAcolyte's Robe"
+    armor_type: chest
+    stars: 2
+    set_name: acolyte_robes
+    base_item: LEATHER_CHESTPLATE
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.06
+    lore:
+      - "Robes worn by temple acolytes."
+      - "§72★"
+      - "§a2-Piece: +6% Spell Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "C C"
+        - "CCC"
+        - "CCC"
+      ingredients:
+        C: IRON_INGOT
+
+  acolyte_robes_leggings:
+    display_name: "&fAcolyte's Leggings"
+    armor_type: legs
+    stars: 2
+    set_name: acolyte_robes
+    base_item: LEATHER_LEGGINGS
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.06
+    lore:
+      - "Robes worn by temple acolytes."
+      - "§72★"
+      - "§a2-Piece: +6% Spell Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "CCC"
+        - "C C"
+        - "C C"
+      ingredients:
+        C: IRON_INGOT
+
+  acolyte_robes_boots:
+    display_name: "&fAcolyte's Boots"
+    armor_type: feet
+    stars: 2
+    set_name: acolyte_robes
+    base_item: LEATHER_BOOTS
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.06
+    lore:
+      - "Robes worn by temple acolytes."
+      - "§72★"
+      - "§a2-Piece: +6% Spell Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "   "
+        - "C C"
+        - "C C"
+      ingredients:
+        C: IRON_INGOT
+
+  # 3-Star: Scholar's Focus (Base stats + 2-piece + 4-piece + Passive)
+  scholar_focus_helmet:
+    display_name: "&bScholar's Focus Hood"
+    armor_type: head
+    stars: 3
+    set_name: scholar_focus
+    base_item: CHAINMAIL_HELMET
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.12
+      four_piece:
+        type: mana_restore_on_cast
+        mana_percentage: 0.05
+    passives:
+      - type: arcane_deflection
+        chance: 0.30
+        knockback_strength: 0.5
+        slow_duration: 2.0
+        slow_amplifier: 1
+        silence_duration: 0.0
+    lore:
+      - "Robes designed for focused spellcasting."
+      - "§73★"
+      - "§a2-Piece: +12% Spell Damage"
+      - "§a4-Piece: Restore 5% Mana on cast"
+      - "§ePassive: Arcane Deflection"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "III"
+        - "I I"
+        - "   "
+      ingredients:
+        I: IRON_INGOT
+
+  scholar_focus_chestplate:
+    display_name: "&bScholar's Focus Robe"
+    armor_type: chest
+    stars: 3
+    set_name: scholar_focus
+    base_item: CHAINMAIL_CHESTPLATE
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.12
+      four_piece:
+        type: mana_restore_on_cast
+        mana_percentage: 0.05
+    passives:
+      - type: arcane_deflection
+        chance: 0.30
+        knockback_strength: 0.5
+        slow_duration: 2.0
+        slow_amplifier: 1
+        silence_duration: 0.0
+    lore:
+      - "Robes designed for focused spellcasting."
+      - "§73★"
+      - "§a2-Piece: +12% Spell Damage"
+      - "§a4-Piece: Restore 5% Mana on cast"
+      - "§ePassive: Arcane Deflection"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "I I"
+        - "III"
+        - "III"
+      ingredients:
+        I: IRON_INGOT
+
+  scholar_focus_leggings:
+    display_name: "&bScholar's Focus Leggings"
+    armor_type: legs
+    stars: 3
+    set_name: scholar_focus
+    base_item: CHAINMAIL_LEGGINGS
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.12
+      four_piece:
+        type: mana_restore_on_cast
+        mana_percentage: 0.05
+    passives:
+      - type: arcane_deflection
+        chance: 0.30
+        knockback_strength: 0.5
+        slow_duration: 2.0
+        slow_amplifier: 1
+        silence_duration: 0.0
+    lore:
+      - "Robes designed for focused spellcasting."
+      - "§73★"
+      - "§a2-Piece: +12% Spell Damage"
+      - "§a4-Piece: Restore 5% Mana on cast"
+      - "§ePassive: Arcane Deflection"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "III"
+        - "I I"
+        - "I I"
+      ingredients:
+        I: IRON_INGOT
+
+  scholar_focus_boots:
+    display_name: "&bScholar's Focus Boots"
+    armor_type: feet
+    stars: 3
+    set_name: scholar_focus
+    base_item: CHAINMAIL_BOOTS
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.12
+      four_piece:
+        type: mana_restore_on_cast
+        mana_percentage: 0.05
+    passives:
+      - type: arcane_deflection
+        chance: 0.30
+        knockback_strength: 0.5
+        slow_duration: 2.0
+        slow_amplifier: 1
+        silence_duration: 0.0
+    lore:
+      - "Robes designed for focused spellcasting."
+      - "§73★"
+      - "§a2-Piece: +12% Spell Damage"
+      - "§a4-Piece: Restore 5% Mana on cast"
+      - "§ePassive: Arcane Deflection"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "   "
+        - "I I"
+        - "I I"
+      ingredients:
+        I: IRON_INGOT
+
+  # 4-Star: Crimson Witch of Flames (Strong 2-piece + complex 4-piece + strong Passive)
+  crimson_witch_helmet:
+    display_name: "&aCrimson Witch's Hat"
+    armor_type: head
+    stars: 4
+    set_name: crimson_witch
+    base_item: IRON_HELMET
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: spell_damage_amplification
+        damage_increase: 0.15
+        max_stacks: 3
+        mana_refund_percentage: 0.10
+        cooldown_reduction_percentage: 0.05
+    passives:
+      - type: mana_shield
+        mana_to_damage_ratio: 2.0
+    lore:
+      - "The burning passion of a pyromancer."
+      - "§74★"
+      - "§a2-Piece: +18% Spell Damage"
+      - "§a4-Piece: Spell damage amplification stacks"
+      - "§ePassive: Mana Shield"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "   "
+      ingredients:
+        D: DIAMOND
+
+  crimson_witch_chestplate:
+    display_name: "&aCrimson Witch's Robes"
+    armor_type: chest
+    stars: 4
+    set_name: crimson_witch
+    base_item: IRON_CHESTPLATE
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 5.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: spell_damage_amplification
+        damage_increase: 0.15
+        max_stacks: 3
+        mana_refund_percentage: 0.10
+        cooldown_reduction_percentage: 0.05
+    passives:
+      - type: mana_shield
+        mana_to_damage_ratio: 2.0
+    lore:
+      - "The burning passion of a pyromancer."
+      - "§74★"
+      - "§a2-Piece: +18% Spell Damage"
+      - "§a4-Piece: Spell damage amplification stacks"
+      - "§ePassive: Mana Shield"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "D D"
+        - "DDD"
+        - "DDD"
+      ingredients:
+        D: DIAMOND
+
+  crimson_witch_leggings:
+    display_name: "&aCrimson Witch's Leggings"
+    armor_type: legs
+    stars: 4
+    set_name: crimson_witch
+    base_item: IRON_LEGGINGS
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: spell_damage_amplification
+        damage_increase: 0.15
+        max_stacks: 3
+        mana_refund_percentage: 0.10
+        cooldown_reduction_percentage: 0.05
+    passives:
+      - type: mana_shield
+        mana_to_damage_ratio: 2.0
+    lore:
+      - "The burning passion of a pyromancer."
+      - "§74★"
+      - "§a2-Piece: +18% Spell Damage"
+      - "§a4-Piece: Spell damage amplification stacks"
+      - "§ePassive: Mana Shield"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  crimson_witch_boots:
+    display_name: "&aCrimson Witch's Boots"
+    armor_type: feet
+    stars: 4
+    set_name: crimson_witch
+    base_item: IRON_BOOTS
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: spell_damage_amplification
+        damage_increase: 0.15
+        max_stacks: 3
+        mana_refund_percentage: 0.10
+        cooldown_reduction_percentage: 0.05
+    passives:
+      - type: mana_shield
+        mana_to_damage_ratio: 2.0
+    lore:
+      - "The burning passion of a pyromancer."
+      - "§74★"
+      - "§a2-Piece: +18% Spell Damage"
+      - "§a4-Piece: Spell damage amplification stacks"
+      - "§ePassive: Mana Shield"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "   "
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  # 5-Star: Obsidian Codex (Strong 2-piece + game-changing 4-piece + strong Passive)
+  obsidian_codex_helmet:
+    display_name: "&6Obsidian Codex Hood"
+    armor_type: head
+    stars: 5
+    set_name: obsidian_codex
+    base_item: DIAMOND_HELMET
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 3.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.20
+      four_piece:
+        type: magic_vulnerability
+        vulnerability_amount: 0.10
+        duration: 8.0
+        max_stacks: 3
+        true_damage_on_max: 50.0
+    passives:
+      - type: arcane_deflection
+        chance: 0.35
+        knockback_strength: 0.7
+        slow_duration: 2.5
+        slow_amplifier: 2
+        silence_duration: 1.5
+    lore:
+      - "Ancient knowledge of dark magic."
+      - "§65★"
+      - "§a2-Piece: +20% Spell Damage"
+      - "§a4-Piece: Magic vulnerability + true damage burst"
+      - "§ePassive: Arcane Deflection (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "   "
+      ingredients:
+        N: NETHERITE_INGOT
+
+  obsidian_codex_chestplate:
+    display_name: "&6Obsidian Codex Robes"
+    armor_type: chest
+    stars: 5
+    set_name: obsidian_codex
+    base_item: DIAMOND_CHESTPLATE
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 6.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.20
+      four_piece:
+        type: magic_vulnerability
+        vulnerability_amount: 0.10
+        duration: 8.0
+        max_stacks: 3
+        true_damage_on_max: 50.0
+    passives:
+      - type: arcane_deflection
+        chance: 0.35
+        knockback_strength: 0.7
+        slow_duration: 2.5
+        slow_amplifier: 2
+        silence_duration: 1.5
+    lore:
+      - "Ancient knowledge of dark magic."
+      - "§65★"
+      - "§a2-Piece: +20% Spell Damage"
+      - "§a4-Piece: Magic vulnerability + true damage burst"
+      - "§ePassive: Arcane Deflection (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "N N"
+        - "NNN"
+        - "NNN"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  obsidian_codex_leggings:
+    display_name: "&6Obsidian Codex Leggings"
+    armor_type: legs
+    stars: 5
+    set_name: obsidian_codex
+    base_item: DIAMOND_LEGGINGS
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 5.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.20
+      four_piece:
+        type: magic_vulnerability
+        vulnerability_amount: 0.10
+        duration: 8.0
+        max_stacks: 3
+        true_damage_on_max: 50.0
+    passives:
+      - type: arcane_deflection
+        chance: 0.35
+        knockback_strength: 0.7
+        slow_duration: 2.5
+        slow_amplifier: 2
+        silence_duration: 1.5
+    lore:
+      - "Ancient knowledge of dark magic."
+      - "§65★"
+      - "§a2-Piece: +20% Spell Damage"
+      - "§a4-Piece: Magic vulnerability + true damage burst"
+      - "§ePassive: Arcane Deflection (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  obsidian_codex_boots:
+    display_name: "&6Obsidian Codex Boots"
+    armor_type: feet
+    stars: 5
+    set_name: obsidian_codex
+    base_item: DIAMOND_BOOTS
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 4.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.20
+      four_piece:
+        type: magic_vulnerability
+        vulnerability_amount: 0.10
+        duration: 8.0
+        max_stacks: 3
+        true_damage_on_max: 50.0
+    passives:
+      - type: arcane_deflection
+        chance: 0.35
+        knockback_strength: 0.7
+        slow_duration: 2.5
+        slow_amplifier: 2
+        silence_duration: 1.5
+    lore:
+      - "Ancient knowledge of dark magic."
+      - "§65★"
+      - "§a2-Piece: +20% Spell Damage"
+      - "§a4-Piece: Magic vulnerability + true damage burst"
+      - "§ePassive: Arcane Deflection (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "   "
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  # ═══════════════════════════════════════════════════════════════════════════════
+  # 🏹 MARKSMAN (Ranged, Crit Damage, Positioning)
+  # ═══════════════════════════════════════════════════════════════════════════════
+
+  # 1-Star: Wooden Bowyer's Garb (Base stats only)
+  wooden_bowyer_helmet:
+    display_name: "&fWooden Bowyer's Hat"
+    armor_type: head
+    stars: 1
+    base_item: LEATHER_HELMET
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "A simple hat for apprentice archers."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "LLL"
+        - "L L"
+        - "   "
+      ingredients:
+        L: LEATHER
+
+  wooden_bowyer_chestplate:
+    display_name: "&fWooden Bowyer's Vest"
+    armor_type: chest
+    stars: 1
+    base_item: LEATHER_CHESTPLATE
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    lore:
+      - "A basic vest for apprentice archers."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "L L"
+        - "LLL"
+        - "LLL"
+      ingredients:
+        L: LEATHER
+
+  wooden_bowyer_leggings:
+    display_name: "&fWooden Bowyer's Pants"
+    armor_type: legs
+    stars: 1
+    base_item: LEATHER_LEGGINGS
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "Simple pants for apprentice archers."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "LLL"
+        - "L L"
+        - "L L"
+      ingredients:
+        L: LEATHER
+
+  wooden_bowyer_boots:
+    display_name: "&fWooden Bowyer's Boots"
+    armor_type: feet
+    stars: 1
+    base_item: LEATHER_BOOTS
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "Basic boots for apprentice archers."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "   "
+        - "L L"
+        - "L L"
+      ingredients:
+        L: LEATHER
+
+  # 2-Star: Hunter's Vest (Base stats + weak 2-piece)
+  hunter_vest_helmet:
+    display_name: "&fHunter's Cap"
+    armor_type: head
+    stars: 2
+    set_name: hunter_vest
+    base_item: LEATHER_HELMET
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+    lore:
+      - "Gear worn by seasoned hunters."
+      - "§72★"
+      - "§a2-Piece: +10% Critical Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "CCC"
+        - "C C"
+        - "   "
+      ingredients:
+        C: IRON_INGOT
+
+  hunter_vest_chestplate:
+    display_name: "&fHunter's Vest"
+    armor_type: chest
+    stars: 2
+    set_name: hunter_vest
+    base_item: LEATHER_CHESTPLATE
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+    lore:
+      - "Gear worn by seasoned hunters."
+      - "§72★"
+      - "§a2-Piece: +10% Critical Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "C C"
+        - "CCC"
+        - "CCC"
+      ingredients:
+        C: IRON_INGOT
+
+  hunter_vest_leggings:
+    display_name: "&fHunter's Pants"
+    armor_type: legs
+    stars: 2
+    set_name: hunter_vest
+    base_item: LEATHER_LEGGINGS
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+    lore:
+      - "Gear worn by seasoned hunters."
+      - "§72★"
+      - "§a2-Piece: +10% Critical Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "CCC"
+        - "C C"
+        - "C C"
+      ingredients:
+        C: IRON_INGOT
+
+  hunter_vest_boots:
+    display_name: "&fHunter's Boots"
+    armor_type: feet
+    stars: 2
+    set_name: hunter_vest
+    base_item: LEATHER_BOOTS
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+    lore:
+      - "Gear worn by seasoned hunters."
+      - "§72★"
+      - "§a2-Piece: +10% Critical Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "   "
+        - "C C"
+        - "C C"
+      ingredients:
+        C: IRON_INGOT
+
+  # 3-Star: Gambler's Feathers (Base stats + 2-piece + 4-piece + Passive)
+  gambler_feathers_helmet:
+    display_name: "&bGambler's Feathered Hat"
+    armor_type: head
+    stars: 3
+    set_name: gambler_feathers
+    base_item: CHAINMAIL_HELMET
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: cooldown_reduction_on_kill
+        cooldown_reduction: 1.5
+        internal_cooldown: 4.0
+    passives:
+      - type: snipers_focus
+        duration: 3.0
+        movement_speed_bonus: 0.10
+        clear_slow_effects: true
+    lore:
+      - "Light armor for those who rely on luck."
+      - "§73★"
+      - "§a2-Piece: +15% Critical Damage"
+      - "§a4-Piece: Cooldown reduction on kill"
+      - "§ePassive: Sniper's Focus"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "III"
+        - "I I"
+        - "   "
+      ingredients:
+        I: IRON_INGOT
+
+  gambler_feathers_chestplate:
+    display_name: "&bGambler's Feathered Vest"
+    armor_type: chest
+    stars: 3
+    set_name: gambler_feathers
+    base_item: CHAINMAIL_CHESTPLATE
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: cooldown_reduction_on_kill
+        cooldown_reduction: 1.5
+        internal_cooldown: 4.0
+    passives:
+      - type: snipers_focus
+        duration: 3.0
+        movement_speed_bonus: 0.10
+        clear_slow_effects: true
+    lore:
+      - "Light armor for those who rely on luck."
+      - "§73★"
+      - "§a2-Piece: +15% Critical Damage"
+      - "§a4-Piece: Cooldown reduction on kill"
+      - "§ePassive: Sniper's Focus"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "I I"
+        - "III"
+        - "III"
+      ingredients:
+        I: IRON_INGOT
+
+  gambler_feathers_leggings:
+    display_name: "&bGambler's Feathered Pants"
+    armor_type: legs
+    stars: 3
+    set_name: gambler_feathers
+    base_item: CHAINMAIL_LEGGINGS
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: cooldown_reduction_on_kill
+        cooldown_reduction: 1.5
+        internal_cooldown: 4.0
+    passives:
+      - type: snipers_focus
+        duration: 3.0
+        movement_speed_bonus: 0.10
+        clear_slow_effects: true
+    lore:
+      - "Light armor for those who rely on luck."
+      - "§73★"
+      - "§a2-Piece: +15% Critical Damage"
+      - "§a4-Piece: Cooldown reduction on kill"
+      - "§ePassive: Sniper's Focus"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "III"
+        - "I I"
+        - "I I"
+      ingredients:
+        I: IRON_INGOT
+
+  gambler_feathers_boots:
+    display_name: "&bGambler's Feathered Boots"
+    armor_type: feet
+    stars: 3
+    set_name: gambler_feathers
+    base_item: CHAINMAIL_BOOTS
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: cooldown_reduction_on_kill
+        cooldown_reduction: 1.5
+        internal_cooldown: 4.0
+    passives:
+      - type: snipers_focus
+        duration: 3.0
+        movement_speed_bonus: 0.10
+        clear_slow_effects: true
+    lore:
+      - "Light armor for those who rely on luck."
+      - "§73★"
+      - "§a2-Piece: +15% Critical Damage"
+      - "§a4-Piece: Cooldown reduction on kill"
+      - "§ePassive: Sniper's Focus"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "   "
+        - "I I"
+        - "I I"
+      ingredients:
+        I: IRON_INGOT
+
+  # 4-Star: Shimenawa's Reminiscence (Strong 2-piece + complex 4-piece + strong Passive)
+  shimenawa_helmet:
+    display_name: "&aShimenawa's Mask"
+    armor_type: head
+    stars: 4
+    set_name: shimenawa_reminiscence
+    base_item: IRON_HELMET
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.20
+      four_piece:
+        type: charged_shot
+        mana_cost_percentage: 0.15
+        bonus_damage_percentage: 0.35
+    passives:
+      - type: pin_down
+        chance: 0.15
+        root_duration: 1.5
+    lore:
+      - "Armor from a forgotten warrior tradition."
+      - "§74★"
+      - "§a2-Piece: +20% Critical Damage"
+      - "§a4-Piece: Charged shots consume mana for bonus damage"
+      - "§ePassive: Pin Down"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "   "
+      ingredients:
+        D: DIAMOND
+
+  shimenawa_chestplate:
+    display_name: "&aShimenawa's Vest"
+    armor_type: chest
+    stars: 4
+    set_name: shimenawa_reminiscence
+    base_item: IRON_CHESTPLATE
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 5.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.20
+      four_piece:
+        type: charged_shot
+        mana_cost_percentage: 0.15
+        bonus_damage_percentage: 0.35
+    passives:
+      - type: pin_down
+        chance: 0.15
+        root_duration: 1.5
+    lore:
+      - "Armor from a forgotten warrior tradition."
+      - "§74★"
+      - "§a2-Piece: +20% Critical Damage"
+      - "§a4-Piece: Charged shots consume mana for bonus damage"
+      - "§ePassive: Pin Down"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "D D"
+        - "DDD"
+        - "DDD"
+      ingredients:
+        D: DIAMOND
+
+  shimenawa_leggings:
+    display_name: "&aShimenawa's Leggings"
+    armor_type: legs
+    stars: 4
+    set_name: shimenawa_reminiscence
+    base_item: IRON_LEGGINGS
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.20
+      four_piece:
+        type: charged_shot
+        mana_cost_percentage: 0.15
+        bonus_damage_percentage: 0.35
+    passives:
+      - type: pin_down
+        chance: 0.15
+        root_duration: 1.5
+    lore:
+      - "Armor from a forgotten warrior tradition."
+      - "§74★"
+      - "§a2-Piece: +20% Critical Damage"
+      - "§a4-Piece: Charged shots consume mana for bonus damage"
+      - "§ePassive: Pin Down"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  shimenawa_boots:
+    display_name: "&aShimenawa's Boots"
+    armor_type: feet
+    stars: 4
+    set_name: shimenawa_reminiscence
+    base_item: IRON_BOOTS
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.20
+      four_piece:
+        type: charged_shot
+        mana_cost_percentage: 0.15
+        bonus_damage_percentage: 0.35
+    passives:
+      - type: pin_down
+        chance: 0.15
+        root_duration: 1.5
+    lore:
+      - "Armor from a forgotten warrior tradition."
+      - "§74★"
+      - "§a2-Piece: +20% Critical Damage"
+      - "§a4-Piece: Charged shots consume mana for bonus damage"
+      - "§ePassive: Pin Down"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "   "
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  # 5-Star: Marechaussee Hunter (Strong 2-piece + game-changing 4-piece + strong Passive)
+  marechaussee_helmet:
+    display_name: "&6Marechaussee Hunter's Hat"
+    armor_type: head
+    stars: 5
+    set_name: marechaussee_hunter
+    base_item: DIAMOND_HELMET
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 4.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.25
+      four_piece:
+        type: crit_rate_on_charged
+        crit_rate_bonus: 0.30
+        crit_damage_bonus: 0.40
+    passives:
+      - type: snipers_focus
+        duration: 3.0
+        movement_speed_bonus: 0.15
+        clear_slow_effects: true
+    lore:
+      - "The uniform of elite monster hunters."
+      - "§65★"
+      - "§a2-Piece: +25% Critical Damage"
+      - "§a4-Piece: Charged attacks gain crit rate + bonus damage"
+      - "§ePassive: Sniper's Focus (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "   "
+      ingredients:
+        N: NETHERITE_INGOT
+
+  marechaussee_chestplate:
+    display_name: "&6Marechaussee Hunter's Coat"
+    armor_type: chest
+    stars: 5
+    set_name: marechaussee_hunter
+    base_item: DIAMOND_CHESTPLATE
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 7.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.25
+      four_piece:
+        type: crit_rate_on_charged
+        crit_rate_bonus: 0.30
+        crit_damage_bonus: 0.40
+    passives:
+      - type: snipers_focus
+        duration: 3.0
+        movement_speed_bonus: 0.15
+        clear_slow_effects: true
+    lore:
+      - "The uniform of elite monster hunters."
+      - "§65★"
+      - "§a2-Piece: +25% Critical Damage"
+      - "§a4-Piece: Charged attacks gain crit rate + bonus damage"
+      - "§ePassive: Sniper's Focus (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "N N"
+        - "NNN"
+        - "NNN"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  marechaussee_leggings:
+    display_name: "&6Marechaussee Hunter's Pants"
+    armor_type: legs
+    stars: 5
+    set_name: marechaussee_hunter
+    base_item: DIAMOND_LEGGINGS
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 6.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.25
+      four_piece:
+        type: crit_rate_on_charged
+        crit_rate_bonus: 0.30
+        crit_damage_bonus: 0.40
+    passives:
+      - type: snipers_focus
+        duration: 3.0
+        movement_speed_bonus: 0.15
+        clear_slow_effects: true
+    lore:
+      - "The uniform of elite monster hunters."
+      - "§65★"
+      - "§a2-Piece: +25% Critical Damage"
+      - "§a4-Piece: Charged attacks gain crit rate + bonus damage"
+      - "§ePassive: Sniper's Focus (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  marechaussee_boots:
+    display_name: "&6Marechaussee Hunter's Boots"
+    armor_type: feet
+    stars: 5
+    set_name: marechaussee_hunter
+    base_item: DIAMOND_BOOTS
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 5.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.25
+      four_piece:
+        type: crit_rate_on_charged
+        crit_rate_bonus: 0.30
+        crit_damage_bonus: 0.40
+    passives:
+      - type: snipers_focus
+        duration: 3.0
+        movement_speed_bonus: 0.15
+        clear_slow_effects: true
+    lore:
+      - "The uniform of elite monster hunters."
+      - "§65★"
+      - "§a2-Piece: +25% Critical Damage"
+      - "§a4-Piece: Charged attacks gain crit rate + bonus damage"
+      - "§ePassive: Sniper's Focus (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "   "
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  # ═══════════════════════════════════════════════════════════════════════════════
+  # 🗡️ ASSASSIN (Burst, Evasion, Debuffs, Aggro manipulation)
+  # ═══════════════════════════════════════════════════════════════════════════════
+
+  # 1-Star: Ragged Shadow Wraps (Base stats only)
+  ragged_shadow_helmet:
+    display_name: "&fRagged Shadow Hood"
+    armor_type: head
+    stars: 1
+    base_item: LEATHER_HELMET
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "Tattered rags for the desperate."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "LLL"
+        - "L L"
+        - "   "
+      ingredients:
+        L: LEATHER
+
+  ragged_shadow_chestplate:
+    display_name: "&fRagged Shadow Wraps"
+    armor_type: chest
+    stars: 1
+    base_item: LEATHER_CHESTPLATE
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    lore:
+      - "Tattered rags for the desperate."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "L L"
+        - "LLL"
+        - "LLL"
+      ingredients:
+        L: LEATHER
+
+  ragged_shadow_leggings:
+    display_name: "&fRagged Shadow Pants"
+    armor_type: legs
+    stars: 1
+    base_item: LEATHER_LEGGINGS
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "Tattered rags for the desperate."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "LLL"
+        - "L L"
+        - "L L"
+      ingredients:
+        L: LEATHER
+
+  ragged_shadow_boots:
+    display_name: "&fRagged Shadow Boots"
+    armor_type: feet
+    stars: 1
+    base_item: LEATHER_BOOTS
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    lore:
+      - "Tattered rags for the desperate."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "   "
+        - "L L"
+        - "L L"
+      ingredients:
+        L: LEATHER
+
+  # 2-Star: Thief's Silk (Base stats + weak 2-piece)
+  thief_silk_helmet:
+    display_name: "&fThief's Silk Hood"
+    armor_type: head
+    stars: 2
+    set_name: thief_silk
+    base_item: LEATHER_HELMET
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.05
+    lore:
+      - "Silk garments favored by thieves."
+      - "§72★"
+      - "§a2-Piece: +5% Physical Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "CCC"
+        - "C C"
+        - "   "
+      ingredients:
+        C: IRON_INGOT
+
+  thief_silk_chestplate:
+    display_name: "&fThief's Silk Vest"
+    armor_type: chest
+    stars: 2
+    set_name: thief_silk
+    base_item: LEATHER_CHESTPLATE
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.05
+    lore:
+      - "Silk garments favored by thieves."
+      - "§72★"
+      - "§a2-Piece: +5% Physical Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "C C"
+        - "CCC"
+        - "CCC"
+      ingredients:
+        C: IRON_INGOT
+
+  thief_silk_leggings:
+    display_name: "&fThief's Silk Pants"
+    armor_type: legs
+    stars: 2
+    set_name: thief_silk
+    base_item: LEATHER_LEGGINGS
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.05
+    lore:
+      - "Silk garments favored by thieves."
+      - "§72★"
+      - "§a2-Piece: +5% Physical Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "CCC"
+        - "C C"
+        - "C C"
+      ingredients:
+        C: IRON_INGOT
+
+  thief_silk_boots:
+    display_name: "&fThief's Silk Boots"
+    armor_type: feet
+    stars: 2
+    set_name: thief_silk
+    base_item: LEATHER_BOOTS
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 1.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.05
+    lore:
+      - "Silk garments favored by thieves."
+      - "§72★"
+      - "§a2-Piece: +5% Physical Damage"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "   "
+        - "C C"
+        - "C C"
+      ingredients:
+        C: IRON_INGOT
+
+  # 3-Star: Martial Artist's Gi (Base stats + 2-piece + 4-piece + Passive)
+  martial_artist_helmet:
+    display_name: "&bMartial Artist's Headband"
+    armor_type: head
+    stars: 3
+    set_name: martial_artist_gi
+    base_item: CHAINMAIL_HELMET
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+      four_piece:
+        type: damage_to_full_health
+        damage_bonus: 0.20
+    passives:
+      - type: phantom_cloak
+        aggro_reduction_percentage: 0.30
+    lore:
+      - "Traditional training attire for martial artists."
+      - "§73★"
+      - "§a2-Piece: +10% Physical Damage"
+      - "§a4-Piece: +20% Damage to full health enemies"
+      - "§ePassive: Phantom Cloak"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "III"
+        - "I I"
+        - "   "
+      ingredients:
+        I: IRON_INGOT
+
+  martial_artist_chestplate:
+    display_name: "&bMartial Artist's Gi"
+    armor_type: chest
+    stars: 3
+    set_name: martial_artist_gi
+    base_item: CHAINMAIL_CHESTPLATE
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+      four_piece:
+        type: damage_to_full_health
+        damage_bonus: 0.20
+    passives:
+      - type: phantom_cloak
+        aggro_reduction_percentage: 0.30
+    lore:
+      - "Traditional training attire for martial artists."
+      - "§73★"
+      - "§a2-Piece: +10% Physical Damage"
+      - "§a4-Piece: +20% Damage to full health enemies"
+      - "§ePassive: Phantom Cloak"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "I I"
+        - "III"
+        - "III"
+      ingredients:
+        I: IRON_INGOT
+
+  martial_artist_leggings:
+    display_name: "&bMartial Artist's Pants"
+    armor_type: legs
+    stars: 3
+    set_name: martial_artist_gi
+    base_item: CHAINMAIL_LEGGINGS
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+      four_piece:
+        type: damage_to_full_health
+        damage_bonus: 0.20
+    passives:
+      - type: phantom_cloak
+        aggro_reduction_percentage: 0.30
+    lore:
+      - "Traditional training attire for martial artists."
+      - "§73★"
+      - "§a2-Piece: +10% Physical Damage"
+      - "§a4-Piece: +20% Damage to full health enemies"
+      - "§ePassive: Phantom Cloak"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "III"
+        - "I I"
+        - "I I"
+      ingredients:
+        I: IRON_INGOT
+
+  martial_artist_boots:
+    display_name: "&bMartial Artist's Boots"
+    armor_type: feet
+    stars: 3
+    set_name: martial_artist_gi
+    base_item: CHAINMAIL_BOOTS
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.10
+      four_piece:
+        type: damage_to_full_health
+        damage_bonus: 0.20
+    passives:
+      - type: phantom_cloak
+        aggro_reduction_percentage: 0.30
+    lore:
+      - "Traditional training attire for martial artists."
+      - "§73★"
+      - "§a2-Piece: +10% Physical Damage"
+      - "§a4-Piece: +20% Damage to full health enemies"
+      - "§ePassive: Phantom Cloak"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "   "
+        - "I I"
+        - "I I"
+      ingredients:
+        I: IRON_INGOT
+
+  # 4-Star: Pale Flame (Strong 2-piece + complex 4-piece + strong Passive)
+  pale_flame_helmet:
+    display_name: "&aPale Flame Mask"
+    armor_type: head
+    stars: 4
+    set_name: pale_flame
+    base_item: IRON_HELMET
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: shadow_stacks
+        max_stacks: 2
+        damage_per_stack: 0.09
+        defense_per_stack: 0.09
+        stack_duration: 8.0
+    passives:
+      - type: smoke_bomb
+        chance: 0.20
+        invisibility_duration: 2.0
+        movement_speed_bonus: 0.30
+    lore:
+      - "Armor that burns with a pale, cold fire."
+      - "§74★"
+      - "§a2-Piece: +15% Physical Damage & +10% Crit Rate"
+      - "§a4-Piece: Shadow stacks from behind/debuffed enemies"
+      - "§ePassive: Smoke Bomb"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "   "
+      ingredients:
+        D: DIAMOND
+
+  pale_flame_chestplate:
+    display_name: "&aPale Flame Vest"
+    armor_type: chest
+    stars: 4
+    set_name: pale_flame
+    base_item: IRON_CHESTPLATE
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 5.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: shadow_stacks
+        max_stacks: 2
+        damage_per_stack: 0.09
+        defense_per_stack: 0.09
+        stack_duration: 8.0
+    passives:
+      - type: smoke_bomb
+        chance: 0.20
+        invisibility_duration: 2.0
+        movement_speed_bonus: 0.30
+    lore:
+      - "Armor that burns with a pale, cold fire."
+      - "§74★"
+      - "§a2-Piece: +15% Physical Damage & +10% Crit Rate"
+      - "§a4-Piece: Shadow stacks from behind/debuffed enemies"
+      - "§ePassive: Smoke Bomb"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "D D"
+        - "DDD"
+        - "DDD"
+      ingredients:
+        D: DIAMOND
+
+  pale_flame_leggings:
+    display_name: "&aPale Flame Leggings"
+    armor_type: legs
+    stars: 4
+    set_name: pale_flame
+    base_item: IRON_LEGGINGS
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: shadow_stacks
+        max_stacks: 2
+        damage_per_stack: 0.09
+        defense_per_stack: 0.09
+        stack_duration: 8.0
+    passives:
+      - type: smoke_bomb
+        chance: 0.20
+        invisibility_duration: 2.0
+        movement_speed_bonus: 0.30
+    lore:
+      - "Armor that burns with a pale, cold fire."
+      - "§74★"
+      - "§a2-Piece: +15% Physical Damage & +10% Crit Rate"
+      - "§a4-Piece: Shadow stacks from behind/debuffed enemies"
+      - "§ePassive: Smoke Bomb"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  pale_flame_boots:
+    display_name: "&aPale Flame Boots"
+    armor_type: feet
+    stars: 4
+    set_name: pale_flame
+    base_item: IRON_BOOTS
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.15
+      four_piece:
+        type: shadow_stacks
+        max_stacks: 2
+        damage_per_stack: 0.09
+        defense_per_stack: 0.09
+        stack_duration: 8.0
+    passives:
+      - type: smoke_bomb
+        chance: 0.20
+        invisibility_duration: 2.0
+        movement_speed_bonus: 0.30
+    lore:
+      - "Armor that burns with a pale, cold fire."
+      - "§74★"
+      - "§a2-Piece: +15% Physical Damage & +10% Crit Rate"
+      - "§a4-Piece: Shadow stacks from behind/debuffed enemies"
+      - "§ePassive: Smoke Bomb"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "   "
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  # 5-Star: Golden Troupe (Strong 2-piece + game-changing 4-piece + strong Passive)
+  golden_troupe_helmet:
+    display_name: "&6Golden Troupe Mask"
+    armor_type: head
+    stars: 5
+    set_name: golden_troupe
+    base_item: DIAMOND_HELMET
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 4.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: backstab_ignore_armor
+        armor_ignore_percentage: 0.30
+        true_damage_percentage: 0.50
+    passives:
+      - type: phantom_strike
+        no_damage_threshold: 5.0
+        true_damage_percentage: 0.25
+    lore:
+      - "The golden mask of a legendary assassin troupe."
+      - "§65★"
+      - "§a2-Piece: +18% Physical Damage & +10% Crit Rate"
+      - "§a4-Piece: Backstab/invisible attacks ignore armor + true damage"
+      - "§ePassive: Phantom Strike"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "   "
+      ingredients:
+        N: NETHERITE_INGOT
+
+  golden_troupe_chestplate:
+    display_name: "&6Golden Troupe Vest"
+    armor_type: chest
+    stars: 5
+    set_name: golden_troupe
+    base_item: DIAMOND_CHESTPLATE
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 7.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: backstab_ignore_armor
+        armor_ignore_percentage: 0.30
+        true_damage_percentage: 0.50
+    passives:
+      - type: phantom_strike
+        no_damage_threshold: 5.0
+        true_damage_percentage: 0.25
+    lore:
+      - "The golden mask of a legendary assassin troupe."
+      - "§65★"
+      - "§a2-Piece: +18% Physical Damage & +10% Crit Rate"
+      - "§a4-Piece: Backstab/invisible attacks ignore armor + true damage"
+      - "§ePassive: Phantom Strike"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "N N"
+        - "NNN"
+        - "NNN"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  golden_troupe_leggings:
+    display_name: "&6Golden Troupe Leggings"
+    armor_type: legs
+    stars: 5
+    set_name: golden_troupe
+    base_item: DIAMOND_LEGGINGS
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 6.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: backstab_ignore_armor
+        armor_ignore_percentage: 0.30
+        true_damage_percentage: 0.50
+    passives:
+      - type: phantom_strike
+        no_damage_threshold: 5.0
+        true_damage_percentage: 0.25
+    lore:
+      - "The golden mask of a legendary assassin troupe."
+      - "§65★"
+      - "§a2-Piece: +18% Physical Damage & +10% Crit Rate"
+      - "§a4-Piece: Backstab/invisible attacks ignore armor + true damage"
+      - "§ePassive: Phantom Strike"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  golden_troupe_boots:
+    display_name: "&6Golden Troupe Boots"
+    armor_type: feet
+    stars: 5
+    set_name: golden_troupe
+    base_item: DIAMOND_BOOTS
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 5.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: attack_damage
+        percentage: 0.18
+      four_piece:
+        type: backstab_ignore_armor
+        armor_ignore_percentage: 0.30
+        true_damage_percentage: 0.50
+    passives:
+      - type: phantom_strike
+        no_damage_threshold: 5.0
+        true_damage_percentage: 0.25
+    lore:
+      - "The golden mask of a legendary assassin troupe."
+      - "§65★"
+      - "§a2-Piece: +18% Physical Damage & +10% Crit Rate"
+      - "§a4-Piece: Backstab/invisible attacks ignore armor + true damage"
+      - "§ePassive: Phantom Strike"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "   "
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  # ═══════════════════════════════════════════════════════════════════════════════
+  # 🛡️ TANK (Health, Aggro, Team Shielding, Mitigation)
+  # ═══════════════════════════════════════════════════════════════════════════════
+
+  # 1-Star: Squire's Iron (Base stats only)
+  squire_iron_helmet:
+    display_name: "&fSquire's Iron Helm"
+    armor_type: head
+    stars: 1
+    base_item: IRON_HELMET
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    lore:
+      - "Basic iron armor for squires."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "III"
+        - "I I"
+        - "   "
+      ingredients:
+        I: IRON_INGOT
+
+  squire_iron_chestplate:
+    display_name: "&fSquire's Iron Chestplate"
+    armor_type: chest
+    stars: 1
+    base_item: IRON_CHESTPLATE
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    lore:
+      - "Basic iron armor for squires."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "I I"
+        - "III"
+        - "III"
+      ingredients:
+        I: IRON_INGOT
+
+  squire_iron_leggings:
+    display_name: "&fSquire's Iron Leggings"
+    armor_type: legs
+    stars: 1
+    base_item: IRON_LEGGINGS
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    lore:
+      - "Basic iron armor for squires."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "III"
+        - "I I"
+        - "I I"
+      ingredients:
+        I: IRON_INGOT
+
+  squire_iron_boots:
+    display_name: "&fSquire's Iron Boots"
+    armor_type: feet
+    stars: 1
+    base_item: IRON_BOOTS
+    custom_model_data: -1
+    durability: 250
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    lore:
+      - "Basic iron armor for squires."
+      - "§7★"
+      - "§4Durability: 250 / 250"
+    recipe:
+      shape:
+        - "   "
+        - "I I"
+        - "I I"
+      ingredients:
+        I: IRON_INGOT
+
+  # 2-Star: Footsoldier's Plate (Base stats + weak 2-piece)
+  footsoldier_plate_helmet:
+    display_name: "&fFootsoldier's Helm"
+    armor_type: head
+    stars: 2
+    set_name: footsoldier_plate
+    base_item: IRON_HELMET
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 2.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.10
+    lore:
+      - "Standard issue footsoldier armor."
+      - "§72★"
+      - "§a2-Piece: +10% Maximum Health"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "   "
+      ingredients:
+        D: DIAMOND
+
+  footsoldier_plate_chestplate:
+    display_name: "&fFootsoldier's Chestplate"
+    armor_type: chest
+    stars: 2
+    set_name: footsoldier_plate
+    base_item: IRON_CHESTPLATE
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 5.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.10
+    lore:
+      - "Standard issue footsoldier armor."
+      - "§72★"
+      - "§a2-Piece: +10% Maximum Health"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "D D"
+        - "DDD"
+        - "DDD"
+      ingredients:
+        D: DIAMOND
+
+  footsoldier_plate_leggings:
+    display_name: "&fFootsoldier's Leggings"
+    armor_type: legs
+    stars: 2
+    set_name: footsoldier_plate
+    base_item: IRON_LEGGINGS
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.10
+    lore:
+      - "Standard issue footsoldier armor."
+      - "§72★"
+      - "§a2-Piece: +10% Maximum Health"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  footsoldier_plate_boots:
+    display_name: "&fFootsoldier's Boots"
+    armor_type: feet
+    stars: 2
+    set_name: footsoldier_plate
+    base_item: IRON_BOOTS
+    custom_model_data: -1
+    durability: 500
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.10
+    lore:
+      - "Standard issue footsoldier armor."
+      - "§72★"
+      - "§a2-Piece: +10% Maximum Health"
+      - "§4Durability: 500 / 500"
+    recipe:
+      shape:
+        - "   "
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  # 3-Star: Defender's Will (Base stats + 2-piece + 4-piece + Passive)
+  defender_will_helmet:
+    display_name: "Defender's Helm"
+    armor_type: head
+    stars: 3
+    set_name: defender_will
+    base_item: IRON_HELMET
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 3.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.15
+      four_piece:
+        type: health_regen
+        regen_percentage: 0.03
+        regen_interval: 6.0
+        damage_pause_duration: 3.0
+    passives:
+      - type: unyielding_fortress
+        health_threshold: 0.50
+        armor_boost_percentage: 0.30
+        toughness_boost_percentage: 0.30
+        reflect_percentage: 0.0
+        cooldown: 15.0
+    lore:
+      - "Armor for those who stand their ground."
+      - "§73★"
+      - "§a2-Piece: +15% Maximum Health"
+      - "§a4-Piece: Regen 3% HP every 6s out of combat"
+      - "§ePassive: Unyielding Fortress"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "   "
+      ingredients:
+        D: DIAMOND
+
+  defender_will_chestplate:
+    display_name: "Defender's Chestplate"
+    armor_type: chest
+    stars: 3
+    set_name: defender_will
+    base_item: IRON_CHESTPLATE
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 6.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.15
+      four_piece:
+        type: health_regen
+        regen_percentage: 0.03
+        regen_interval: 6.0
+        damage_pause_duration: 3.0
+    passives:
+      - type: unyielding_fortress
+        health_threshold: 0.50
+        armor_boost_percentage: 0.30
+        toughness_boost_percentage: 0.30
+        reflect_percentage: 0.0
+        cooldown: 15.0
+    lore:
+      - "Armor for those who stand their ground."
+      - "§73★"
+      - "§a2-Piece: +15% Maximum Health"
+      - "§a4-Piece: Regen 3% HP every 6s out of combat"
+      - "§ePassive: Unyielding Fortress"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "D D"
+        - "DDD"
+        - "DDD"
+      ingredients:
+        D: DIAMOND
+
+  defender_will_leggings:
+    display_name: "Defender's Leggings"
+    armor_type: legs
+    stars: 3
+    set_name: defender_will
+    base_item: IRON_LEGGINGS
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 5.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.15
+      four_piece:
+        type: health_regen
+        regen_percentage: 0.03
+        regen_interval: 6.0
+        damage_pause_duration: 3.0
+    passives:
+      - type: unyielding_fortress
+        health_threshold: 0.50
+        armor_boost_percentage: 0.30
+        toughness_boost_percentage: 0.30
+        reflect_percentage: 0.0
+        cooldown: 15.0
+    lore:
+      - "Armor for those who stand their ground."
+      - "§73★"
+      - "§a2-Piece: +15% Maximum Health"
+      - "§a4-Piece: Regen 3% HP every 6s out of combat"
+      - "§ePassive: Unyielding Fortress"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "DDD"
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  defender_will_boots:
+    display_name: "Defender's Boots"
+    armor_type: feet
+    stars: 3
+    set_name: defender_will
+    base_item: IRON_BOOTS
+    custom_model_data: -1
+    durability: 1250
+    stats:
+      armor_points: 4.0
+      armor_toughness: 0.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.15
+      four_piece:
+        type: health_regen
+        regen_percentage: 0.03
+        regen_interval: 6.0
+        damage_pause_duration: 3.0
+    passives:
+      - type: unyielding_fortress
+        health_threshold: 0.50
+        armor_boost_percentage: 0.30
+        toughness_boost_percentage: 0.30
+        reflect_percentage: 0.0
+        cooldown: 15.0
+    lore:
+      - "Armor for those who stand their ground."
+      - "§73★"
+      - "§a2-Piece: +15% Maximum Health"
+      - "§a4-Piece: Regen 3% HP every 6s out of combat"
+      - "§ePassive: Unyielding Fortress"
+      - "§4Durability: 1250 / 1250"
+    recipe:
+      shape:
+        - "   "
+        - "D D"
+        - "D D"
+      ingredients:
+        D: DIAMOND
+
+  # 4-Star: Husk of Opulent Dreams (Strong 2-piece + complex 4-piece + strong Passive)
+  husk_opulent_helmet:
+    display_name: "&aHusk of Opulent Dreams Helm"
+    armor_type: head
+    stars: 4
+    set_name: husk_opulent
+    base_item: DIAMOND_HELMET
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 4.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.20
+      four_piece:
+        type: fortification_stacks
+        max_stacks: 4
+        defense_per_stack: 0.06
+        movement_speed_penalty_per_stack: 0.05
+        stack_decay_time: 8.0
+    passives:
+      - type: thorns
+        reflect_percentage: 0.10
+    lore:
+      - "Ancient armor that grows stronger with each blow."
+      - "§74★"
+      - "§a2-Piece: +20% Maximum Health"
+      - "§a4-Piece: Fortification stacks on hit (slows you)"
+      - "§ePassive: Thorns"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "   "
+      ingredients:
+        N: NETHERITE_INGOT
+
+  husk_opulent_chestplate:
+    display_name: "&aHusk of Opulent Dreams Chestplate"
+    armor_type: chest
+    stars: 4
+    set_name: husk_opulent
+    base_item: DIAMOND_CHESTPLATE
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 8.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.20
+      four_piece:
+        type: fortification_stacks
+        max_stacks: 4
+        defense_per_stack: 0.06
+        movement_speed_penalty_per_stack: 0.05
+        stack_decay_time: 8.0
+    passives:
+      - type: thorns
+        reflect_percentage: 0.10
+    lore:
+      - "Ancient armor that grows stronger with each blow."
+      - "§74★"
+      - "§a2-Piece: +20% Maximum Health"
+      - "§a4-Piece: Fortification stacks on hit (slows you)"
+      - "§ePassive: Thorns"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "N N"
+        - "NNN"
+        - "NNN"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  husk_opulent_leggings:
+    display_name: "&aHusk of Opulent Dreams Leggings"
+    armor_type: legs
+    stars: 4
+    set_name: husk_opulent
+    base_item: DIAMOND_LEGGINGS
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 7.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.20
+      four_piece:
+        type: fortification_stacks
+        max_stacks: 4
+        defense_per_stack: 0.06
+        movement_speed_penalty_per_stack: 0.05
+        stack_decay_time: 8.0
+    passives:
+      - type: thorns
+        reflect_percentage: 0.10
+    lore:
+      - "Ancient armor that grows stronger with each blow."
+      - "§74★"
+      - "§a2-Piece: +20% Maximum Health"
+      - "§a4-Piece: Fortification stacks on hit (slows you)"
+      - "§ePassive: Thorns"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  husk_opulent_boots:
+    display_name: "&aHusk of Opulent Dreams Boots"
+    armor_type: feet
+    stars: 4
+    set_name: husk_opulent
+    base_item: DIAMOND_BOOTS
+    custom_model_data: -1
+    durability: 1800
+    stats:
+      armor_points: 6.0
+      armor_toughness: 1.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.20
+      four_piece:
+        type: fortification_stacks
+        max_stacks: 4
+        defense_per_stack: 0.06
+        movement_speed_penalty_per_stack: 0.05
+        stack_decay_time: 8.0
+    passives:
+      - type: thorns
+        reflect_percentage: 0.10
+    lore:
+      - "Ancient armor that grows stronger with each blow."
+      - "§74★"
+      - "§a2-Piece: +20% Maximum Health"
+      - "§a4-Piece: Fortification stacks on hit (slows you)"
+      - "§ePassive: Thorns"
+      - "§4Durability: 1800 / 1800"
+    recipe:
+      shape:
+        - "   "
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  # 5-Star: Vourukasha's Glow (Strong 2-piece + game-changing 4-piece + strong Passive)
+  vourukasha_helmet:
+    display_name: "&6Vourukasha's Glow Helm"
+    armor_type: head
+    stars: 5
+    set_name: vourukasha_glow
+    base_item: NETHERITE_HELMET
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 5.0
+      armor_toughness: 3.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.25
+      four_piece:
+        type: taunt_and_shield
+        taunt_radius: 10.0
+        taunt_duration: 3.0
+        shield_radius: 12.0
+        shield_percentage: 0.08
+        shield_duration: 5.0
+        cooldown: 5.0
+    passives:
+      - type: unyielding_fortress
+        health_threshold: 0.50
+        armor_boost_percentage: 0.30
+        toughness_boost_percentage: 0.30
+        reflect_percentage: 0.15
+        cooldown: 15.0
+    lore:
+      - "The radiant armor of Vourukasha's chosen."
+      - "§65★"
+      - "§a2-Piece: +25% Maximum Health"
+      - "§a4-Piece: Taunt enemies + shield party on damage taken"
+      - "§ePassive: Unyielding Fortress (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "   "
+      ingredients:
+        N: NETHERITE_INGOT
+
+  vourukasha_chestplate:
+    display_name: "&6Vourukasha's Glow Chestplate"
+    armor_type: chest
+    stars: 5
+    set_name: vourukasha_glow
+    base_item: NETHERITE_CHESTPLATE
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 10.0
+      armor_toughness: 3.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.25
+      four_piece:
+        type: taunt_and_shield
+        taunt_radius: 10.0
+        taunt_duration: 3.0
+        shield_radius: 12.0
+        shield_percentage: 0.08
+        shield_duration: 5.0
+        cooldown: 5.0
+    passives:
+      - type: unyielding_fortress
+        health_threshold: 0.50
+        armor_boost_percentage: 0.30
+        toughness_boost_percentage: 0.30
+        reflect_percentage: 0.15
+        cooldown: 15.0
+    lore:
+      - "The radiant armor of Vourukasha's chosen."
+      - "§65★"
+      - "§a2-Piece: +25% Maximum Health"
+      - "§a4-Piece: Taunt enemies + shield party on damage taken"
+      - "§ePassive: Unyielding Fortress (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "N N"
+        - "NNN"
+        - "NNN"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  vourukasha_leggings:
+    display_name: "&6Vourukasha's Glow Leggings"
+    armor_type: legs
+    stars: 5
+    set_name: vourukasha_glow
+    base_item: NETHERITE_LEGGINGS
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 9.0
+      armor_toughness: 3.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.25
+      four_piece:
+        type: taunt_and_shield
+        taunt_radius: 10.0
+        taunt_duration: 3.0
+        shield_radius: 12.0
+        shield_percentage: 0.08
+        shield_duration: 5.0
+        cooldown: 5.0
+    passives:
+      - type: unyielding_fortress
+        health_threshold: 0.50
+        armor_boost_percentage: 0.30
+        toughness_boost_percentage: 0.30
+        reflect_percentage: 0.15
+        cooldown: 15.0
+    lore:
+      - "The radiant armor of Vourukasha's chosen."
+      - "§65★"
+      - "§a2-Piece: +25% Maximum Health"
+      - "§a4-Piece: Taunt enemies + shield party on damage taken"
+      - "§ePassive: Unyielding Fortress (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "NNN"
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT
+
+  vourukasha_boots:
+    display_name: "&6Vourukasha's Glow Boots"
+    armor_type: feet
+    stars: 5
+    set_name: vourukasha_glow
+    base_item: NETHERITE_BOOTS
+    custom_model_data: -1
+    durability: 3000
+    stats:
+      armor_points: 7.0
+      armor_toughness: 3.0
+    set_bonuses:
+      two_piece:
+        type: percentage_stat_boost
+        stat: max_health
+        percentage: 0.25
+      four_piece:
+        type: taunt_and_shield
+        taunt_radius: 10.0
+        taunt_duration: 3.0
+        shield_radius: 12.0
+        shield_percentage: 0.08
+        shield_duration: 5.0
+        cooldown: 5.0
+    passives:
+      - type: unyielding_fortress
+        health_threshold: 0.50
+        armor_boost_percentage: 0.30
+        toughness_boost_percentage: 0.30
+        reflect_percentage: 0.15
+        cooldown: 15.0
+    lore:
+      - "The radiant armor of Vourukasha's chosen."
+      - "§65★"
+      - "§a2-Piece: +25% Maximum Health"
+      - "§a4-Piece: Taunt enemies + shield party on damage taken"
+      - "§ePassive: Unyielding Fortress (Enhanced)"
+      - "§4Durability: 3000 / 3000"
+    recipe:
+      shape:
+        - "   "
+        - "N N"
+        - "N N"
+      ingredients:
+        N: NETHERITE_INGOT

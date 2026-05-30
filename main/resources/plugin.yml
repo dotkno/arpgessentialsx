@@ -1,0 +1,19 @@
+name: ARPGEssentialsX
+version: '${project.version}'
+main: com.ahren.arpgessentialsx.ARPGEssentialsX
+api-version: '1.21'
+softdepend:
+  - AuthMe
+description: A full RPG class, abilities, spell system inspired by Dark Souls.
+author: renyuzaki and nerha on discord!
+
+commands:
+  arpg:
+    description: Main command for ARPGEssentialsX
+    usage: /arpg class <pick|reset> [player] | /arpg party | /arpg admin
+  class:
+    description: Class management commands
+    usage: /class pick | /class reset [player]
+  party:
+    description: Party management commands
+    usage: /party | /party name <name> | /party invite <player> | /party invite <accept|decline> | /party request <accept|decline> | /party leave

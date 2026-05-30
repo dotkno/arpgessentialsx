@@ -1,0 +1,23 @@
+# ==========================================
+# Custom Crafting Materials
+# ==========================================
+# Naming: mat1_ (Basic), mat2_ (Advanced), mat3_ (Endgame)
+# These are used as ingredients in Weapon and Relic recipes.
+# ==========================================
+
+items:
+  mat2_crucible_ingot:
+    display_name: "&6Pure Netherite"
+    material: IRON_INGOT
+    custom_model_data: 201
+    lore:
+      - "&7An advanced material forged in the hidden depths of the Nether."
+      - "&8Used to craft powerful weapons."
+    recipe:
+      shape:
+        - "DND"
+        - "NNN"
+        - "DND"
+      ingredients:
+        N: NETHERITE_INGOT
+        D: DIAMOND
