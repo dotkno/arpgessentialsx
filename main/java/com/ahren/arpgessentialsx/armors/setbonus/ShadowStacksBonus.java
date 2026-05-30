@@ -106,9 +106,9 @@ public final class ShadowStacksBonus implements ArmorSetBonus {
             double baseDef = player.getAttribute(Attribute.GENERIC_ARMOR).getBaseValue();
             
             player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).addModifier(new AttributeModifier(
-                dmgKey, baseDmg * dmgPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER));
+                dmgKey, baseDmg * dmgPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER, org.bukkit.inventory.EquipmentSlotGroup.ANY));
             player.getAttribute(Attribute.GENERIC_ARMOR).addModifier(new AttributeModifier(
-                defKey, baseDef * defPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER));
+                defKey, baseDef * defPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER, org.bukkit.inventory.EquipmentSlotGroup.ANY));
         }
     }
 

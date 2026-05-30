@@ -34,16 +34,18 @@ public final class DamageReductionBonus implements ArmorSetBonus {
         player.getAttribute(Attribute.GENERIC_ARMOR).addModifier(new AttributeModifier(
                 key,
                 amount * 10, // Scale to armor points
-                AttributeModifier.Operation.ADD_NUMBER));
+                AttributeModifier.Operation.ADD_NUMBER,
+                org.bukkit.inventory.EquipmentSlotGroup.ANY));
     }
 
     @Override
     public void remove(Player player, ConfigurationSection config, int pieces, String setName) {
         // Use composite key: setName_pieces (e.g., "Dragon_2pc")
         String modifierName = setName + "_" + pieces + "pc_damage_reduction";
+        NamespacedKey key = new NamespacedKey("arpgessentialsx", modifierName);
         
         player.getAttribute(Attribute.GENERIC_ARMOR).getModifiers().removeIf(
-                modifier -> modifier.getKey().equals(new NamespacedKey("arpgessentialsx", modifierName)));
+                modifier -> modifier.getKey().equals(key));
     }
 
     @Override

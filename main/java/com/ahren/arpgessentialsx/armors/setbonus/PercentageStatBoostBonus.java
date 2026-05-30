@@ -63,7 +63,8 @@ public final class PercentageStatBoostBonus implements ArmorSetBonus {
             player.getAttribute(attribute).addModifier(new AttributeModifier(
                     key,
                     bonusAmount,
-                    operation));
+                    operation,
+                    org.bukkit.inventory.EquipmentSlotGroup.ANY));
             
             // For max_health, restore health percentage
             if (attribute == Attribute.GENERIC_MAX_HEALTH) {

@@ -107,9 +107,9 @@ public final class MomentumStacksBonus implements ArmorSetBonus {
             double baseMS = player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).getBaseValue();
             
             player.getAttribute(Attribute.GENERIC_ATTACK_SPEED).addModifier(new AttributeModifier(
-                asKey, baseAS * asPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER));
+                asKey, baseAS * asPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER, org.bukkit.inventory.EquipmentSlotGroup.ANY));
             player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).addModifier(new AttributeModifier(
-                msKey, baseMS * msPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER));
+                msKey, baseMS * msPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER, org.bukkit.inventory.EquipmentSlotGroup.ANY));
         }
     }
 

@@ -63,7 +63,8 @@ public final class ConditionalAttackSpeedBonus implements ArmorSetBonus {
                     player.getAttribute(Attribute.GENERIC_ATTACK_SPEED).addModifier(new AttributeModifier(
                             key,
                             bonusAmount,
-                            AttributeModifier.Operation.ADD_NUMBER));
+                            AttributeModifier.Operation.ADD_NUMBER,
+                            org.bukkit.inventory.EquipmentSlotGroup.ANY));
                 }
             }
         };

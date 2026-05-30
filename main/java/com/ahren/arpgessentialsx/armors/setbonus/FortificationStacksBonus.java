@@ -104,9 +104,9 @@ public final class FortificationStacksBonus implements ArmorSetBonus {
             double baseMS = player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).getBaseValue();
             
             player.getAttribute(Attribute.GENERIC_ARMOR).addModifier(new AttributeModifier(
-                defKey, baseDef * defPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER));
+                defKey, baseDef * defPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER, org.bukkit.inventory.EquipmentSlotGroup.ANY));
             player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).addModifier(new AttributeModifier(
-                msKey, -baseMS * msPenaltyPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER));
+                msKey, -baseMS * msPenaltyPerStack * stacks, AttributeModifier.Operation.ADD_NUMBER, org.bukkit.inventory.EquipmentSlotGroup.ANY));
         }
     }
 

@@ -49,11 +49,15 @@ public final class PlayerQuitListener implements Listener {
         Player player = event.getPlayer();
         UUID uuid = player.getUniqueId();
 
-        // Save set bonuses to database
-        plugin.getArmorEquipListener().getSetBonusManager().savePlayerSetBonuses(uuid);
+        // Save armor counts to database
+        plugin.getArmorEquipListener().getSetBonusManager().savePlayerArmorCounts(uuid);
+
+        // Strip all set bonus modifiers
+        plugin.getArmorEquipListener().getSetBonusManager().stripAllModifiers(player);
 
         // Cleanup set bonus state
         plugin.getSetBonusEventListener().clearPlayer(uuid);
+        plugin.getArmorEquipListener().getSetBonusManager().clearPlayerData(uuid);
 
         Party party = plugin.getPartyManager().getPartyOf(uuid);
         if (party == null) return; // Not in a party — nothing to do
