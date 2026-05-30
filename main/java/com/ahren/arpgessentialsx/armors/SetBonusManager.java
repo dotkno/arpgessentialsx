@@ -1,25 +1,23 @@
 package com.ahren.arpgessentialsx.armors;
 
 import com.ahren.arpgessentialsx.ARPGEssentialsX;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeInstance;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Manages set bonus tracking and application for players.
- * Uses independent set evaluation with thread-safe armor piece count tracking.
+ * Uses a clear-then-apply strategy to ensure airtight modifier management.
  */
 public class SetBonusManager {
 
     private final ARPGEssentialsX plugin;
     private final ArmorManager armorManager;
-
-    // Track armor piece counts per player: UUID -> Map<SetID -> Count>
-    private final Map<UUID, Map<String, Integer>> playerArmorCounts = new ConcurrentHashMap<>();
 
     public SetBonusManager(ARPGEssentialsX plugin, ArmorManager armorManager) {
         this.plugin = plugin;
@@ -28,66 +26,113 @@ public class SetBonusManager {
 
     /**
      * Updates set bonuses based on currently equipped armor.
-     * Uses independent set evaluation comparing old vs new piece counts.
+     * Uses clear-then-apply strategy: clear ALL arpgessentialsx modifiers, then re-apply based on current gear.
      */
     public void updateSetBonuses(Player player, Map<ArmorType, Armor> equippedArmor) {
-        UUID uuid = player.getUniqueId();
+        plugin.getLogger().info("[SetBonusManager] Updating set bonuses for player " + player.getName());
 
-        // Calculate NEW armor piece count per set from current gear
-        Map<String, Integer> newCounts = new HashMap<>();
+        // Step 1: Clear ALL existing 'arpgessentialsx' attributes from the player
+        stripAllModifiers(player);
+
+        // Step 2: Count pieces per set from current gear
+        Map<String, Integer> setCounts = new HashMap<>();
         Map<String, Armor> representativeArmor = new HashMap<>();
 
         for (Armor armor : equippedArmor.values()) {
             if (armor.hasSetName()) {
                 String setName = armor.getSetName();
-                newCounts.merge(setName, 1, Integer::sum);
+                setCounts.merge(setName, 1, Integer::sum);
                 representativeArmor.putIfAbsent(setName, armor);
             }
         }
 
-        // Retrieve OLD armor piece count map for that player
-        Map<String, Integer> oldCounts = playerArmorCounts.get(uuid);
-        if (oldCounts == null) {
-            oldCounts = new HashMap<>();
-        }
+        // Step 3: Apply new valid 2pc or 4pc modifiers based ONLY on the fresh count
+        for (Map.Entry<String, Integer> entry : setCounts.entrySet()) {
+            String setID = entry.getKey();
+            int count = entry.getValue();
+            Armor armor = representativeArmor.get(setID);
 
-        // Get all possible Armor Set IDs from the system
-        Map<String, Armor> allArmors = new HashMap<>();
-        for (Armor armor : armorManager.getAllArmors()) {
-            if (armor.hasSetName()) {
-                allArmors.put(armor.getSetName(), armor);
-            }
-        }
-
-        // Loop through every possible Armor Set ID and compare independently
-        for (String setID : allArmors.keySet()) {
-            int oldCount = oldCounts.getOrDefault(setID, 0);
-            int newCount = newCounts.getOrDefault(setID, 0);
-            Armor armor = allArmors.get(setID);
-
-            // OLD count >= 2 AND NEW count < 2 -> Remove 2-piece bonus
-            if (oldCount >= 2 && newCount < 2 && armor.hasTwoPieceBonus()) {
-                remove2PieceBonus(player, setID, armor.getTwoPieceBonusConfig());
-            }
-
-            // OLD count >= 4 AND NEW count < 4 -> Remove 4-piece bonus
-            if (oldCount >= 4 && newCount < 4 && armor.hasFourPieceBonus()) {
-                remove4PieceBonus(player, setID, armor.getFourPieceBonusConfig());
-            }
-
-            // OLD count < 2 AND NEW count >= 2 -> Apply 2-piece bonus
-            if (oldCount < 2 && newCount >= 2 && armor.hasTwoPieceBonus()) {
+            if (count >= 2 && armor.hasTwoPieceBonus()) {
                 apply2PieceBonus(player, setID, armor.getTwoPieceBonusConfig());
             }
 
-            // OLD count < 4 AND NEW count >= 4 -> Apply 4-piece bonus
-            if (oldCount < 4 && newCount >= 4 && armor.hasFourPieceBonus()) {
+            if (count >= 4 && armor.hasFourPieceBonus()) {
                 apply4PieceBonus(player, setID, armor.getFourPieceBonusConfig());
             }
         }
 
-        // Update playerArmorCounts with the NEW count map
-        playerArmorCounts.put(uuid, newCounts);
+        // Step 4: Force client-side attribute packet refresh for armor-related attributes
+        forceClientAttributeRefresh(player);
+    }
+
+    /**
+     * Strips ALL 'arpgessentialsx' attribute modifiers from the player.
+     * This ensures a clean slate before applying new modifiers.
+     * Skips class and civilian modifiers to avoid wiping class stats.
+     * Only removes explicit set bonus tier modifiers (containing "_2pc" or "_4pc").
+     */
+    public void stripAllModifiers(Player player) {
+        plugin.getLogger().info("[SetBonusManager] Stripping set bonus modifiers from player " + player.getName());
+
+        for (Attribute attribute : Attribute.values()) {
+            AttributeInstance instance = player.getAttribute(attribute);
+            if (instance != null) {
+                instance.getModifiers().stream()
+                    .filter(mod -> mod.getKey().getNamespace().equals("arpgessentialsx"))
+                    .filter(mod -> {
+                        String path = mod.getKey().getKey();
+                        // DO NOT remove if it belongs to the class or civilian system
+                        if (path.startsWith("class_") || path.startsWith("civilian_")) {
+                            return false;
+                        }
+                        // ONLY remove if it's an explicit set bonus tier modifier
+                        return path.contains("_2pc") || path.contains("_4pc");
+                    })
+                    .forEach(instance::removeModifier);
+            }
+        }
+
+        // Also clear any stack-based bonus state
+        clearStackBasedBonuses(player);
+    }
+
+    /**
+     * Clears stack-based bonus state for the player.
+     * Called when stripping modifiers to ensure clean state.
+     */
+    private void clearStackBasedBonuses(Player player) {
+        // Clear momentum stacks
+        com.ahren.arpgessentialsx.armors.setbonus.MomentumStacksBonus.clearPlayer(player.getUniqueId());
+        
+        // Clear shadow stacks
+        com.ahren.arpgessentialsx.armors.setbonus.ShadowStacksBonus.clearPlayer(player.getUniqueId());
+        
+        // Clear fortification stacks
+        com.ahren.arpgessentialsx.armors.setbonus.FortificationStacksBonus.clearPlayer(player.getUniqueId());
+        
+        // Clear conditional attack speed task
+        com.ahren.arpgessentialsx.armors.setbonus.ConditionalAttackSpeedBonus.clearPlayer(player.getUniqueId());
+    }
+
+    /**
+     * Forces client-side attribute packet refresh for armor-related attributes.
+     * This ensures the client receives updated armor, armor toughness, and knockback resistance values immediately.
+     */
+    private void forceClientAttributeRefresh(Player player) {
+        org.bukkit.attribute.AttributeInstance armorInst = player.getAttribute(org.bukkit.attribute.Attribute.GENERIC_ARMOR);
+        if (armorInst != null) {
+            armorInst.setBaseValue(armorInst.getBaseValue());
+        }
+
+        org.bukkit.attribute.AttributeInstance toughnessInst = player.getAttribute(org.bukkit.attribute.Attribute.GENERIC_ARMOR_TOUGHNESS);
+        if (toughnessInst != null) {
+            toughnessInst.setBaseValue(toughnessInst.getBaseValue());
+        }
+
+        org.bukkit.attribute.AttributeInstance kbInst = player.getAttribute(org.bukkit.attribute.Attribute.GENERIC_KNOCKBACK_RESISTANCE);
+        if (kbInst != null) {
+            kbInst.setBaseValue(kbInst.getBaseValue());
+        }
     }
 
     private void apply2PieceBonus(Player player, String setID, ConfigurationSection config) {
@@ -102,80 +147,14 @@ public class SetBonusManager {
         armorManager.getSetBonusRegistry().applyBonus(player, config, 4, setID);
     }
 
-    private void remove2PieceBonus(Player player, String setID, ConfigurationSection config) {
-        if (config == null) return;
-        plugin.getLogger().info("[SetBonusManager] Removing 2-piece bonus for set " + setID + " from player " + player.getName());
-        armorManager.getSetBonusRegistry().removeBonus(player, config, 2, setID);
-    }
-
-    private void remove4PieceBonus(Player player, String setID, ConfigurationSection config) {
-        if (config == null) return;
-        plugin.getLogger().info("[SetBonusManager] Removing 4-piece bonus for set " + setID + " from player " + player.getName());
-        armorManager.getSetBonusRegistry().removeBonus(player, config, 4, setID);
-    }
-
     /**
-     * Saves the player's armor counts to the database.
-     * Called on logout to persist the current state.
-     */
-    public void savePlayerArmorCounts(UUID uuid) {
-        Map<String, Integer> counts = playerArmorCounts.get(uuid);
-        if (counts == null || counts.isEmpty()) {
-            plugin.getPlayerDataManager().setActiveSetBonuses(uuid, null);
-            return;
-        }
-
-        // Serialize armor counts as comma-separated "SetID:count" strings
-        StringBuilder sb = new StringBuilder();
-        for (Map.Entry<String, Integer> entry : counts.entrySet()) {
-            if (sb.length() > 0) sb.append(",");
-            sb.append(entry.getKey()).append(":").append(entry.getValue());
-        }
-        plugin.getPlayerDataManager().setActiveSetBonuses(uuid, sb.toString());
-    }
-
-    /**
-     * Loads and re-applies set bonuses for a player based on their currently equipped armor.
-     * Called on login to restore set bonuses.
+     * Re-applies set bonuses for a player based on their currently equipped armor.
+     * Called on login to restore set bonuses without requiring manual re-equip.
      */
     public void restorePlayerSetBonuses(Player player) {
-        // Load saved data (optional, for reference/debugging)
-        String savedCounts = plugin.getPlayerDataManager().getPlayerData(player.getUniqueId()).getActiveSetBonuses();
-        if (savedCounts != null && !savedCounts.isEmpty()) {
-            plugin.getLogger().info("[SetBonusManager] Restoring set bonuses for " + player.getName() + " (saved: " + savedCounts + ")");
-        }
-
-        // Re-apply based on currently equipped armor
+        plugin.getLogger().info("[SetBonusManager] Restoring set bonuses for " + player.getName());
+        
+        // Force re-calculation based on currently equipped armor
         plugin.getArmorEquipListener().scanAndEquipArmor(player);
-    }
-
-    /**
-     * Clears all set bonus modifiers for a player.
-     * Called on logout to strip all modifiers.
-     */
-    public void stripAllModifiers(Player player) {
-        UUID uuid = player.getUniqueId();
-        Map<String, Integer> counts = playerArmorCounts.get(uuid);
-        if (counts == null || counts.isEmpty()) return;
-
-        // Get all possible Armor Set IDs from the system
-        for (Armor armor : armorManager.getAllArmors()) {
-            if (!armor.hasSetName()) continue;
-            String setID = armor.getSetName();
-
-            // Remove 2-piece bonus if it was active
-            if (counts.getOrDefault(setID, 0) >= 2 && armor.hasTwoPieceBonus()) {
-                remove2PieceBonus(player, setID, armor.getTwoPieceBonusConfig());
-            }
-
-            // Remove 4-piece bonus if it was active
-            if (counts.getOrDefault(setID, 0) >= 4 && armor.hasFourPieceBonus()) {
-                remove4PieceBonus(player, setID, armor.getFourPieceBonusConfig());
-            }
-        }
-    }
-
-    public void clearPlayerData(UUID uuid) {
-        playerArmorCounts.remove(uuid);
     }
 }

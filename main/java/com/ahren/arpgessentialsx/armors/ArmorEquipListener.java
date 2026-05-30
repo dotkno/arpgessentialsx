@@ -48,7 +48,6 @@ public final class ArmorEquipListener implements Listener {
     public void onPlayerQuit(PlayerQuitEvent event) {
         UUID uuid = event.getPlayer().getUniqueId();
         equippedArmor.remove(uuid);
-        setBonusManager.clearPlayerData(uuid);
         passiveManager.clearPlayerData(uuid);
     }
 

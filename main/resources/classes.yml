@@ -66,7 +66,7 @@ mage:
   icon: BLAZE_ROD
   custom-model-data: -1
   lore:
-    - "&7A versatile ranged spellcaster."
+    - "&7A versatile spellcaster."
     - "&7Can attack, defend, and heal — but fragile."
     - ""
     - "&f▸ &c-2 Hearts &8(-4 HP)"
@@ -123,16 +123,16 @@ assassin:
     - "&7An agile melee damage dealer."
     - "&7Relies on speed and critical hits."
     - ""
-    - "&f▸ &c-2 Hearts &8(-4 HP)"
-    - "&f▸ &a+1 Melee Damage"
+    - "&f▸ &c-3 Hearts &8(-6 HP)"
+    - "&f▸ &a+2 Melee Damage"
     - "&f▸ &a+0.03 Movement Speed"
     - "&f▸ &c-2 Armor"
     - "&f▸ &7Passive: &fCrits deal &a1.65x &fdamage &8(vanilla 1.5x)"
     - ""
     - "&8Glass cannon. Don't get hit."
   attributes:
-    health: -4.0             # -2 hearts
-    damage: 3.0              # +3 melee damage
+    health: -6.0             # -3 hearts
+    damage: 2.0              # +2 melee damage
     speed: 0.03              # fast movement
     armor: -2.0              # -2 armor points
     armor_toughness: 0.0     # no change

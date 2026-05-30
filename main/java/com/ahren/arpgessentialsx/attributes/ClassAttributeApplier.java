@@ -53,6 +53,9 @@ public final class ClassAttributeApplier {
      * FIX: Previously compared against plugin.getName() (e.g. "ARPGEssentialsX"),
      *      but NamespacedKey stores the namespace in lowercase ("arpgessentialsx").
      *      The comparison always failed, so old modifiers were never removed.
+     *
+     * FIX: Now only removes modifiers that start with "class_" or "civilian_" to avoid
+     *      wiping armor set bonus modifiers.
      */
     public void clearAttributes(Player player) {
         try {
@@ -66,7 +69,12 @@ public final class ClassAttributeApplier {
                 for (AttributeModifier mod : instance.getModifiers()) {
                     if (mod != null && mod.getKey() != null
                             && mod.getKey().getNamespace().equals(pluginNamespace)) {
-                        toRemove.add(mod);
+                        
+                        String path = mod.getKey().getKey();
+                        // ONLY remove it if it belongs to our Class or Civilian systems
+                        if (path.startsWith("class_") || path.startsWith("civilian_")) {
+                            toRemove.add(mod);
+                        }
                     }
                 }
 

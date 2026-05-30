@@ -218,10 +218,26 @@ public final class StatsHUDManager {
     }
 
     private double getCurrentCritMultiplier(Player player) {
-        // This would need to be stored/set by the class system
-        // For now, use base value
         BaseStats base = baseStatsMap.getOrDefault(player.getUniqueId(), new BaseStats());
-        return base.critMultiplier;
+        double totalCrit = base.critMultiplier;
+        double critBonus = 0.0;
+
+        // Check for active armor set crit damage bonuses
+        // Look for arpgessentialsx attribute modifiers that represent crit damage bonuses
+        for (org.bukkit.attribute.Attribute attribute : org.bukkit.attribute.Attribute.values()) {
+            org.bukkit.attribute.AttributeInstance instance = player.getAttribute(attribute);
+            if (instance != null) {
+                for (org.bukkit.attribute.AttributeModifier mod : instance.getModifiers()) {
+                    if (mod.getKey().getNamespace().equals("arpgessentialsx") 
+                            && mod.getKey().getKey().contains("crit")) {
+                        critBonus += mod.getAmount();
+                    }
+                }
+            }
+        }
+
+        totalCrit += critBonus;
+        return totalCrit;
     }
 
     private double getCurrentSpeed(Player player) {

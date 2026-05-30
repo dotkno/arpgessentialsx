@@ -13,6 +13,7 @@ import com.ahren.arpgessentialsx.listeners.ClassSelectionListener;
 import com.ahren.arpgessentialsx.listeners.DamageTrackerListener;
 import com.ahren.arpgessentialsx.listeners.MageRestrictionListener;
 import com.ahren.arpgessentialsx.listeners.PassiveListener;
+import com.ahren.arpgessentialsx.listeners.PlayerDeathListener;
 import com.ahren.arpgessentialsx.listeners.PlayerJoinListener;
 import com.ahren.arpgessentialsx.listeners.SpellCastListener;
 import com.ahren.arpgessentialsx.tasks.PassiveTickTask;
@@ -154,6 +155,7 @@ public final class ARPGEssentialsX extends JavaPlugin {
         getServer().getPluginManager().registerEvents(armorEquipListener, this);
         getServer().getPluginManager().registerEvents(armorPassiveListener, this);
         getServer().getPluginManager().registerEvents(setBonusEventListener, this);
+        getServer().getPluginManager().registerEvents(new PlayerDeathListener(this), this);
 
         // Register join listeners
         registerJoinListeners();
@@ -176,6 +178,7 @@ public final class ARPGEssentialsX extends JavaPlugin {
 
     private void registerJoinListeners() {
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
+        getServer().getPluginManager().registerEvents(new com.ahren.arpgessentialsx.listeners.PlayerQuitListener(this), this);
         if (Bukkit.getPluginManager().getPlugin("AuthMe") != null) {
             getServer().getPluginManager().registerEvents(new AuthMeLoginListener(this), this);
             getLogger().info("AuthMe detected — class attributes will apply after login.");

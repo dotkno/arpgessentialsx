@@ -1529,7 +1529,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.10
     lore:
       - "Gear worn by seasoned hunters."
@@ -1558,7 +1558,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.10
     lore:
       - "Gear worn by seasoned hunters."
@@ -1587,7 +1587,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.10
     lore:
       - "Gear worn by seasoned hunters."
@@ -1616,7 +1616,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.10
     lore:
       - "Gear worn by seasoned hunters."
@@ -1646,7 +1646,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.15
       four_piece:
         type: cooldown_reduction_on_kill
@@ -1686,7 +1686,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.15
       four_piece:
         type: cooldown_reduction_on_kill
@@ -1726,7 +1726,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.15
       four_piece:
         type: cooldown_reduction_on_kill
@@ -1766,7 +1766,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.15
       four_piece:
         type: cooldown_reduction_on_kill
@@ -1807,7 +1807,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.20
       four_piece:
         type: charged_shot
@@ -1846,7 +1846,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.20
       four_piece:
         type: charged_shot
@@ -1885,7 +1885,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.20
       four_piece:
         type: charged_shot
@@ -1924,7 +1924,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.20
       four_piece:
         type: charged_shot
@@ -1964,7 +1964,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.25
       four_piece:
         type: crit_rate_on_charged
@@ -2004,7 +2004,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.25
       four_piece:
         type: crit_rate_on_charged
@@ -2044,7 +2044,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.25
       four_piece:
         type: crit_rate_on_charged
@@ -2084,7 +2084,7 @@ armors:
     set_bonuses:
       two_piece:
         type: percentage_stat_boost
-        stat: attack_damage
+        stat: crit_damage
         percentage: 0.25
       four_piece:
         type: crit_rate_on_charged
