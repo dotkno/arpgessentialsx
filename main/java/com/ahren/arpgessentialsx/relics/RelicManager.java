@@ -93,8 +93,11 @@ public final class RelicManager {
                 ShapedRecipe recipe = new ShapedRecipe(key, result);
                 recipe.shape(relic.getRecipeShape().toArray(new String[0]));
 
-                for (Map.Entry<Character, Material> entry : relic.getRecipeIngredients().entrySet()) {
-                    recipe.setIngredient(entry.getKey(), entry.getValue());
+                for (Map.Entry<Character, String> entry : relic.getRecipeIngredients().entrySet()) {
+                    Material material = Material.matchMaterial(entry.getValue());
+                    if (material != null) {
+                        recipe.setIngredient(entry.getKey(), material);
+                    }
                 }
 
                 Bukkit.addRecipe(recipe);

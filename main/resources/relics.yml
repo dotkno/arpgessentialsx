@@ -239,11 +239,64 @@ relics:
     recipe:
       shape:
         - "NAN"
-        - " N "
-        - " N "
+        - "NBN"
+        - "INI"
       ingredients:
-        N: NETHER_STAR
-        A: NETHERITE_AXE
+         I: NETHERITE_SCRAP
+         N: NETHER_STAR
+
+  # ──────────────────────────────────────────────────────────
+  # THROWABLE RELIC EXAMPLES — Assassin Throwing Daggers
+  # ──────────────────────────────────────────────────────────
+
+  # Example: Throwing dagger with visible projectile and poison on hit
+  tag4_poison_dagger:
+    display_name: "&2Poison Dagger"
+    stars: 3
+    class_tag: 4
+    type: offensive
+    base_item: GOLDEN_SWORD
+    custom_model_data: 6501
+    cooldown: 8.0
+    max_uses: 30
+    throwable: true
+    lore:
+      - "&7A dagger dripped in venom."
+      - "&7Throw to strike from distance."
+      - "&7Applies poison on hit."
+      - ""
+      - "&f▸ &bCooldown: &f8.0s"
+      - "&f▸ &7Uses: &f30/30"
+      - "&8&l[Assassin Only]"
+    throw:
+      power: 2.0
+      damage: 4.0
+      cooldown_seconds: 8
+      explode: false
+      explosion_power: 0.0
+      on_hit_effects:
+        - "PARTICLE:EFFECT:15"
+        - "SOUND:ENTITY_SPIDER_DEATH:0.9:1.3"
+        - "POTION:POISON:3:1:2.5"
+    effects:
+      - type: play_sound
+        sound: ENTITY_GENERIC_THROW
+        volume: 0.8
+        pitch: 1.0
+      - type: particle_burst
+        particle: CRIT
+        count: 10
+        radius: 0.3
+        speed: 0.1
+    recipe:
+      shape:
+        - " F "
+        - " S "
+        - " P "
+      ingredients:
+        F: FERMENTED_SPIDER_EYE
+        S: STICK
+        P: POISONOUS_POTATO
 
 
   # ──────────────────────────────────────────────────────────

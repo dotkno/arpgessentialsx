@@ -31,7 +31,16 @@ public final class Relic {
     private final List<RelicEffect> effects = new ArrayList<>();
 
     private final List<String> recipeShape;
-    private final Map<Character, Material> recipeIngredients;
+    private final Map<Character, String> recipeIngredients; // Support Material names or item:<id>
+
+    // throwable support
+    private final boolean throwable;
+    private final double throwPower;
+    private final double throwDamage;
+    private final boolean throwExplode;
+    private final float throwExplosionPower;
+    private final int throwCooldown;
+    private final List<String> throwOnHitEffects;
 
     public Relic(String id, ConfigurationSection section) {
         this.id = id;
@@ -71,10 +80,20 @@ public final class Relic {
             for (String key : ingredSection.getKeys(false)) {
                 if (key.length() == 1) {
                     Material m = Material.matchMaterial(ingredSection.getString(key, ""));
-                    if (m != null) recipeIngredients.put(key.charAt(0), m);
+                    String val = ingredSection.getString(key, "");
+                    if (!val.isEmpty()) recipeIngredients.put(key.charAt(0), val.trim());
                 }
             }
         }
+
+        // Throwable support
+        this.throwable = section.getBoolean("throwable", false);
+        this.throwPower = section.getDouble("throw.power", 1.5);
+        this.throwDamage = section.getDouble("throw.damage", 0.0);
+        this.throwExplode = section.getBoolean("throw.explode", false);
+        this.throwExplosionPower = (float) section.getDouble("throw.explosion_power", 2.0);
+        this.throwCooldown = section.getInt("throw.cooldown_seconds", 0);
+        this.throwOnHitEffects = section.getStringList("throw.on_hit_effects");
     }
 
     // ── Getters ──────────────────────────────────────────────────────────────
@@ -103,7 +122,15 @@ public final class Relic {
     }
 
     public List<String> getRecipeShape()                      { return recipeShape; }
-    public Map<Character, Material> getRecipeIngredients()    {
+    public Map<Character, String> getRecipeIngredients()    {
         return Collections.unmodifiableMap(recipeIngredients);
     }
+
+    public boolean isThrowable()           { return throwable; }
+    public double getThrowPower()          { return throwPower; }
+    public double getThrowDamage()         { return throwDamage; }
+    public boolean isThrowExplode()        { return throwExplode; }
+    public float getThrowExplosionPower()  { return throwExplosionPower; }
+    public int getThrowCooldown()          { return throwCooldown; }
+    public List<String> getThrowOnHitEffects() { return throwOnHitEffects; }
 }

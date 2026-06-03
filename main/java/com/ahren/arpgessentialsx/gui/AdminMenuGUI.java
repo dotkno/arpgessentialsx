@@ -3,6 +3,8 @@ package com.ahren.arpgessentialsx.gui;
 import com.ahren.arpgessentialsx.ARPGEssentialsX;
 import com.ahren.arpgessentialsx.armors.Armor;
 import com.ahren.arpgessentialsx.armors.ArmorManager;
+import com.ahren.arpgessentialsx.customitems.CustomItem;
+import com.ahren.arpgessentialsx.customitems.CustomItemManager;
 import com.ahren.arpgessentialsx.relics.Relic;
 import com.ahren.arpgessentialsx.relics.RelicManager;
 import com.ahren.arpgessentialsx.spells.Spell;
@@ -35,6 +37,7 @@ public final class AdminMenuGUI {
     private final RelicManager relicManager;
     private final WeaponManager weaponManager;
     private final ArmorManager armorManager;
+    private final CustomItemManager customItemManager;
     private final LegacyComponentSerializer serializer;
 
     public static final Component GUI_TITLE =
@@ -46,6 +49,7 @@ public final class AdminMenuGUI {
         this.relicManager = plugin.getRelicManager();
         this.weaponManager = plugin.getWeaponManager();
         this.armorManager = plugin.getArmorManager();
+        this.customItemManager = plugin.getCustomItemManager();
         this.serializer = LegacyComponentSerializer.legacyAmpersand();
     }
 
@@ -69,6 +73,7 @@ public final class AdminMenuGUI {
         inventory.setItem(12, makeCategoryButton("Relics", Material.DRAGON_EGG, "&d&lRelics", "&7Click to view all relics"));
         inventory.setItem(14, makeCategoryButton("Weapons", Material.DIAMOND_SWORD, "&b&lWeapons", "&7Click to view all weapons"));
         inventory.setItem(16, makeCategoryButton("Armors", Material.DIAMOND_CHESTPLATE, "&a&lArmors", "&7Click to view all armors"));
+        inventory.setItem(18, makeCategoryButton("Custom Items", Material.AMETHYST_SHARD, "&6&lCustom Items", "&7Click to view all custom items"));
 
         return inventory;
     }
@@ -219,6 +224,44 @@ public final class AdminMenuGUI {
             Armor armor = allArmors.get(i);
             ItemStack armorItem = armorManager.getItemFactory().createArmor(armor);
             inventory.setItem(slot, armorItem);
+            slot++;
+        }
+
+        player.openInventory(inventory);
+    }
+
+    public void openCustomItemsMenu(Player player, int page) {
+        List<CustomItem> allItems = new ArrayList<>(customItemManager.getAllItems());
+        int itemsPerPage = 45;
+        int totalPages = (int) Math.ceil((double) allItems.size() / itemsPerPage);
+        if (totalPages == 0) totalPages = 1;
+        page = Math.max(0, Math.min(page, totalPages - 1));
+
+        Inventory inventory = Bukkit.createInventory(null, 54, Component.text("Custom Items - Page " + (page + 1) + "/" + totalPages));
+        ItemStack filler = makeFiller();
+        for (int i = 0; i < 54; i++) {
+            inventory.setItem(i, filler);
+        }
+
+        // Back button
+        inventory.setItem(45, makeBackButton());
+
+        // Previous page button
+        if (page > 0) {
+            inventory.setItem(46, makePreviousPageButton());
+        }
+
+        // Next page button
+        if (page < totalPages - 1) {
+            inventory.setItem(47, makeNextPageButton());
+        }
+
+        int startIndex = page * itemsPerPage;
+        int slot = 0;
+        for (int i = startIndex; i < allItems.size() && slot < itemsPerPage; i++) {
+            CustomItem item = allItems.get(i);
+            ItemStack customItem = customItemManager.createItem(item);
+            inventory.setItem(slot, customItem);
             slot++;
         }
 

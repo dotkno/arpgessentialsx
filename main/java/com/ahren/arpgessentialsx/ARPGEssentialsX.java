@@ -111,6 +111,8 @@ public final class ARPGEssentialsX extends JavaPlugin {
 
         // Relic system
         relicManager = new RelicManager(this);
+        // ...existing code...
+        getServer().getPluginManager().registerEvents(new com.ahren.arpgessentialsx.relics.RelicThrowableListener(relicManager, relicManager.getItemFactory()), this);
 
         // Weapon system (CatalystManager after WeaponManager so it can read weapons.yml)
         weaponManager        = new WeaponManager(this);
@@ -127,6 +129,9 @@ public final class ARPGEssentialsX extends JavaPlugin {
 
         // Custom items
         customItemManager = new CustomItemManager(this);
+        // Register custom item listeners (consumables + throwables)
+        getServer().getPluginManager().registerEvents(new com.ahren.arpgessentialsx.customitems.CustomItemConsumeListener(this, customItemManager), this);
+        getServer().getPluginManager().registerEvents(new com.ahren.arpgessentialsx.customitems.CustomItemThrowableListener(this, customItemManager), this);
 
         // Party system
         partyManager    = new PartyManager(this);

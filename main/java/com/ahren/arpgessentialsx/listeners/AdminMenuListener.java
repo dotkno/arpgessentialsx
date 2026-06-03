@@ -30,6 +30,7 @@ public final class AdminMenuListener implements Listener {
     private final Map<UUID, Integer> relicPages = new HashMap<>();
     private final Map<UUID, Integer> weaponPages = new HashMap<>();
     private final Map<UUID, Integer> armorPages = new HashMap<>();
+    private final Map<UUID, Integer> customItemPages = new HashMap<>();
 
     public AdminMenuListener(ARPGEssentialsX plugin, AdminMenuGUI adminMenuGUI) {
         this.plugin = plugin;

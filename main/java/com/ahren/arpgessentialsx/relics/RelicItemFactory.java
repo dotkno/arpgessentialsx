@@ -26,17 +26,20 @@ public final class RelicItemFactory {
 
     public static final String NBT_RELIC_ID  = "relic_id";
     public static final String NBT_USES_LEFT = "relic_uses_left";
+    public static final String NBT_THROWABLE = "relic_throwable";
 
     private final ARPGEssentialsX plugin;
     private final LegacyComponentSerializer serializer;
     private final NamespacedKey relicIdKey;
     private final NamespacedKey usesLeftKey;
+    private final NamespacedKey throwableKey;
 
     public RelicItemFactory(ARPGEssentialsX plugin) {
         this.plugin = plugin;
         this.serializer = LegacyComponentSerializer.legacyAmpersand();
         this.relicIdKey  = new NamespacedKey(plugin, NBT_RELIC_ID);
         this.usesLeftKey = new NamespacedKey(plugin, NBT_USES_LEFT);
+        this.throwableKey = new NamespacedKey(plugin, NBT_THROWABLE);
     }
 
     /**
@@ -82,6 +85,7 @@ public final class RelicItemFactory {
         // NBT stamps
         meta.getPersistentDataContainer().set(relicIdKey,  PersistentDataType.STRING,  relic.getId());
         meta.getPersistentDataContainer().set(usesLeftKey, PersistentDataType.INTEGER, relic.getMaxUses());
+        meta.getPersistentDataContainer().set(throwableKey, PersistentDataType.INTEGER, relic.isThrowable() ? 1 : 0);
 
         item.setItemMeta(meta);
         return item;
@@ -145,4 +149,5 @@ public final class RelicItemFactory {
 
     public NamespacedKey getRelicIdKey()  { return relicIdKey; }
     public NamespacedKey getUsesLeftKey() { return usesLeftKey; }
+    public NamespacedKey getThrowableKey() { return throwableKey; }
 }
