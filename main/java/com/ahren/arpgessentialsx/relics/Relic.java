@@ -27,6 +27,11 @@ public final class Relic {
     private final int customModelData;
     private final List<String> lore;
 
+    // ── Resource Pack Support ─────────────────────────────────────────────────────
+    private final String texturePath;
+    private final String modelPath;
+    private final boolean generateModel;
+
     private final List<ConfigurationSection> effectConfigs;
     private final List<RelicEffect> effects = new ArrayList<>();
 
@@ -52,6 +57,18 @@ public final class Relic {
         this.maxUses = section.getInt("max_uses", 30);
         this.customModelData = section.getInt("custom_model_data", -1);
         this.lore = section.getStringList("lore");
+
+        // Resource pack configuration
+        ConfigurationSection resourceSection = section.getConfigurationSection("resource");
+        if (resourceSection != null) {
+            this.texturePath = resourceSection.getString("texture", null);
+            this.modelPath = resourceSection.getString("model", null);
+            this.generateModel = resourceSection.getBoolean("generate", true);
+        } else {
+            this.texturePath = null;
+            this.modelPath = null;
+            this.generateModel = true;
+        }
 
         // Parse base item — default GOAT_HORN but fully configurable
         String matName = section.getString("base_item", "GOAT_HORN");
@@ -133,4 +150,21 @@ public final class Relic {
     public float getThrowExplosionPower()  { return throwExplosionPower; }
     public int getThrowCooldown()          { return throwCooldown; }
     public List<String> getThrowOnHitEffects() { return throwOnHitEffects; }
+
+    // ── Resource Pack Getters ────────────────────────────────────────────────────
+    public String getTexturePath() {
+        return texturePath;
+    }
+
+    public String getModelPath() {
+        return modelPath;
+    }
+
+    public boolean shouldGenerateModel() {
+        return generateModel;
+    }
+
+    public boolean hasResourceConfig() {
+        return texturePath != null;
+    }
 }

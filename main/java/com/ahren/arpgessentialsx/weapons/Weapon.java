@@ -29,6 +29,11 @@ public final class Weapon {
     private final double damageBonus;
     private final double attackSpeedBonus;
 
+    // ── Resource Pack Support ─────────────────────────────────────────────────────
+    private final String texturePath;
+    private final String modelPath;
+    private final boolean generateModel;
+
     // ── On-hit effects ────────────────────────────────────────────────────────
     private final List<ConfigurationSection> onHitEffectConfigs;
     private final List<WeaponEffect> onHitEffects = new ArrayList<>();
@@ -57,6 +62,18 @@ public final class Weapon {
         this.customModelData = section.getInt("custom_model_data", -1);
         this.maxDurability   = section.getInt("durability", -1); // -1 = use vanilla durability
         this.lore            = section.getStringList("lore");
+
+        // Resource pack configuration
+        ConfigurationSection resourceSection = section.getConfigurationSection("resource");
+        if (resourceSection != null) {
+            this.texturePath = resourceSection.getString("texture", null);
+            this.modelPath = resourceSection.getString("model", null);
+            this.generateModel = resourceSection.getBoolean("generate", true);
+        } else {
+            this.texturePath = null;
+            this.modelPath = null;
+            this.generateModel = true;
+        }
 
         // Natural classes — overrides weapon type defaults if explicitly set
         List<Integer> nc = new ArrayList<>();
@@ -199,5 +216,22 @@ public final class Weapon {
     }
     public List<WeaponPassive> getPassives() {
         return Collections.unmodifiableList(passives);
+    }
+
+    // ── Resource Pack Getters ────────────────────────────────────────────────────
+    public String getTexturePath() {
+        return texturePath;
+    }
+
+    public String getModelPath() {
+        return modelPath;
+    }
+
+    public boolean shouldGenerateModel() {
+        return generateModel;
+    }
+
+    public boolean hasResourceConfig() {
+        return texturePath != null;
     }
 }

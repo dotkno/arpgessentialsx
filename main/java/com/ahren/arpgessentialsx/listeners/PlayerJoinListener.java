@@ -41,6 +41,9 @@ public final class PlayerJoinListener implements Listener {
 
                 restorePartyState(player);
                 restoreSetBonuses(player);
+
+                // Send resource pack if it exists
+                sendResourcePack(player);
             }, 1L);
         }
     }
@@ -79,6 +82,15 @@ public final class PlayerJoinListener implements Listener {
                 member.sendMessage(ColorUtil.translate(
                         "&e" + player.getName() + " &7has rejoined the party."));
             }
+        }
+    }
+
+    /**
+     * Sends the resource pack to a player if it exists.
+     */
+    private void sendResourcePack(Player player) {
+        if (plugin.getResourcePackManager().getResourcePackFile().exists()) {
+            plugin.getResourcePackManager().sendResourcePack(player);
         }
     }
 }

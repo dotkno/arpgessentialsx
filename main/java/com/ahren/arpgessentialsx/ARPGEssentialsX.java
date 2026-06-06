@@ -24,6 +24,7 @@ import com.ahren.arpgessentialsx.spells.SpellManager;
 import com.ahren.arpgessentialsx.spells.SpellCastManager;
 import com.ahren.arpgessentialsx.relics.RelicManager;
 import com.ahren.arpgessentialsx.relics.RelicCastListener;
+import com.ahren.arpgessentialsx.util.BossBarCooldownManager;
 import com.ahren.arpgessentialsx.util.ColorUtil;
 import com.ahren.arpgessentialsx.weapons.CatalystManager;
 import com.ahren.arpgessentialsx.weapons.SkillCooldownTracker;
@@ -36,6 +37,10 @@ import com.ahren.arpgessentialsx.customitems.CustomItemManager;
 import com.ahren.arpgessentialsx.armors.ArmorManager;
 import com.ahren.arpgessentialsx.armors.ArmorEquipListener;
 import com.ahren.arpgessentialsx.armors.SetBonusEventListener;
+import com.ahren.arpgessentialsx.resourcepack.ResourcePackManager;
+import com.ahren.arpgessentialsx.drops.DropManager;
+import com.ahren.arpgessentialsx.drops.MobDropListener;
+import com.ahren.arpgessentialsx.drops.MiningDropListener;
 import com.ahren.arpgessentialsx.party.PartyManager;
 import com.ahren.arpgessentialsx.party.hud.PartyHUDManager;
 import com.ahren.arpgessentialsx.party.hud.PartyHUDTask;
@@ -92,6 +97,15 @@ public final class ARPGEssentialsX extends JavaPlugin {
     // Stats HUD
     private StatsHUDManager statsHUDManager;
 
+    // Cooldown HUD
+    private BossBarCooldownManager bossBarCooldownManager;
+
+    // Resource pack system
+    private ResourcePackManager resourcePackManager;
+
+    // Drop system
+    private DropManager dropManager;
+
     // Shared state
     private final Map<UUID, Long> lastDamageTime = new HashMap<>();
 
@@ -104,6 +118,9 @@ public final class ARPGEssentialsX extends JavaPlugin {
         playerDataManager = new PlayerDataManager(this);
         attributeApplier  = new ClassAttributeApplier(this);
         classSelectionGUI = new ClassSelectionGUI(this);
+
+        // Cooldown HUD (must be initialized before other systems that use it)
+        bossBarCooldownManager = new BossBarCooldownManager(this);
 
         // Spell system
         spellManager     = new SpellManager(this);
@@ -140,6 +157,12 @@ public final class ARPGEssentialsX extends JavaPlugin {
         // Stats HUD
         statsHUDManager = new StatsHUDManager(this);
 
+        // Resource pack system
+        resourcePackManager = new ResourcePackManager(this);
+
+        // Drop system
+        dropManager = new DropManager(this);
+
         // Admin menu (must be after managers are initialized)
         adminMenuGUI = new AdminMenuGUI(this);
 
@@ -161,6 +184,10 @@ public final class ARPGEssentialsX extends JavaPlugin {
         getServer().getPluginManager().registerEvents(armorPassiveListener, this);
         getServer().getPluginManager().registerEvents(setBonusEventListener, this);
         getServer().getPluginManager().registerEvents(new PlayerDeathListener(this), this);
+
+        // Register drop system listeners
+        getServer().getPluginManager().registerEvents(new MobDropListener(this, dropManager), this);
+        getServer().getPluginManager().registerEvents(new MiningDropListener(this, dropManager), this);
 
         // Register join listeners
         registerJoinListeners();
@@ -197,6 +224,12 @@ public final class ARPGEssentialsX extends JavaPlugin {
         if (playerDataManager != null) {
             playerDataManager.saveAll();
         }
+        if (bossBarCooldownManager != null) {
+            // Clean up all boss bars for online players
+            Bukkit.getOnlinePlayers().forEach(player -> {
+                bossBarCooldownManager.cleanupPlayer(player.getUniqueId());
+            });
+        }
         getLogger().info("ARPGEssentialsX disabled.");
     }
 
@@ -216,10 +249,13 @@ public final class ARPGEssentialsX extends JavaPlugin {
     public PartyManager getPartyManager()                { return partyManager; }
     public PartyHUDManager getPartyHUDManager()          { return partyHUDManager; }
     public StatsHUDManager getStatsHUDManager()          { return statsHUDManager; }
+    public BossBarCooldownManager getBossBarCooldownManager() { return bossBarCooldownManager; }
     public ArmorManager getArmorManager()                { return armorManager; }
     public ArmorEquipListener getArmorEquipListener()     { return armorEquipListener; }
     public com.ahren.arpgessentialsx.armors.ArmorPassiveListener getArmorPassiveListener() { return armorPassiveListener; }
     public SetBonusEventListener getSetBonusEventListener() { return setBonusEventListener; }
+    public ResourcePackManager getResourcePackManager()   { return resourcePackManager; }
+    public DropManager getDropManager()                   { return dropManager; }
 
     public void applyClassToPlayer(Player player) {
         PlayerData data = playerDataManager.getOrCreatePlayerData(player.getUniqueId());

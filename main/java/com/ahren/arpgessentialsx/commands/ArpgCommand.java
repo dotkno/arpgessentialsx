@@ -57,11 +57,14 @@ public final class ArpgCommand implements CommandExecutor {
         }
 
         switch (args[0].toLowerCase()) {
-            case "class"  -> handleClass(sender, args);
-            case "party"  -> handleParty(sender, args);
-            case "stats"  -> handleStats(sender);
-            case "admin"  -> handleAdmin(sender, args);
-            default       -> sendHelp(sender);
+            case "class"             -> handleClass(sender, args);
+            case "party"             -> handleParty(sender, args);
+            case "stats"             -> handleStats(sender);
+            case "admin"             -> handleAdmin(sender, args);
+            case "generatepack"      -> handleGeneratePack(sender);
+            case "generatebedrock"   -> handleGenerateBedrockPack(sender);
+            case "generateall"       -> handleGenerateAllPacks(sender);
+            default                  -> sendHelp(sender);
         }
         return true;
     }
@@ -426,6 +429,49 @@ public final class ArpgCommand implements CommandExecutor {
     }
 
     // ══════════════════════════════════════════════════════════════════════════
+    // /arpg generatepack
+    // ══════════════════════════════════════════════════════════════════════════
+
+    private void handleGeneratePack(CommandSender sender) {
+        if (!sender.isOp() && !sender.hasPermission("arpg.admin")) {
+            sender.sendMessage(ColorUtil.translate("&cYou don't have permission to use this command."));
+            return;
+        }
+
+        sender.sendMessage(ColorUtil.translate("&eGenerating Java resource pack..."));
+        plugin.getResourcePackManager().generateResourcePack();
+        sender.sendMessage(ColorUtil.translate("&aJava resource pack generated successfully!"));
+        sender.sendMessage(ColorUtil.translate("&7Location: " + plugin.getResourcePackManager().getResourcePackFile().getAbsolutePath()));
+        sender.sendMessage(ColorUtil.translate("&7Place your texture files in: " + plugin.getResourcePackManager().getTexturesFolder().getAbsolutePath()));
+    }
+
+    private void handleGenerateBedrockPack(CommandSender sender) {
+        if (!sender.isOp() && !sender.hasPermission("arpg.admin")) {
+            sender.sendMessage(ColorUtil.translate("&cYou don't have permission to use this command."));
+            return;
+        }
+
+        sender.sendMessage(ColorUtil.translate("&eGenerating Bedrock resource pack..."));
+        plugin.getResourcePackManager().generateBedrockResourcePack();
+        sender.sendMessage(ColorUtil.translate("&aBedrock resource pack generated successfully!"));
+        sender.sendMessage(ColorUtil.translate("&7Location: " + plugin.getResourcePackManager().getBedrockResourcePackFile().getAbsolutePath()));
+        sender.sendMessage(ColorUtil.translate("&7Place your .geo.json files in: " + plugin.getResourcePackManager().getBedrockModelsFolder().getAbsolutePath()));
+    }
+
+    private void handleGenerateAllPacks(CommandSender sender) {
+        if (!sender.isOp() && !sender.hasPermission("arpg.admin")) {
+            sender.sendMessage(ColorUtil.translate("&cYou don't have permission to use this command."));
+            return;
+        }
+
+        sender.sendMessage(ColorUtil.translate("&eGenerating both Java and Bedrock resource packs..."));
+        plugin.getResourcePackManager().generateAllResourcePacks();
+        sender.sendMessage(ColorUtil.translate("&aBoth resource packs generated successfully!"));
+        sender.sendMessage(ColorUtil.translate("&7Java pack: " + plugin.getResourcePackManager().getResourcePackFile().getAbsolutePath()));
+        sender.sendMessage(ColorUtil.translate("&7Bedrock pack: " + plugin.getResourcePackManager().getBedrockResourcePackFile().getAbsolutePath()));
+    }
+
+    // ══════════════════════════════════════════════════════════════════════════
     // Help menus
     // ══════════════════════════════════════════════════════════════════════════
 
@@ -443,6 +489,9 @@ public final class ArpgCommand implements CommandExecutor {
         sender.sendMessage(ColorUtil.translate("&7/arpg stats &8- &7Toggle character stats HUD."));
         if (sender.isOp() || sender.hasPermission("arpg.admin")) {
             sender.sendMessage(ColorUtil.translate("&7/arpg admin &8- &7Open the admin item menu."));
+            sender.sendMessage(ColorUtil.translate("&7/arpg generatepack &8- &7Generate the Java resource pack."));
+            sender.sendMessage(ColorUtil.translate("&7/arpg generatebedrock &8- &7Generate the Bedrock resource pack."));
+            sender.sendMessage(ColorUtil.translate("&7/arpg generateall &8- &7Generate both Java and Bedrock packs."));
         }
     }
 

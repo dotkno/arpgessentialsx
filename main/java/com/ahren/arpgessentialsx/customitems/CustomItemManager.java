@@ -51,10 +51,10 @@ public final class CustomItemManager {
                 items.put(id.toLowerCase(), new CustomItem(id, itemSection));
             }
         }
-        plugin.getLogger().info("Loaded " + items.size() + " custom item(s).");
+        plugin.getLogger().info("[CustomItemManager] Loaded " + items.size() + " custom item(s).");
         // Detailed debug output for console
         for (CustomItem it : items.values()) {
-            plugin.getLogger().info(" - " + it.getId() + " [mat=" + (it.getMaterial() == null ? "null" : it.getMaterial().name())
+            plugin.getLogger().info("[CustomItemManager] - " + it.getId() + " [mat=" + (it.getMaterial() == null ? "null" : it.getMaterial().name())
                     + ", model=" + it.getCustomModelData()
                     + ", consumable=" + it.isConsumable()
                     + ", throwable=" + it.isThrowable()
@@ -91,17 +91,17 @@ public final class CustomItemManager {
                     // validate shape: max 3 rows and each row 1-3 chars and same length
                     var shape = item.getRecipeShape();
                     if (shape.size() > 3) {
-                        plugin.getLogger().warning("Invalid recipe shape for " + item.getId() + ": more than 3 rows. Skipping recipe.");
+                        plugin.getLogger().warning("[CustomItemManager] Invalid recipe shape for " + item.getId() + ": more than 3 rows. Skipping recipe.");
                         continue;
                     }
                     int cols = shape.get(0).length();
                     if (cols < 1 || cols > 3) {
-                        plugin.getLogger().warning("Invalid recipe shape columns for " + item.getId() + ". Skipping recipe.");
+                        plugin.getLogger().warning("[CustomItemManager] Invalid recipe shape columns for " + item.getId() + ". Skipping recipe.");
                         continue;
                     }
                     boolean rowsMatch = shape.stream().allMatch(s -> s.length() == cols);
                     if (!rowsMatch) {
-                        plugin.getLogger().warning("Recipe shape rows mismatch for " + item.getId() + ". Skipping recipe.");
+                        plugin.getLogger().warning("[CustomItemManager] Recipe shape rows mismatch for " + item.getId() + ". Skipping recipe.");
                         continue;
                     }
 
@@ -129,7 +129,7 @@ public final class CustomItemManager {
 
                     plugin.getServer().addRecipe(recipe);
                     registeredRecipeKeys.add(key);
-                    plugin.getLogger().info("Registered shaped recipe for item: " + item.getDisplayName());
+                    plugin.getLogger().info("[CustomItemManager] Registered shaped recipe for: " + item.getDisplayName());
                 } else {
                     // shapeless
                     ShapelessRecipe recipe = new ShapelessRecipe(key, result);
@@ -151,10 +151,10 @@ public final class CustomItemManager {
                     }
                     plugin.getServer().addRecipe(recipe);
                     registeredRecipeKeys.add(key);
-                    plugin.getLogger().info("Registered shapeless recipe for item: " + item.getDisplayName());
+                    plugin.getLogger().info("[CustomItemManager] Registered shapeless recipe for: " + item.getDisplayName());
                 }
             } catch (Exception e) {
-                plugin.getLogger().warning("Failed to register recipe for item '" + item.getId() + "': " + e.getMessage());
+                plugin.getLogger().warning("[CustomItemManager] Failed to register recipe for item '" + item.getId() + "': " + e.getMessage());
             }
         }
     }

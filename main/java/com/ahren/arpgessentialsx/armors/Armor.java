@@ -31,6 +31,11 @@ public final class Armor {
     private final double armorPoints;
     private final double armorToughness;
 
+    // ── Resource Pack Support ─────────────────────────────────────────────────────
+    private final String texturePath;
+    private final String modelPath;
+    private final boolean generateModel;
+
     // ── Passives ──────────────────────────────────────────────────────────────
     private final List<ConfigurationSection> passiveConfigs;
     private final List<ArmorPassive> passives = new ArrayList<>();
@@ -52,6 +57,18 @@ public final class Armor {
         this.setName = section.getString("set_name", null);
         this.customModelData = section.getInt("custom_model_data", -1);
         this.lore = section.getStringList("lore");
+
+        // Resource pack configuration
+        ConfigurationSection resourceSection = section.getConfigurationSection("resource");
+        if (resourceSection != null) {
+            this.texturePath = resourceSection.getString("texture", null);
+            this.modelPath = resourceSection.getString("model", null);
+            this.generateModel = resourceSection.getBoolean("generate", true);
+        } else {
+            this.texturePath = null;
+            this.modelPath = null;
+            this.generateModel = true;
+        }
 
         // Base item
         String matName = section.getString("base_item", "IRON_CHESTPLATE");
@@ -195,5 +212,22 @@ public final class Armor {
 
     public ConfigurationSection getFourPieceBonusConfig() {
         return fourPieceBonusConfig;
+    }
+
+    // ── Resource Pack Getters ────────────────────────────────────────────────────
+    public String getTexturePath() {
+        return texturePath;
+    }
+
+    public String getModelPath() {
+        return modelPath;
+    }
+
+    public boolean shouldGenerateModel() {
+        return generateModel;
+    }
+
+    public boolean hasResourceConfig() {
+        return texturePath != null;
     }
 }

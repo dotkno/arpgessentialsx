@@ -19,7 +19,8 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Sneak + Right-click → activate weapon skill.
+ * Right-click → activate weapon skill.
+ * Bows and Polearms require Shift + Right-click.
  *
  * Uses SkillCooldownTracker (shared with CooldownReductionPassive)
  * so passive cooldown reduction actually works.
@@ -51,7 +52,6 @@ public final class WeaponSkillListener implements Listener {
                 && event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
 
         Player player = event.getPlayer();
-        if (!player.isSneaking()) return;
 
         ItemStack held = player.getInventory().getItemInMainHand();
         String weaponId = factory.getWeaponId(held);
@@ -59,6 +59,11 @@ public final class WeaponSkillListener implements Listener {
 
         Weapon weapon = plugin.getWeaponManager().getWeapon(weaponId);
         if (weapon == null || !weapon.hasSkill()) return;
+
+        // Bows and Polearms require Shift + Right-click
+        if (weapon.getWeaponType() == WeaponType.BOW || weapon.getWeaponType() == WeaponType.POLEARM) {
+            if (!player.isSneaking()) return;
+        }
 
         event.setCancelled(true);
 

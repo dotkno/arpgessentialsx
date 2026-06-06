@@ -228,6 +228,9 @@ public final class SpellCastManager {
         UUID uuid  = player.getUniqueId();
         String key = getKey(uuid, spell.getId());
 
+        // Start boss bar cooldown
+        plugin.getBossBarCooldownManager().startCooldown(player, spell.getDisplayName(), seconds);
+
         BukkitRunnable cdTask = new BukkitRunnable() {
             @Override
             public void run() {
@@ -279,5 +282,6 @@ public final class SpellCastManager {
         preCastLevels.remove(uuid);
         BukkitRunnable regen = regenTasks.remove(uuid);
         if (regen != null) regen.cancel();
+        plugin.getBossBarCooldownManager().cleanupPlayer(uuid);
     }
 }

@@ -68,12 +68,12 @@ public final class AdminMenuGUI {
             inventory.setItem(i, filler);
         }
 
-        // Category buttons in row 1 (slots 10-16)
+        // Category buttons in row 1 (slots 10-16) and row 2 (slot 20)
         inventory.setItem(10, makeCategoryButton("Spells", Material.ENCHANTED_BOOK, "&e&lSpells", "&7Click to view all spells"));
         inventory.setItem(12, makeCategoryButton("Relics", Material.DRAGON_EGG, "&d&lRelics", "&7Click to view all relics"));
         inventory.setItem(14, makeCategoryButton("Weapons", Material.DIAMOND_SWORD, "&b&lWeapons", "&7Click to view all weapons"));
         inventory.setItem(16, makeCategoryButton("Armors", Material.DIAMOND_CHESTPLATE, "&a&lArmors", "&7Click to view all armors"));
-        inventory.setItem(18, makeCategoryButton("Custom Items", Material.AMETHYST_SHARD, "&6&lCustom Items", "&7Click to view all custom items"));
+        inventory.setItem(20, makeCategoryButton("Custom Items", Material.AMETHYST_SHARD, "&6&lCustom Items", "&7Click to view all custom items"));
 
         return inventory;
     }

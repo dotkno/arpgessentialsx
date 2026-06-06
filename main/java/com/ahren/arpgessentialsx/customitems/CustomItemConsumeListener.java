@@ -72,6 +72,18 @@ public class CustomItemConsumeListener implements Listener {
             player.setHealth(newHealth);
         }
 
+        // apply hunger and saturation
+        int hunger = custom.getConsumeHunger();
+        if (hunger > 0) {
+            int newFood = Math.min(20, player.getFoodLevel() + hunger);
+            player.setFoodLevel(newFood);
+        }
+        float saturation = custom.getConsumeSaturation();
+        if (saturation > 0) {
+            float newSaturation = Math.min(player.getSaturation() + saturation, player.getFoodLevel());
+            player.setSaturation(newSaturation);
+        }
+
         // apply potion effects
         List<String> effects = custom.getConsumeEffects();
         if (effects != null) {
@@ -95,6 +107,7 @@ public class CustomItemConsumeListener implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
         // handle using consumables that are not "edible" (non-food custom consumables)
+        // edible materials will use PlayerItemConsumeEvent which shows eating animation
         if (event.getHand() != null && event.getHand() != EquipmentSlot.HAND) return; // only main hand
         if (!event.getAction().isRightClick()) return;
         ItemStack item = event.getItem();
@@ -103,6 +116,12 @@ public class CustomItemConsumeListener implements Listener {
         if (id == null) return;
         CustomItem custom = manager.getItem(id);
         if (custom == null || !custom.isConsumable()) return;
+        
+        // If the material is edible, let PlayerItemConsumeEvent handle it (shows eating animation)
+        if (custom.getMaterial() != null && custom.getMaterial().isEdible()) {
+            return;
+        }
+        
         Player player = event.getPlayer();
         if (!canUse(player.getUniqueId(), id, custom.getConsumeCooldown())) {
             event.setCancelled(true);
@@ -133,6 +152,18 @@ public class CustomItemConsumeListener implements Listener {
         if (heal > 0) {
             double newHealth = Math.min(player.getMaxHealth(), player.getHealth() + heal);
             player.setHealth(newHealth);
+        }
+
+        // apply hunger and saturation
+        int hunger = custom.getConsumeHunger();
+        if (hunger > 0) {
+            int newFood = Math.min(20, player.getFoodLevel() + hunger);
+            player.setFoodLevel(newFood);
+        }
+        float saturation = custom.getConsumeSaturation();
+        if (saturation > 0) {
+            float newSaturation = Math.min(player.getSaturation() + saturation, player.getFoodLevel());
+            player.setSaturation(newSaturation);
         }
 
         List<String> effects = custom.getConsumeEffects();

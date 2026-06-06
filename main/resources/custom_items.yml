@@ -41,6 +41,8 @@ items:
       - "&7A small berry that restores health."
     consume:
       heal: 6
+      hunger: 4
+      saturation: 2.4
       cooldown_seconds: 5
       sound: ENTITY_PLAYER_BURP
       particle: HEART
@@ -66,3 +68,303 @@ items:
         - "PARTICLE:EXPLOSION:20"
         - "SOUND:ENTITY_GENERIC_EXPLODE:1.0:1.0"
         - "POTION:SLOWNESS:4:1:3.5"
+
+  # ==========================================
+  # Tier 1 Basic Materials
+  # ==========================================
+  refined_iron:
+    display_name: "&fRefined Iron"
+    material: IRON_INGOT
+    custom_model_data: 2001
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Purified iron ingot, stronger than standard iron."
+      - "&8Used for crafting basic equipment."
+    recipe:
+      shape:
+        - "II"
+        - "II"
+      ingredients:
+        I: IRON_INGOT
+
+  tempered_steel:
+    display_name: "&fTempered Steel"
+    material: IRON_INGOT
+    custom_model_data: 2002
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Steel forged with intense heat and pressure."
+      - "&8Used for crafting intermediate equipment."
+    recipe:
+      shape:
+        - "ICI"
+        - "ICI"
+        - "ICI"
+      ingredients:
+        I: IRON_INGOT
+        C: COAL_BLOCK
+
+  hardened_leather:
+    display_name: "&fHardened Leather"
+    material: LEATHER
+    custom_model_data: 2003
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Leather treated with iron for durability."
+      - "&8Used for crafting basic armor."
+    recipe:
+      shape:
+        - "LIL"
+        - "LIL"
+      ingredients:
+        L: LEATHER
+        I: IRON_INGOT
+
+  polished_stone:
+    display_name: "&fPolished Stone"
+    material: STONE
+    custom_model_data: 2004
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Smooth stone reinforced with iron."
+      - "&8Used for crafting basic tools."
+    recipe:
+      shape:
+        - "SIS"
+        - "SIS"
+      ingredients:
+        S: STONE
+        I: IRON_INGOT
+
+  # ==========================================
+  # Tier 2 Intermediate Materials
+  # ==========================================
+  arcane_dust:
+    display_name: "&eArcane Dust"
+    material: GLOWSTONE_DUST
+    custom_model_data: 3001
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Magical dust infused with redstone energy."
+      - "&8Used for crafting magical equipment."
+    recipe:
+      shape:
+        - "RGR"
+        - "GRG"
+        - "RGR"
+      ingredients:
+        R: REDSTONE_BLOCK
+        G: GLOWSTONE_BLOCK
+
+  frost_crystal:
+    display_name: "&bFrost Crystal"
+    material: PACKED_ICE
+    custom_model_data: 3002
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Crystal formed from eternal ice."
+      - "&8Used for crafting ice-based equipment."
+    recipe:
+      shape:
+        - "PIP"
+        - "PIP"
+        - "PIP"
+      ingredients:
+        P: PACKED_ICE
+        I: BLUE_ICE
+
+  magma_fragment:
+    display_name: "&cMagma Fragment"
+    material: MAGMA_CREAM
+    custom_model_data: 3003
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Fragment of solidified magma."
+      - "&8Used for crafting fire-based equipment."
+    recipe:
+      shape:
+        - "MBM"
+        - "BMB"
+        - "MBM"
+      ingredients:
+        M: MAGMA_BLOCK
+        B: BLAZE_ROD
+
+  shadow_essence:
+    display_name: "&8Shadow Essence"
+    material: COAL
+    custom_model_data: 3004
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Dark essence extracted from obsidian."
+      - "&8Used for crafting dark equipment."
+    recipe:
+      shape:
+        - "OCO"
+        - "COC"
+        - "OCO"
+      ingredients:
+        O: OBSIDIAN
+        C: COAL_BLOCK
+
+  # ==========================================
+  # Tier 3 Advanced Materials
+  # ==========================================
+  void_crystal:
+    display_name: "&dVoid Crystal"
+    material: ENDER_PEARL
+    custom_model_data: 4001
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Crystal from the void between dimensions."
+      - "&8Used for crafting advanced equipment."
+    recipe:
+      shape:
+        - "EAE"
+        - "AEA"
+        - "EAE"
+      ingredients:
+        E: ENDER_PEARL
+        A: ARCANE_DUST
+
+  dragon_scale:
+    display_name: "&6Dragon Scale"
+    material: PRISMARINE_SHARD
+    custom_model_data: 4002
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Scale from an ancient dragon."
+      - "&8Used for crafting powerful equipment."
+    recipe:
+      shape:
+        - "DPD"
+        - "PDP"
+        - "DPD"
+      ingredients:
+        D: DRAGON_BREATH
+        P: PRISMARINE
+
+  celestial_shard:
+    display_name: "&bCelestial Shard"
+    material: AMETHYST_SHARD
+    custom_model_data: 4003
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Shard of crystallized starlight."
+      - "&8Used for crafting endgame equipment."
+    recipe:
+      shape:
+        - "NAN"
+        - "ANA"
+        - "NAN"
+      ingredients:
+        N: NETHER_STAR
+        A: AMETHYST_BLOCK
+
+  abyssal_metal:
+    display_name: "&5Abyssal Metal"
+    material: NETHERITE_SCRAP
+    custom_model_data: 4004
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Metal forged in the deepest abyss."
+      - "&8Used for crafting endgame equipment."
+    recipe:
+      shape:
+        - "SAS"
+        - "ASA"
+        - "SAS"
+      ingredients:
+        S: NETHERITE_SCRAP
+        A: ANCIENT_DEBRIS
+
+  # ==========================================
+  # Tier 4 Endgame Materials
+  # ==========================================
+  eternal_flame:
+    display_name: "&cEternal Flame"
+    material: BLAZE_POWDER
+    custom_model_data: 5001
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Flame that never extinguishes."
+      - "&8Used for crafting legendary equipment."
+    recipe:
+      shape:
+        - "BMB"
+        - "MDM"
+        - "BMB"
+      ingredients:
+        B: BLAZE_ROD
+        M: MAGMA_FRAGMENT
+        D: DRAGON_SCALE
+
+  chrono_dust:
+    display_name: "&eChrono Dust"
+    material: CLOCK
+    custom_model_data: 5002
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Dust that manipulates time itself."
+      - "&8Used for crafting legendary equipment."
+    recipe:
+      shape:
+        - "CVE"
+        - "VCV"
+        - "CVE"
+      ingredients:
+        C: CLOCK
+        V: VOID_CRYSTAL
+        E: ENDER_PEARL
+
+  reality_shard:
+    display_name: "&6Reality Shard"
+    material: NETHER_STAR
+    custom_model_data: 5003
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Shard that bends reality."
+      - "&8Used for crafting god-tier equipment."
+    recipe:
+      shape:
+        - "NEN"
+        - "EDE"
+        - "NEN"
+      ingredients:
+        N: NETHER_STAR
+        E: DRAGON_EGG
+        D: CELESTIAL_SHARD
+
+  pure_netherite:
+    display_name: "&aPure Netherite"
+    material: NETHERITE_INGOT
+    custom_model_data: 5004
+    amount: 1
+    stackable: true
+    lore:
+      - "&7Netherite purified to its essence."
+      - "&8Used for crafting god-tier equipment."
+    recipe:
+      shape:
+        - "NAN"
+        - "ABA"
+        - "NAN"
+      ingredients:
+        N: NETHERITE_BLOCK
+        A: ABYSSAL_METAL
+        B: NETHERITE_BLOCK

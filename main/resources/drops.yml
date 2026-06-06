@@ -1,0 +1,185 @@
+# ==========================================
+# Custom Drop System Configuration
+# ==========================================
+# This file controls custom drops from mobs and mining.
+# Drops are ADDITIONAL to vanilla drops - they don't replace them.
+# 
+# chance: Percentage (0-100) of the drop occurring
+# min_amount: Minimum amount to drop
+# max_amount: Maximum amount to drop (random between min and max)
+# ==========================================
+
+mob_drops:
+  # Tier 1 Mobs - Basic materials
+  ZOMBIE:
+    - item: refined_iron
+      chance: 5.0
+      min_amount: 1
+      max_amount: 2
+  SKELETON:
+    - item: refined_iron
+      chance: 4.0
+      min_amount: 1
+      max_amount: 2
+  SPIDER:
+    - item: shadow_essence
+      chance: 3.0
+      min_amount: 1
+      max_amount: 1
+  CREEPER:
+    - item: arcane_dust
+      chance: 6.0
+      min_amount: 1
+      max_amount: 2
+  
+  # Tier 2 Mobs - Intermediate materials
+  ENDERMAN:
+    - item: void_crystal
+      chance: 8.0
+      min_amount: 1
+      max_amount: 2
+  BLAZE:
+    - item: magma_fragment
+      chance: 10.0
+      min_amount: 1
+      max_amount: 3
+  WITCH:
+    - item: arcane_dust
+      chance: 7.0
+      min_amount: 1
+      max_amount: 2
+  GHAST:
+    - item: frost_crystal
+      chance: 5.0
+      min_amount: 1
+      max_amount: 2
+  
+  # Tier 3 Mobs - Advanced materials
+  WITHER_SKELETON:
+    - item: abyssal_metal
+      chance: 8.0
+      min_amount: 1
+      max_amount: 2
+  GUARDIAN:
+    - item: dragon_scale
+      chance: 6.0
+      min_amount: 1
+      max_amount: 1
+  ELDER_GUARDIAN:
+    - item: dragon_scale
+      chance: 15.0
+      min_amount: 1
+      max_amount: 3
+  VINDICATOR:
+    - item: tempered_steel
+      chance: 7.0
+      min_amount: 1
+      max_amount: 2
+  
+  # Tier 4 Mobs - Endgame materials
+  WITHER:
+    - item: reality_shard
+      chance: 25.0
+      min_amount: 1
+      max_amount: 2
+    - item: pure_netherite
+      chance: 15.0
+      min_amount: 1
+      max_amount: 1
+  ENDER_DRAGON:
+    - item: celestial_shard
+      chance: 40.0
+      min_amount: 2
+      max_amount: 4
+    - item: reality_shard
+      chance: 20.0
+      min_amount: 1
+      max_amount: 2
+    - item: dragon_scale
+      chance: 50.0
+      min_amount: 1
+      max_amount: 5
+mining_drops:
+  # Tier 1 Mining - Basic materials
+  COAL_ORE:
+    - item: tempered_steel
+      chance: 3.0
+      min_amount: 1
+      max_amount: 1
+  IRON_ORE:
+    - item: refined_iron
+      chance: 5.0
+      min_amount: 1
+      max_amount: 2
+  COPPER_ORE:
+    - item: refined_iron
+      chance: 4.0
+      min_amount: 1
+      max_amount: 1
+  
+  # Tier 2 Mining - Intermediate materials
+  GOLD_ORE:
+    - item: arcane_dust
+      chance: 4.0
+      min_amount: 1
+      max_amount: 1
+  LAPIS_ORE:
+    - item: arcane_dust
+      chance: 5.0
+      min_amount: 1
+      max_amount: 2
+  REDSTONE_ORE:
+    - item: arcane_dust
+      chance: 6.0
+      min_amount: 1
+      max_amount: 2
+  
+  # Tier 3 Mining - Advanced materials
+  DIAMOND_ORE:
+    - item: celestial_shard
+      chance: 2.0
+      min_amount: 1
+      max_amount: 1
+  EMERALD_ORE:
+    - item: celestial_shard
+      chance: 3.0
+      min_amount: 1
+      max_amount: 2
+  
+  # Tier 4 Mining - Endgame materials
+  ANCIENT_DEBRIS:
+    - item: abyssal_metal
+      chance: 15.0
+      min_amount: 1
+      max_amount: 2
+    - item: pure_netherite
+      chance: 5.0
+      min_amount: 1
+      max_amount: 1
+  
+  # Special blocks
+  ICE:
+    - item: frost_crystal
+      chance: 2.0
+      min_amount: 1
+      max_amount: 1
+  PACKED_ICE:
+    - item: frost_crystal
+      chance: 4.0
+      min_amount: 1
+      max_amount: 2
+  BLUE_ICE:
+    - item: frost_crystal
+      chance: 8.0
+      min_amount: 2
+      max_amount: 3
+  OBSIDIAN:
+    - item: shadow_essence
+      chance: 3.0
+      min_amount: 1
+      max_amount: 1
+  CRYING_OBSIDIAN:
+    - item: void_crystal
+      chance: 6.0
+      min_amount: 1
+      max_amount: 2

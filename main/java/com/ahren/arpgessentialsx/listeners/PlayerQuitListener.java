@@ -55,6 +55,9 @@ public final class PlayerQuitListener implements Listener {
         // Cleanup set bonus state
         plugin.getSetBonusEventListener().clearPlayer(uuid);
 
+        // Cleanup boss bar cooldown
+        plugin.getBossBarCooldownManager().cleanupPlayer(uuid);
+
         Party party = plugin.getPartyManager().getPartyOf(uuid);
         if (party == null) return; // Not in a party — nothing to do
 

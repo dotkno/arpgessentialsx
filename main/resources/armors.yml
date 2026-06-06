@@ -32,7 +32,7 @@ armors:
         - "L L"
         - "   "
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   trainee_leather_chestplate:
     display_name: "&fTrainee's Leather Vest"
@@ -54,7 +54,7 @@ armors:
         - "LLL"
         - "LLL"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   trainee_leather_leggings:
     display_name: "&fTrainee's Leather Pants"
@@ -76,7 +76,7 @@ armors:
         - "L L"
         - "L L"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   trainee_leather_boots:
     display_name: "&fTrainee's Leather Boots"
@@ -98,7 +98,7 @@ armors:
         - "L L"
         - "L L"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   # 2-Star: Militia's Chainmail (Base stats + weak 2-piece)
   militia_chainmail_helmet:
@@ -128,7 +128,7 @@ armors:
         - "C C"
         - "   "
       ingredients:
-        C: IRON_INGOT
+        C: REFINED_IRON
 
   militia_chainmail_chestplate:
     display_name: "&fMilitia's Chainmail Vest"
@@ -157,7 +157,7 @@ armors:
         - "CCC"
         - "CCC"
       ingredients:
-        C: IRON_INGOT
+        C: REFINED_IRON
 
   militia_chainmail_leggings:
     display_name: "&fMilitia's Chainmail Leggings"
@@ -186,7 +186,7 @@ armors:
         - "C C"
         - "C C"
       ingredients:
-        C: IRON_INGOT
+        C: REFINED_IRON
 
   militia_chainmail_boots:
     display_name: "&fMilitia's Chainmail Boots"
@@ -215,7 +215,7 @@ armors:
         - "C C"
         - "C C"
       ingredients:
-        C: IRON_INGOT
+        C: REFINED_IRON
 
   # 3-Star: Berserker's Resolve (Base stats + 2-piece + 4-piece + Passive)
   berserker_resolve_helmet:
@@ -252,11 +252,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "III"
-        - "I I"
+        - "MMM"
+        - "M M"
         - "   "
       ingredients:
-        I: IRON_INGOT
+        M: MAGMA_FRAGMENT
 
   berserker_resolve_chestplate:
     display_name: "&bBerserker's Resolve Chestplate"
@@ -292,11 +292,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "I I"
-        - "III"
-        - "III"
+        - "M M"
+        - "MMM"
+        - "MMM"
       ingredients:
-        I: IRON_INGOT
+        M: MAGMA_FRAGMENT
 
   berserker_resolve_leggings:
     display_name: "&bBerserker's Resolve Leggings"
@@ -332,11 +332,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "III"
-        - "I I"
-        - "I I"
+        - "MMM"
+        - "M M"
+        - "M M"
       ingredients:
-        I: IRON_INGOT
+        M: MAGMA_FRAGMENT
 
   berserker_resolve_boots:
     display_name: "&bBerserker's Resolve Boots"
@@ -373,10 +373,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "I I"
-        - "I I"
+        - "M M"
+        - "M M"
       ingredients:
-        I: IRON_INGOT
+        M: MAGMA_FRAGMENT
 
   # 4-Star: Bloodstained Chivalry (Strong 2-piece + complex 4-piece + strong Passive)
   bloodstained_chivalry_helmet:
@@ -417,7 +417,7 @@ armors:
         - "D D"
         - "   "
       ingredients:
-        D: DIAMOND
+        D: DRAGON_SCALE
 
   bloodstained_chivalry_chestplate:
     display_name: "&aBloodstained Knight's Chestplate"
@@ -457,7 +457,7 @@ armors:
         - "DDD"
         - "DDD"
       ingredients:
-        D: DIAMOND
+        D: DRAGON_SCALE
 
   bloodstained_chivalry_leggings:
     display_name: "&aBloodstained Knight's Leggings"
@@ -497,7 +497,7 @@ armors:
         - "D D"
         - "D D"
       ingredients:
-        D: DIAMOND
+        D: DRAGON_SCALE
 
   bloodstained_chivalry_boots:
     display_name: "&aBloodstained Knight's Boots"
@@ -537,7 +537,7 @@ armors:
         - "D D"
         - "D D"
       ingredients:
-        D: DIAMOND
+        D: DRAGON_SCALE
 
   # 5-Star: Gladiator's Finale (Strong 2-piece + game-changing 4-piece + strong Passive)
   gladiators_finale_helmet:
@@ -576,11 +576,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
+        - "PPP"
+        - "P P"
         - "   "
       ingredients:
-        N: NETHERITE_INGOT
+        P: PURE_NETHERITE
 
   gladiators_finale_chestplate:
     display_name: "&6Gladiator's Finale Chestplate"
@@ -618,11 +618,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "N N"
-        - "NNN"
-        - "NNN"
+        - "P P"
+        - "PPP"
+        - "PPP"
       ingredients:
-        N: NETHERITE_INGOT
+        P: PURE_NETHERITE
 
   gladiators_finale_leggings:
     display_name: "&6Gladiator's Finale Leggings"
@@ -660,11 +660,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
-        - "N N"
+        - "PPP"
+        - "P P"
+        - "P P"
       ingredients:
-        N: NETHERITE_INGOT
+        P: PURE_NETHERITE
 
   gladiators_finale_boots:
     display_name: "&6Gladiator's Finale Boots"
@@ -703,10 +703,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "N N"
-        - "N N"
+        - "P P"
+        - "P P"
       ingredients:
-        N: NETHERITE_INGOT
+        P: PURE_NETHERITE
 
   # ═══════════════════════════════════════════════════════════════════════════════
   # 🔥 MAGE (Spell Damage, Mana, Cooldowns)
@@ -733,7 +733,7 @@ armors:
         - "L L"
         - "   "
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   novice_linen_chestplate:
     display_name: "&fNovice's Linen Robe"
@@ -755,7 +755,7 @@ armors:
         - "LLL"
         - "LLL"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   novice_linen_leggings:
     display_name: "&fNovice's Linen Pants"
@@ -777,7 +777,7 @@ armors:
         - "L L"
         - "L L"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   novice_linen_boots:
     display_name: "&fNovice's Linen Boots"
@@ -799,7 +799,7 @@ armors:
         - "L L"
         - "L L"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   # 2-Star: Acolyte's Robes (Base stats + weak 2-piece)
   acolyte_robes_helmet:
@@ -825,11 +825,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "CCC"
-        - "C C"
+        - "AAA"
+        - "A A"
         - "   "
       ingredients:
-        C: IRON_INGOT
+        A: ARCANE_DUST
 
   acolyte_robes_chestplate:
     display_name: "&fAcolyte's Robe"
@@ -854,11 +854,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "C C"
-        - "CCC"
-        - "CCC"
+        - "A A"
+        - "AAA"
+        - "AAA"
       ingredients:
-        C: IRON_INGOT
+        A: ARCANE_DUST
 
   acolyte_robes_leggings:
     display_name: "&fAcolyte's Leggings"
@@ -883,11 +883,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "CCC"
-        - "C C"
-        - "C C"
+        - "AAA"
+        - "A A"
+        - "A A"
       ingredients:
-        C: IRON_INGOT
+        A: ARCANE_DUST
 
   acolyte_robes_boots:
     display_name: "&fAcolyte's Boots"
@@ -913,10 +913,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "C C"
-        - "C C"
+        - "A A"
+        - "A A"
       ingredients:
-        C: IRON_INGOT
+        A: ARCANE_DUST
 
   # 3-Star: Scholar's Focus (Base stats + 2-piece + 4-piece + Passive)
   scholar_focus_helmet:
@@ -954,11 +954,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "III"
-        - "I I"
+        - "FFF"
+        - "F F"
         - "   "
       ingredients:
-        I: IRON_INGOT
+        F: FROST_CRYSTAL
 
   scholar_focus_chestplate:
     display_name: "&bScholar's Focus Robe"
@@ -995,11 +995,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "I I"
-        - "III"
-        - "III"
+        - "F F"
+        - "FFF"
+        - "FFF"
       ingredients:
-        I: IRON_INGOT
+        F: FROST_CRYSTAL
 
   scholar_focus_leggings:
     display_name: "&bScholar's Focus Leggings"
@@ -1036,11 +1036,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "III"
-        - "I I"
-        - "I I"
+        - "FFF"
+        - "F F"
+        - "F F"
       ingredients:
-        I: IRON_INGOT
+        F: FROST_CRYSTAL
 
   scholar_focus_boots:
     display_name: "&bScholar's Focus Boots"
@@ -1078,10 +1078,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "I I"
-        - "I I"
+        - "F F"
+        - "F F"
       ingredients:
-        I: IRON_INGOT
+        F: FROST_CRYSTAL
 
   # 4-Star: Crimson Witch of Flames (Strong 2-piece + complex 4-piece + strong Passive)
   crimson_witch_helmet:
@@ -1118,11 +1118,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "DDD"
-        - "D D"
+        - "EEE"
+        - "E E"
         - "   "
       ingredients:
-        D: DIAMOND
+        E: ETERNAL_FLAME
 
   crimson_witch_chestplate:
     display_name: "&aCrimson Witch's Robes"
@@ -1158,11 +1158,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "D D"
-        - "DDD"
-        - "DDD"
+        - "E E"
+        - "EEE"
+        - "EEE"
       ingredients:
-        D: DIAMOND
+        E: ETERNAL_FLAME
 
   crimson_witch_leggings:
     display_name: "&aCrimson Witch's Leggings"
@@ -1198,11 +1198,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "DDD"
-        - "D D"
-        - "D D"
+        - "EEE"
+        - "E E"
+        - "E E"
       ingredients:
-        D: DIAMOND
+        E: ETERNAL_FLAME
 
   crimson_witch_boots:
     display_name: "&aCrimson Witch's Boots"
@@ -1239,10 +1239,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "D D"
-        - "D D"
+        - "E E"
+        - "E E"
       ingredients:
-        D: DIAMOND
+        E: ETERNAL_FLAME
 
   # 5-Star: Obsidian Codex (Strong 2-piece + game-changing 4-piece + strong Passive)
   obsidian_codex_helmet:
@@ -1283,11 +1283,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
+        - "RRR"
+        - "R R"
         - "   "
       ingredients:
-        N: NETHERITE_INGOT
+        R: REALITY_SHARD
 
   obsidian_codex_chestplate:
     display_name: "&6Obsidian Codex Robes"
@@ -1327,11 +1327,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "N N"
-        - "NNN"
-        - "NNN"
+        - "R R"
+        - "RRR"
+        - "RRR"
       ingredients:
-        N: NETHERITE_INGOT
+        R: REALITY_SHARD
 
   obsidian_codex_leggings:
     display_name: "&6Obsidian Codex Leggings"
@@ -1371,11 +1371,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
-        - "N N"
+        - "RRR"
+        - "R R"
+        - "R R"
       ingredients:
-        N: NETHERITE_INGOT
+        R: REALITY_SHARD
 
   obsidian_codex_boots:
     display_name: "&6Obsidian Codex Boots"
@@ -1416,10 +1416,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "N N"
-        - "N N"
+        - "R R"
+        - "R R"
       ingredients:
-        N: NETHERITE_INGOT
+        R: REALITY_SHARD
 
   # ═══════════════════════════════════════════════════════════════════════════════
   # 🏹 MARKSMAN (Ranged, Crit Damage, Positioning)
@@ -1446,7 +1446,7 @@ armors:
         - "L L"
         - "   "
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   wooden_bowyer_chestplate:
     display_name: "&fWooden Bowyer's Vest"
@@ -1468,7 +1468,7 @@ armors:
         - "LLL"
         - "LLL"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   wooden_bowyer_leggings:
     display_name: "&fWooden Bowyer's Pants"
@@ -1490,7 +1490,7 @@ armors:
         - "L L"
         - "L L"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   wooden_bowyer_boots:
     display_name: "&fWooden Bowyer's Boots"
@@ -1512,7 +1512,7 @@ armors:
         - "L L"
         - "L L"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   # 2-Star: Hunter's Vest (Base stats + weak 2-piece)
   hunter_vest_helmet:
@@ -1538,11 +1538,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "CCC"
-        - "C C"
+        - "TTT"
+        - "T T"
         - "   "
       ingredients:
-        C: IRON_INGOT
+        T: TEMPERED_STEEL
 
   hunter_vest_chestplate:
     display_name: "&fHunter's Vest"
@@ -1567,11 +1567,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "C C"
-        - "CCC"
-        - "CCC"
+        - "T T"
+        - "TTT"
+        - "TTT"
       ingredients:
-        C: IRON_INGOT
+        T: TEMPERED_STEEL
 
   hunter_vest_leggings:
     display_name: "&fHunter's Pants"
@@ -1596,11 +1596,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "CCC"
-        - "C C"
-        - "C C"
+        - "TTT"
+        - "T T"
+        - "T T"
       ingredients:
-        C: IRON_INGOT
+        T: TEMPERED_STEEL
 
   hunter_vest_boots:
     display_name: "&fHunter's Boots"
@@ -1626,10 +1626,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "C C"
-        - "C C"
+        - "T T"
+        - "T T"
       ingredients:
-        C: IRON_INGOT
+        T: TEMPERED_STEEL
 
   # 3-Star: Gambler's Feathers (Base stats + 2-piece + 4-piece + Passive)
   gambler_feathers_helmet:
@@ -1666,11 +1666,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "III"
-        - "I I"
+        - "SSS"
+        - "S S"
         - "   "
       ingredients:
-        I: IRON_INGOT
+        S: SHADOW_ESSENCE
 
   gambler_feathers_chestplate:
     display_name: "&bGambler's Feathered Vest"
@@ -1706,11 +1706,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "I I"
-        - "III"
-        - "III"
+        - "S S"
+        - "SSS"
+        - "SSS"
       ingredients:
-        I: IRON_INGOT
+        S: SHADOW_ESSENCE
 
   gambler_feathers_leggings:
     display_name: "&bGambler's Feathered Pants"
@@ -1746,11 +1746,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "III"
-        - "I I"
-        - "I I"
+        - "SSS"
+        - "S S"
+        - "S S"
       ingredients:
-        I: IRON_INGOT
+        S: SHADOW_ESSENCE
 
   gambler_feathers_boots:
     display_name: "&bGambler's Feathered Boots"
@@ -1787,10 +1787,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "I I"
-        - "I I"
+        - "S S"
+        - "S S"
       ingredients:
-        I: IRON_INGOT
+        S: SHADOW_ESSENCE
 
   # 4-Star: Shimenawa's Reminiscence (Strong 2-piece + complex 4-piece + strong Passive)
   shimenawa_helmet:
@@ -1826,11 +1826,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "DDD"
-        - "D D"
+        - "VVV"
+        - "V V"
         - "   "
       ingredients:
-        D: DIAMOND
+        V: VOID_CRYSTAL
 
   shimenawa_chestplate:
     display_name: "&aShimenawa's Vest"
@@ -1865,11 +1865,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "D D"
-        - "DDD"
-        - "DDD"
+        - "V V"
+        - "VVV"
+        - "VVV"
       ingredients:
-        D: DIAMOND
+        V: VOID_CRYSTAL
 
   shimenawa_leggings:
     display_name: "&aShimenawa's Leggings"
@@ -1904,11 +1904,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "DDD"
-        - "D D"
-        - "D D"
+        - "VVV"
+        - "V V"
+        - "V V"
       ingredients:
-        D: DIAMOND
+        V: VOID_CRYSTAL
 
   shimenawa_boots:
     display_name: "&aShimenawa's Boots"
@@ -1944,10 +1944,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "D D"
-        - "D D"
+        - "V V"
+        - "V V"
       ingredients:
-        D: DIAMOND
+        V: VOID_CRYSTAL
 
   # 5-Star: Marechaussee Hunter (Strong 2-piece + game-changing 4-piece + strong Passive)
   marechaussee_helmet:
@@ -1984,11 +1984,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
+        - "CCC"
+        - "C C"
         - "   "
       ingredients:
-        N: NETHERITE_INGOT
+        C: CHRONO_DUST
 
   marechaussee_chestplate:
     display_name: "&6Marechaussee Hunter's Coat"
@@ -2024,11 +2024,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "N N"
-        - "NNN"
-        - "NNN"
+        - "C C"
+        - "CCC"
+        - "CCC"
       ingredients:
-        N: NETHERITE_INGOT
+        C: CHRONO_DUST
 
   marechaussee_leggings:
     display_name: "&6Marechaussee Hunter's Pants"
@@ -2064,11 +2064,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
-        - "N N"
+        - "CCC"
+        - "C C"
+        - "C C"
       ingredients:
-        N: NETHERITE_INGOT
+        C: CHRONO_DUST
 
   marechaussee_boots:
     display_name: "&6Marechaussee Hunter's Boots"
@@ -2105,10 +2105,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "N N"
-        - "N N"
+        - "C C"
+        - "C C"
       ingredients:
-        N: NETHERITE_INGOT
+        C: CHRONO_DUST
 
   # ═══════════════════════════════════════════════════════════════════════════════
   # 🗡️ ASSASSIN (Burst, Evasion, Debuffs, Aggro manipulation)
@@ -2135,7 +2135,7 @@ armors:
         - "L L"
         - "   "
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   ragged_shadow_chestplate:
     display_name: "&fRagged Shadow Wraps"
@@ -2157,7 +2157,7 @@ armors:
         - "LLL"
         - "LLL"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   ragged_shadow_leggings:
     display_name: "&fRagged Shadow Pants"
@@ -2179,7 +2179,7 @@ armors:
         - "L L"
         - "L L"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   ragged_shadow_boots:
     display_name: "&fRagged Shadow Boots"
@@ -2201,7 +2201,7 @@ armors:
         - "L L"
         - "L L"
       ingredients:
-        L: LEATHER
+        L: HARDENED_LEATHER
 
   # 2-Star: Thief's Silk (Base stats + weak 2-piece)
   thief_silk_helmet:
@@ -2227,11 +2227,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "CCC"
-        - "C C"
+        - "RRR"
+        - "R R"
         - "   "
       ingredients:
-        C: IRON_INGOT
+        R: REFINED_IRON
 
   thief_silk_chestplate:
     display_name: "&fThief's Silk Vest"
@@ -2256,11 +2256,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "C C"
-        - "CCC"
-        - "CCC"
+        - "R R"
+        - "RRR"
+        - "RRR"
       ingredients:
-        C: IRON_INGOT
+        R: REFINED_IRON
 
   thief_silk_leggings:
     display_name: "&fThief's Silk Pants"
@@ -2285,11 +2285,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "CCC"
-        - "C C"
-        - "C C"
+        - "RRR"
+        - "R R"
+        - "R R"
       ingredients:
-        C: IRON_INGOT
+        R: REFINED_IRON
 
   thief_silk_boots:
     display_name: "&fThief's Silk Boots"
@@ -2315,10 +2315,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "C C"
-        - "C C"
+        - "R R"
+        - "R R"
       ingredients:
-        C: IRON_INGOT
+        R: REFINED_IRON
 
   # 3-Star: Martial Artist's Gi (Base stats + 2-piece + 4-piece + Passive)
   martial_artist_helmet:
@@ -2352,11 +2352,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "III"
-        - "I I"
+        - "AAA"
+        - "A A"
         - "   "
       ingredients:
-        I: IRON_INGOT
+        A: ABYSSAL_METAL
 
   martial_artist_chestplate:
     display_name: "&bMartial Artist's Gi"
@@ -2389,11 +2389,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "I I"
-        - "III"
-        - "III"
+        - "A A"
+        - "AAA"
+        - "AAA"
       ingredients:
-        I: IRON_INGOT
+        A: ABYSSAL_METAL
 
   martial_artist_leggings:
     display_name: "&bMartial Artist's Pants"
@@ -2426,11 +2426,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "III"
-        - "I I"
-        - "I I"
+        - "AAA"
+        - "A A"
+        - "A A"
       ingredients:
-        I: IRON_INGOT
+        A: ABYSSAL_METAL
 
   martial_artist_boots:
     display_name: "&bMartial Artist's Boots"
@@ -2464,10 +2464,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "I I"
-        - "I I"
+        - "A A"
+        - "A A"
       ingredients:
-        I: IRON_INGOT
+        A: ABYSSAL_METAL
 
   # 4-Star: Pale Flame (Strong 2-piece + complex 4-piece + strong Passive)
   pale_flame_helmet:
@@ -2506,11 +2506,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "DDD"
-        - "D D"
+        - "CCC"
+        - "C C"
         - "   "
       ingredients:
-        D: DIAMOND
+        C: CELESTIAL_SHARD
 
   pale_flame_chestplate:
     display_name: "&aPale Flame Vest"
@@ -2548,11 +2548,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "D D"
-        - "DDD"
-        - "DDD"
+        - "C C"
+        - "CCC"
+        - "CCC"
       ingredients:
-        D: DIAMOND
+        C: CELESTIAL_SHARD
 
   pale_flame_leggings:
     display_name: "&aPale Flame Leggings"
@@ -2590,11 +2590,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "DDD"
-        - "D D"
-        - "D D"
+        - "CCC"
+        - "C C"
+        - "C C"
       ingredients:
-        D: DIAMOND
+        C: CELESTIAL_SHARD
 
   pale_flame_boots:
     display_name: "&aPale Flame Boots"
@@ -2633,10 +2633,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "D D"
-        - "D D"
+        - "C C"
+        - "C C"
       ingredients:
-        D: DIAMOND
+        C: CELESTIAL_SHARD
 
   # 5-Star: Golden Troupe (Strong 2-piece + game-changing 4-piece + strong Passive)
   golden_troupe_helmet:
@@ -2672,11 +2672,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
+        - "RRR"
+        - "R R"
         - "   "
       ingredients:
-        N: NETHERITE_INGOT
+        R: REALITY_SHARD
 
   golden_troupe_chestplate:
     display_name: "&6Golden Troupe Vest"
@@ -2711,11 +2711,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "N N"
-        - "NNN"
-        - "NNN"
+        - "R R"
+        - "RRR"
+        - "RRR"
       ingredients:
-        N: NETHERITE_INGOT
+        R: REALITY_SHARD
 
   golden_troupe_leggings:
     display_name: "&6Golden Troupe Leggings"
@@ -2750,11 +2750,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
-        - "N N"
+        - "RRR"
+        - "R R"
+        - "R R"
       ingredients:
-        N: NETHERITE_INGOT
+        R: REALITY_SHARD
 
   golden_troupe_boots:
     display_name: "&6Golden Troupe Boots"
@@ -2790,10 +2790,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "N N"
-        - "N N"
+        - "R R"
+        - "R R"
       ingredients:
-        N: NETHERITE_INGOT
+        R: REALITY_SHARD
 
   # ═══════════════════════════════════════════════════════════════════════════════
   # 🛡️ TANK (Health, Aggro, Team Shielding, Mitigation)
@@ -2816,11 +2816,11 @@ armors:
       - "§4Durability: 250 / 250"
     recipe:
       shape:
-        - "III"
-        - "I I"
+        - "PPP"
+        - "P P"
         - "   "
       ingredients:
-        I: IRON_INGOT
+        P: POLISHED_STONE
 
   squire_iron_chestplate:
     display_name: "&fSquire's Iron Chestplate"
@@ -2838,11 +2838,11 @@ armors:
       - "§4Durability: 250 / 250"
     recipe:
       shape:
-        - "I I"
-        - "III"
-        - "III"
+        - "P P"
+        - "PPP"
+        - "PPP"
       ingredients:
-        I: IRON_INGOT
+        P: POLISHED_STONE
 
   squire_iron_leggings:
     display_name: "&fSquire's Iron Leggings"
@@ -2860,11 +2860,11 @@ armors:
       - "§4Durability: 250 / 250"
     recipe:
       shape:
-        - "III"
-        - "I I"
-        - "I I"
+        - "PPP"
+        - "P P"
+        - "P P"
       ingredients:
-        I: IRON_INGOT
+        P: POLISHED_STONE
 
   squire_iron_boots:
     display_name: "&fSquire's Iron Boots"
@@ -2883,10 +2883,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "I I"
-        - "I I"
+        - "P P"
+        - "P P"
       ingredients:
-        I: IRON_INGOT
+        P: POLISHED_STONE
 
   # 2-Star: Footsoldier's Plate (Base stats + weak 2-piece)
   footsoldier_plate_helmet:
@@ -2912,11 +2912,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "DDD"
-        - "D D"
+        - "RRR"
+        - "R R"
         - "   "
       ingredients:
-        D: DIAMOND
+        R: REFINED_IRON
 
   footsoldier_plate_chestplate:
     display_name: "&fFootsoldier's Chestplate"
@@ -2941,11 +2941,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "D D"
-        - "DDD"
-        - "DDD"
+        - "R R"
+        - "RRR"
+        - "RRR"
       ingredients:
-        D: DIAMOND
+        R: REFINED_IRON
 
   footsoldier_plate_leggings:
     display_name: "&fFootsoldier's Leggings"
@@ -2970,11 +2970,11 @@ armors:
       - "§4Durability: 500 / 500"
     recipe:
       shape:
-        - "DDD"
-        - "D D"
-        - "D D"
+        - "RRR"
+        - "R R"
+        - "R R"
       ingredients:
-        D: DIAMOND
+        R: REFINED_IRON
 
   footsoldier_plate_boots:
     display_name: "&fFootsoldier's Boots"
@@ -3000,10 +3000,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "D D"
-        - "D D"
+        - "R R"
+        - "R R"
       ingredients:
-        D: DIAMOND
+        R: REFINED_IRON
 
   # 3-Star: Defender's Will (Base stats + 2-piece + 4-piece + Passive)
   defender_will_helmet:
@@ -3043,11 +3043,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "DDD"
-        - "D D"
+        - "TTT"
+        - "T T"
         - "   "
       ingredients:
-        D: DIAMOND
+        T: TEMPERED_STEEL
 
   defender_will_chestplate:
     display_name: "Defender's Chestplate"
@@ -3086,11 +3086,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "D D"
-        - "DDD"
-        - "DDD"
+        - "T T"
+        - "TTT"
+        - "TTT"
       ingredients:
-        D: DIAMOND
+        T: TEMPERED_STEEL
 
   defender_will_leggings:
     display_name: "Defender's Leggings"
@@ -3129,11 +3129,11 @@ armors:
       - "§4Durability: 1250 / 1250"
     recipe:
       shape:
-        - "DDD"
-        - "D D"
-        - "D D"
+        - "TTT"
+        - "T T"
+        - "T T"
       ingredients:
-        D: DIAMOND
+        T: TEMPERED_STEEL
 
   defender_will_boots:
     display_name: "Defender's Boots"
@@ -3173,10 +3173,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "D D"
-        - "D D"
+        - "T T"
+        - "T T"
       ingredients:
-        D: DIAMOND
+        T: TEMPERED_STEEL
 
   # 4-Star: Husk of Opulent Dreams (Strong 2-piece + complex 4-piece + strong Passive)
   husk_opulent_helmet:
@@ -3213,11 +3213,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
+        - "DDD"
+        - "D D"
         - "   "
       ingredients:
-        N: NETHERITE_INGOT
+        D: DRAGON_SCALE
 
   husk_opulent_chestplate:
     display_name: "&aHusk of Opulent Dreams Chestplate"
@@ -3253,11 +3253,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "N N"
-        - "NNN"
-        - "NNN"
+        - "D D"
+        - "DDD"
+        - "DDD"
       ingredients:
-        N: NETHERITE_INGOT
+        D: DRAGON_SCALE
 
   husk_opulent_leggings:
     display_name: "&aHusk of Opulent Dreams Leggings"
@@ -3293,11 +3293,11 @@ armors:
       - "§4Durability: 1800 / 1800"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
-        - "N N"
+        - "DDD"
+        - "D D"
+        - "D D"
       ingredients:
-        N: NETHERITE_INGOT
+        D: DRAGON_SCALE
 
   husk_opulent_boots:
     display_name: "&aHusk of Opulent Dreams Boots"
@@ -3334,10 +3334,10 @@ armors:
     recipe:
       shape:
         - "   "
-        - "N N"
-        - "N N"
+        - "D D"
+        - "D D"
       ingredients:
-        N: NETHERITE_INGOT
+        D: DRAGON_SCALE
 
   # 5-Star: Vourukasha's Glow (Strong 2-piece + game-changing 4-piece + strong Passive)
   vourukasha_helmet:
@@ -3380,11 +3380,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
+        - "PPP"
+        - "P P"
         - "   "
       ingredients:
-        N: NETHERITE_INGOT
+        P: PURE_NETHERITE
 
   vourukasha_chestplate:
     display_name: "&6Vourukasha's Glow Chestplate"
@@ -3426,11 +3426,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "N N"
-        - "NNN"
-        - "NNN"
+        - "P P"
+        - "PPP"
+        - "PPP"
       ingredients:
-        N: NETHERITE_INGOT
+        P: PURE_NETHERITE
 
   vourukasha_leggings:
     display_name: "&6Vourukasha's Glow Leggings"
@@ -3472,11 +3472,11 @@ armors:
       - "§4Durability: 3000 / 3000"
     recipe:
       shape:
-        - "NNN"
-        - "N N"
-        - "N N"
+        - "PPP"
+        - "P P"
+        - "P P"
       ingredients:
-        N: NETHERITE_INGOT
+        P: PURE_NETHERITE
 
   vourukasha_boots:
     display_name: "&6Vourukasha's Glow Boots"
@@ -3519,7 +3519,7 @@ armors:
     recipe:
       shape:
         - "   "
-        - "N N"
-        - "N N"
+        - "P P"
+        - "P P"
       ingredients:
-        N: NETHERITE_INGOT
+        P: PURE_NETHERITE

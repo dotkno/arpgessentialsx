@@ -1,8 +1,9 @@
 package com.ahren.arpgessentialsx.weapons;
 
 import com.ahren.arpgessentialsx.ARPGEssentialsX;
-import org.bukkit.scheduler.BukkitRunnable;
 import com.ahren.arpgessentialsx.util.ColorUtil;
+import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Map;
 import java.util.UUID;
@@ -42,6 +43,12 @@ public final class SkillCooldownTracker {
         String k = key(uuid, weaponId);
         long endTick = plugin.getServer().getCurrentTick() + (long)(seconds * 20);
         cooldownEndTick.put(k, new long[]{endTick});
+
+        // Start boss bar cooldown
+        var player = plugin.getServer().getPlayer(uuid);
+        if (player != null) {
+            plugin.getBossBarCooldownManager().startCooldown(player, weapon.getSkillName(), seconds);
+        }
 
         BukkitRunnable task = new BukkitRunnable() {
             @Override
@@ -95,6 +102,7 @@ public final class SkillCooldownTracker {
             return false;
         });
         cooldownEndTick.keySet().removeIf(k -> k.startsWith(uuid.toString()));
+        plugin.getBossBarCooldownManager().cleanupPlayer(uuid);
     }
 
     /**

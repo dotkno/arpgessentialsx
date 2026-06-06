@@ -19,10 +19,17 @@ public final class CustomItem {
     private final boolean throwable;
     private final boolean block;
     private final boolean unbreakable;
+
+    // ── Resource Pack Support ─────────────────────────────────────────────────────
+    private final String texturePath;
+    private final String modelPath;
+    private final boolean generateModel;
     private final List<String> recipeShape;
     private final Map<Character, String> recipeIngredients; // value can be Material name or custom item id prefix
     private final Map<String, Integer> enchantments;
     private final int consumeHeal;
+    private final int consumeHunger;
+    private final float consumeSaturation;
     private final List<String> consumeEffects;
     private final int consumeCooldown;
     private final String consumeSound;
@@ -43,6 +50,18 @@ public final class CustomItem {
         this.material = Material.matchMaterial(section.getString("material", "BARRIER"));
         this.customModelData = section.getInt("custom_model_data", -1);
         this.lore = section.getStringList("lore");
+
+        // Resource pack configuration
+        ConfigurationSection resourceSection = section.getConfigurationSection("resource");
+        if (resourceSection != null) {
+            this.texturePath = resourceSection.getString("texture", null);
+            this.modelPath = resourceSection.getString("model", null);
+            this.generateModel = resourceSection.getBoolean("generate", true);
+        } else {
+            this.texturePath = null;
+            this.modelPath = null;
+            this.generateModel = true;
+        }
 
         this.amount = Math.max(1, section.getInt("amount", 1));
         // default stackable based on material max stack size when not explicitly set
@@ -74,6 +93,8 @@ public final class CustomItem {
             }
         }
         this.consumeHeal = section.getInt("consume.heal", 0);
+        this.consumeHunger = section.getInt("consume.hunger", 0);
+        this.consumeSaturation = (float) section.getDouble("consume.saturation", 0.0);
         this.consumeEffects = section.getStringList("consume.effects");
         this.consumeCooldown = section.getInt("consume.cooldown_seconds", 0);
         this.consumeSound = section.getString("consume.sound", null);
@@ -103,6 +124,8 @@ public final class CustomItem {
     public Map<Character, String> getRecipeIngredients() { return Collections.unmodifiableMap(recipeIngredients); }
     public Map<String, Integer> getEnchantments() { return Collections.unmodifiableMap(enchantments); }
     public int getConsumeHeal() { return consumeHeal; }
+    public int getConsumeHunger() { return consumeHunger; }
+    public float getConsumeSaturation() { return consumeSaturation; }
     public List<String> getConsumeEffects() { return consumeEffects; }
     public int getConsumeCooldown() { return consumeCooldown; }
     public String getConsumeSound() { return consumeSound; }
@@ -115,4 +138,21 @@ public final class CustomItem {
     public float getThrowExplosionPower() { return throwExplosionPower; }
     public List<String> getThrowOnHitEffects() { return throwOnHitEffects; }
     public int getThrowCooldown() { return throwCooldown; }
+
+    // ── Resource Pack Getters ────────────────────────────────────────────────────
+    public String getTexturePath() {
+        return texturePath;
+    }
+
+    public String getModelPath() {
+        return modelPath;
+    }
+
+    public boolean shouldGenerateModel() {
+        return generateModel;
+    }
+
+    public boolean hasResourceConfig() {
+        return texturePath != null;
+    }
 }

@@ -104,6 +104,19 @@ public final class AdminMenuListener implements Listener {
 
             int currentPage = parsePageFromTitle(titleString);
             handleSubmenuClick(player, clickedItem, "Armors", currentPage, armorPages);
+            return;
+        }
+
+        // Custom Items menu
+        if (titleString.startsWith("Custom Items")) {
+            event.setCancelled(true);
+            if (!(event.getWhoClicked() instanceof Player player)) return;
+
+            ItemStack clickedItem = event.getCurrentItem();
+            if (clickedItem == null || clickedItem.getType().isAir()) return;
+
+            int currentPage = parsePageFromTitle(titleString);
+            handleSubmenuClick(player, clickedItem, "Custom Items", currentPage, customItemPages);
         }
     }
 
@@ -126,6 +139,9 @@ public final class AdminMenuListener implements Listener {
         } else if (displayName.contains("Armors")) {
             armorPages.put(player.getUniqueId(), 0);
             adminMenuGUI.openArmorsMenu(player, 0);
+        } else if (displayName.contains("Custom Items")) {
+            customItemPages.put(player.getUniqueId(), 0);
+            adminMenuGUI.openCustomItemsMenu(player, 0);
         }
     }
 
@@ -171,6 +187,9 @@ public final class AdminMenuListener implements Listener {
                 break;
             case "Armors":
                 adminMenuGUI.openArmorsMenu(player, page);
+                break;
+            case "Custom Items":
+                adminMenuGUI.openCustomItemsMenu(player, page);
                 break;
         }
     }

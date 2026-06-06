@@ -12,510 +12,6 @@
 weapons:
 
   # ════════════════════════════════════════════════════════════════════════════
-  # PASSIVE TEST WEAPONS — one per type
-  # ════════════════════════════════════════════════════════════════════════════
-
-  # ── TEST: flat_damage ──────────────────────────────────────────────────────
-  test_flat_damage:
-    display_name: "&fFlat Damage Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: flat_damage passive"
-      - "&7Should add +3.0 flat damage on every hit"
-    effects_on_hit: []
-    passives:
-      - type: flat_damage
-        amount: 3.0
-    recipe:
-      shape:
-        - " I "
-        - " I "
-        - " S "
-      ingredients:
-        I: IRON_INGOT
-        S: STICK
-
-  # ── TEST: percent_damage ───────────────────────────────────────────────────
-  test_percent_damage:
-    display_name: "&fPercent Damage Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: percent_damage passive"
-      - "&7Should deal +20% more damage on every hit"
-    effects_on_hit: []
-    passives:
-      - type: percent_damage
-        bonus: 0.20
-    recipe:
-      shape:
-        - " G "
-        - " G "
-        - " S "
-      ingredients:
-        G: GOLD_INGOT
-        S: STICK
-
-  # ── TEST: hp_threshold_damage ─────────────────────────────────────────────
-  test_hp_threshold:
-    display_name: "&fThreshold Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: hp_threshold_damage passive"
-      - "&7+40% damage when YOU are below 40% HP"
-    effects_on_hit: []
-    passives:
-      - type: hp_threshold_damage
-        threshold: 0.4
-        above: false
-        bonus_multiplier: 1.4
-    recipe:
-      shape:
-        - " R "
-        - " R "
-        - " S "
-      ingredients:
-        R: REDSTONE
-        S: STICK
-
-  # ── TEST: execute ─────────────────────────────────────────────────────────
-  test_execute:
-    display_name: "&fExecute Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: execute passive"
-      - "&7Instantly kills targets below 20% HP"
-    effects_on_hit: []
-    passives:
-      - type: execute
-        threshold_percent: 20.0
-    recipe:
-      shape:
-        - " N "
-        - " N "
-        - " S "
-      ingredients:
-        N: NETHERITE_SCRAP
-        S: STICK
-
-  # ── TEST: consecutive_hit ─────────────────────────────────────────────────
-  test_consecutive_hit:
-    display_name: "&fConsecutive Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: consecutive_hit passive"
-      - "&7Stacks +10% damage per hit, max 5 stacks"
-      - "&7Resets after 2 seconds without hitting"
-    effects_on_hit: []
-    passives:
-      - type: consecutive_hit
-        bonus_per_stack: 0.1
-        max_stacks: 5
-        reset_window: 40
-    recipe:
-      shape:
-        - " C "
-        - " C "
-        - " S "
-      ingredients:
-        C: COPPER_INGOT
-        S: STICK
-
-  # ── TEST: debuff_exploiter ────────────────────────────────────────────────
-  test_debuff_exploiter:
-    display_name: "&fDebuff Exploiter Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: debuff_exploiter passive"
-      - "&7+30% damage against enemies with any debuff"
-      - "&7Poison the enemy first to proc this"
-    effects_on_hit:
-      - type: potion
-        effect: SLOWNESS
-        duration: 3.0
-        amplifier: 0
-    passives:
-      - type: debuff_exploiter
-        bonus_multiplier: 1.3
-    recipe:
-      shape:
-        - " P "
-        - " P "
-        - " S "
-      ingredients:
-        P: POISONOUS_POTATO
-        S: STICK
-
-  # ── TEST: surrounded_bonus ────────────────────────────────────────────────
-  test_surrounded_bonus:
-    display_name: "&fSurrounded Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: surrounded_bonus passive"
-      - "&7+35% damage when 3+ enemies are nearby"
-    effects_on_hit: []
-    passives:
-      - type: surrounded_bonus
-        enemy_count: 3
-        radius: 6.0
-        bonus_multiplier: 1.35
-    recipe:
-      shape:
-        - " M "
-        - " M "
-        - " S "
-      ingredients:
-        M: MOSSY_COBBLESTONE
-        S: STICK
-
-  # ── TEST: passive_lifesteal ───────────────────────────────────────────────
-  test_passive_lifesteal:
-    display_name: "&fLifesteal Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: passive_lifesteal passive"
-      - "&7Heals 15% of damage dealt on every hit"
-    effects_on_hit: []
-    passives:
-      - type: lifesteal
-        percent: 0.15
-    recipe:
-      shape:
-        - " H "
-        - " H "
-        - " S "
-      ingredients:
-        H: HEART_OF_THE_SEA
-        S: STICK
-
-  # ── TEST: kill_heal ───────────────────────────────────────────────────────
-  test_kill_heal:
-    display_name: "&fKill Heal Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: kill_heal passive"
-      - "&7Heals 2 hearts on kill"
-    effects_on_hit: []
-    passives:
-      - type: kill_heal
-        amount: 4.0
-    recipe:
-      shape:
-        - " E "
-        - " E "
-        - " S "
-      ingredients:
-        E: EMERALD
-        S: STICK
-
-  # ── TEST: low_hp_shield ───────────────────────────────────────────────────
-  test_low_hp_shield:
-    display_name: "&fShield Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: low_hp_shield passive"
-      - "&7Absorb shield when below 30% HP (30s cooldown)"
-      - "&7Take damage to trigger it"
-    effects_on_hit: []
-    passives:
-      - type: low_hp_shield
-        threshold: 0.3
-        shield_amount: 6.0
-        cooldown_ticks: 600
-    recipe:
-      shape:
-        - " D "
-        - " D "
-        - " S "
-      ingredients:
-        D: DIAMOND
-        S: STICK
-
-  # ── TEST: hp_to_damage ────────────────────────────────────────────────────
-  test_hp_to_damage:
-    display_name: "&fHP to Damage Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: hp_to_damage passive"
-      - "&7Adds 5% of max HP as flat damage bonus"
-      - "&7e.g. 20 HP = +1.0 bonus damage"
-    effects_on_hit: []
-    passives:
-      - type: hp_to_damage
-        conversion_rate: 0.05
-    recipe:
-      shape:
-        - " A "
-        - " A "
-        - " S "
-      ingredients:
-        A: AMETHYST_SHARD
-        S: STICK
-
-  # ── TEST: armor_to_damage ─────────────────────────────────────────────────
-  test_armor_to_damage:
-    display_name: "&fArmor to Damage Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: armor_to_damage passive"
-      - "&7Adds 8% of armor value as flat damage"
-      - "&7Wear armor to boost damage"
-    effects_on_hit: []
-    passives:
-      - type: armor_to_damage
-        conversion_rate: 0.08
-    recipe:
-      shape:
-        - " T "
-        - " T "
-        - " S "
-      ingredients:
-        T: IRON_NUGGET
-        S: STICK
-
-  # ── TEST: speed_to_damage ─────────────────────────────────────────────────
-  test_speed_to_damage:
-    display_name: "&fSpeed to Damage Sword"
-    weapon_type: sword
-    stars: 3
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: IRON_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: speed_to_damage passive"
-      - "&7Converts movement speed to damage"
-      - "&7Fast classes hit harder"
-    effects_on_hit: []
-    passives:
-      - type: speed_to_damage
-        conversion_rate: 8.0
-    recipe:
-      shape:
-        - " F "
-        - " F "
-        - " S "
-      ingredients:
-        F: FEATHER
-        S: STICK
-
-  # ── TEST: cooldown_reduction ──────────────────────────────────────────────
-  test_cooldown_reduction:
-    display_name: "&fCooldown Reduction Sword"
-    weapon_type: sword
-    stars: 4
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: DIAMOND_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 5.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: cooldown_reduction passive"
-      - "&7Reduces skill cooldown by 3s on kill"
-      - "&7Skill cooldown is 30s — kill to reduce it"
-    effects_on_hit: []
-    passives:
-      - type: cooldown_reduction
-        reduction: 3.0
-    skill:
-      name: "&aCooldown Test Skill"
-      cooldown: 30.0
-      class_tag: -1
-      effects:
-        - type: aoe_damage
-          radius: 3.0
-          damage: 4.0
-        - type: play_sound
-          sound: ENTITY_PLAYER_LEVELUP
-          volume: 1.0
-          pitch: 1.0
-    recipe:
-      shape:
-        - " Q "
-        - " Q "
-        - " S "
-      ingredients:
-        Q: QUARTZ
-        S: STICK
-
-  # ── TEST: mana_on_kill ────────────────────────────────────────────────────
-  test_mana_on_kill:
-    display_name: "&fMana on Kill Sword"
-    weapon_type: catalyst
-    stars: 3
-    natural_classes: [2]
-    base_item: BLAZE_ROD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 3.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: mana_on_kill passive"
-      - "&7Restores 2 mana levels on kill"
-      - "&9Mage only"
-    effects_on_hit: []
-    passives:
-      - type: mana_on_kill
-        amount: 2
-    recipe:
-      shape:
-        - " L "
-        - " L "
-        - " S "
-      ingredients:
-        L: LAPIS_LAZULI
-        S: STICK
-
-  # ── TEST: ambush ──────────────────────────────────────────────────────────
-  test_ambush:
-    display_name: "&fAmbush Dagger"
-    weapon_type: dagger
-    stars: 4
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: GOLDEN_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 5.5
-      attack_speed_bonus: 4.0
-    lore:
-      - "&7TEST: ambush passive"
-      - "&7First hit after sneaking 2+ seconds = 2x damage"
-      - "&7Sneak, wait, then attack"
-    effects_on_hit: []
-    passives:
-      - type: ambush
-        sneak_duration: 2.0
-        bonus_multiplier: 2.0
-    recipe:
-      shape:
-        - " O "
-        - " O "
-        - " S "
-      ingredients:
-        O: OBSIDIAN
-        S: STICK
-
-  # ── TEST: random_buff ─────────────────────────────────────────────────────
-  test_random_buff:
-    display_name: "&fRandom Buff Sword"
-    weapon_type: sword
-    stars: 4
-    natural_classes: [1, 2, 3, 4, 5]
-    base_item: DIAMOND_SWORD
-    custom_model_data: -1
-    combat:
-      damage_bonus: 5.5
-      attack_speed_bonus: 0.0
-    lore:
-      - "&7TEST: random_buff passive"
-      - "&7ON EQUIP: randomly grants STR, SPD, or HASTE"
-      - "&7Re-equip to reroll the buff"
-    effects_on_hit: []
-    passives:
-      - type: random_buff
-        duration: 10.0
-        buffs:
-          - STRENGTH
-          - SPEED
-          - HASTE
-          - JUMP_BOOST
-          - REGENERATION
-    recipe:
-      shape:
-        - " W "
-        - " W "
-        - " S "
-      ingredients:
-        W: ECHO_SHARD
-        S: STICK
-
-  # ════════════════════════════════════════════════════════════════════════════
   #  NEW PROGRESSION SETS (Custom Tier Balancing)
   # ════════════════════════════════════════════════════════════════════════════
 
@@ -542,11 +38,11 @@ weapons:
     passives: []
     recipe:
       shape:
-        - " M "
-        - " M "
+        - " R "
+        - " R "
         - " S "
       ingredients:
-        M: FLINT
+        R: REFINED_IRON
         S: STICK
 
   astra_sword_2:
@@ -569,12 +65,12 @@ weapons:
     passives: []
     recipe:
       shape:
-        - " I "
-        - " M "
+        - " T "
+        - " A "
         - " S "
       ingredients:
-        I: IRON_INGOT
-        M: AMETHYST_SHARD
+        T: TEMPERED_STEEL
+        A: ARCANE_DUST
         S: STICK
 
   astra_sword_3:
@@ -603,11 +99,11 @@ weapons:
         bonus: 0.20
     recipe:
       shape:
-        - " A "
-        - " A "
+        - " F "
+        - " F "
         - " S "
       ingredients:
-        A: AMETHYST_SHARD
+        F: FROST_CRYSTAL
         S: STICK
 
   astra_sword_4:
@@ -657,13 +153,13 @@ weapons:
         amount: 3.0
     recipe:
       shape:
-        - " C "
-        - " A "
-        - " D "
+        - " M "
+        - " V "
+        - " S "
       ingredients:
-        C: CHORUS_FRUIT
-        A: AMETHYST_BLOCK
-        D: DIAMOND
+        M: MAGMA_FRAGMENT
+        V: VOID_CRYSTAL
+        S: STICK
 
   astra_sword_5:
     display_name: "&d&lSupernova"
@@ -730,14 +226,14 @@ weapons:
         threshold_percent: 25.0
     recipe:
       shape:
-        - "NEN"
-        - "RAR"
+        - "RCR"
+        - "PVP"
         - " S "
       ingredients:
-        N: NETHERITE_INGOT
-        E: NETHER_STAR
-        R: RECOVERY_COMPASS
-        A: AMETHYST_BLOCK
+        R: REALITY_SHARD
+        C: CELESTIAL_SHARD
+        P: PURE_NETHERITE
+        V: VOID_CRYSTAL
         S: STICK
 
 
@@ -763,11 +259,11 @@ weapons:
     passives: []
     recipe:
       shape:
-        - " C "
+        - " T "
         - " S "
         - " S "
       ingredients:
-        C: COAL
+        T: TEMPERED_STEEL
         S: STICK
 
   volcano_polearm_2:
@@ -793,7 +289,7 @@ weapons:
         - " S "
         - " S "
       ingredients:
-        M: MAGMA_BLOCK
+        M: MAGMA_FRAGMENT
         S: STICK
 
   volcano_polearm_3:
@@ -821,11 +317,11 @@ weapons:
         bonus: 0.15
     recipe:
       shape:
-        - " B "
+        - " E "
         - " S "
         - " S "
       ingredients:
-        B: BLAZE_POWDER
+        E: ETERNAL_FLAME
         S: STICK
 
   volcano_polearm_4:
@@ -874,12 +370,12 @@ weapons:
         reset_window: 40
     recipe:
       shape:
-        - " M "
+        - " D "
         - " S "
         - " S "
       ingredients:
-        M: MAGMA_CREAM
-        S: IRON_BLOCK
+        D: DRAGON_SCALE
+        S: STICK
 
   volcano_polearm_5:
     display_name: "&4&lHellfire Trident"
@@ -941,12 +437,12 @@ weapons:
         bonus_multiplier: 1.40
     recipe:
       shape:
-        - "NBN"
+        - "EPE"
         - " S "
         - " S "
       ingredients:
-        N: NETHERITE_BLOCK
-        B: BLAZE_ROD
+        E: ETERNAL_FLAME
+        P: PURE_NETHERITE
         S: STICK
 
 
@@ -972,11 +468,11 @@ weapons:
     passives: []
     recipe:
       shape:
-        - " WG"
-        - "W G"
-        - " WG"
+        - " RG"
+        - "R G"
+        - " RG"
       ingredients:
-        W: WOODEN_SWORD
+        R: REFINED_IRON
         G: STRING
 
   storm_bow_2:
@@ -998,12 +494,12 @@ weapons:
     passives: []
     recipe:
       shape:
-        - " IC"
-        - "I C"
-        - " IC"
+        - " AS"
+        - "A S"
+        - " AS"
       ingredients:
-        I: IRON_INGOT
-        C: COPPER_INGOT
+        A: ARCANE_DUST
+        S: SHADOW_ESSENCE
 
   storm_bow_3:
     display_name: "&bSquall Shortbow"
@@ -1031,12 +527,12 @@ weapons:
         conversion_rate: 6.0
     recipe:
       shape:
-        - " DF"
-        - "D F"
-        - " DF"
+        - " VF"
+        - "V F"
+        - " VF"
       ingredients:
-        D: DIAMOND
-        F: FEATHER
+        V: VOID_CRYSTAL
+        F: FROST_CRYSTAL
 
   storm_bow_4:
     display_name: "&9Lightning Reflex"
@@ -1079,12 +575,12 @@ weapons:
         amount: 3.0
     recipe:
       shape:
-        - " LC"
-        - "L C"
-        - " LC"
+        - " DC"
+        - "D C"
+        - " DC"
       ingredients:
-        L: LAPIS_BLOCK
-        C: LIGHTNING_ROD
+        C: CELESTIAL_SHARD
+        D: CHRONO_DUST
 
   storm_bow_5:
     display_name: "&b&lZeus's Wrath"
@@ -1149,13 +645,13 @@ weapons:
         bonus: 0.35
     recipe:
       shape:
-        - "NDN"
-        - "E D"
-        - "NDN"
+        - "RPR"
+        - "C P"
+        - "RPR"
       ingredients:
-        N: NETHERITE_INGOT
-        D: DIAMOND_BLOCK
-        E: NETHER_STAR
+        R: REALITY_SHARD
+        P: PURE_NETHERITE
+        C: CHRONO_DUST
 
 
   # ── GLACIAL CATALYST SERIES (Mage Spells) ─────────────────────────────────
@@ -1180,11 +676,11 @@ weapons:
     passives: []
     recipe:
       shape:
-        - " I "
+        - " F "
         - " S "
         - "   "
       ingredients:
-        I: ICE
+        F: FROST_CRYSTAL
         S: STICK
 
   frost_catalyst_2:
@@ -1206,12 +702,12 @@ weapons:
     passives: []
     recipe:
       shape:
-        - " P "
-        - " G "
+        - " F "
+        - " A "
         - "   "
       ingredients:
-        P: PACKED_ICE
-        G: GOLD_INGOT
+        F: FROST_CRYSTAL
+        A: ARCANE_DUST
 
   frost_catalyst_3:
     display_name: "&bGlacial Scepter"
@@ -1240,12 +736,12 @@ weapons:
         amount: 2
     recipe:
       shape:
-        - " B "
-        - " Q "
+        - " V "
+        - " S "
         - "   "
       ingredients:
-        B: BLUE_ICE
-        Q: QUARTZ
+        V: VOID_CRYSTAL
+        S: SHADOW_ESSENCE
 
   frost_catalyst_4:
     display_name: "&dBlizzard Grimoire"
@@ -1295,12 +791,12 @@ weapons:
         reduction: 3.0
     recipe:
       shape:
-        - " B "
-        - " O "
-        - " B "
+        - " D "
+        - " C "
+        - " D "
       ingredients:
-        B: BLUE_ICE
-        O: BOOK
+        D: DRAGON_SCALE
+        C: CELESTIAL_SHARD
 
   frost_catalyst_5:
     display_name: "&3&lAbsolute Zero"
@@ -1366,14 +862,14 @@ weapons:
         bonus_multiplier: 1.45
     recipe:
       shape:
-        - "NBN"
-        - "ECE"
-        - "NBN"
+        - "RFR"
+        - "EAE"
+        - "RFR"
       ingredients:
-        N: NETHER_STAR
-        B: BLUE_ICE
-        E: EMERALD_BLOCK
-        C: HEART_OF_THE_SEA
+        R: REALITY_SHARD
+        F: FROST_CRYSTAL
+        E: ETERNAL_FLAME
+        A: ABYSSAL_METAL
 
 
   # ── TECTONIC CLAYMORE SERIES (Tank / Heavy Cleave) ────────────────────────
@@ -1401,11 +897,11 @@ weapons:
     passives: []
     recipe:
       shape:
-        - " D "
-        - " D "
+        - " P "
+        - " P "
         - " S "
       ingredients:
-        D: COBBLED_DEEPSLATE
+        P: POLISHED_STONE
         S: STICK
 
   abyss_claymore_2:
@@ -1430,12 +926,12 @@ weapons:
     passives: []
     recipe:
       shape:
-        - " I "
-        - " D "
-        - " I "
+        - " H "
+        - " A "
+        - " H "
       ingredients:
-        I: IRON_BLOCK
-        D: COBBLED_DEEPSLATE
+        H: HARDENED_LEATHER
+        A: ABYSSAL_METAL
 
   abyss_claymore_3:
     display_name: "&cEarthshaker"
@@ -1463,12 +959,12 @@ weapons:
         conversion_rate: 0.10
     recipe:
       shape:
-        - " O "
-        - " D "
+        - " S "
+        - " A "
         - " S "
       ingredients:
-        O: OBSIDIAN
-        D: DIAMOND
+        S: SHADOW_ESSENCE
+        A: ABYSSAL_METAL
         S: STICK
 
   abyss_claymore_4:
@@ -1517,13 +1013,13 @@ weapons:
         conversion_rate: 0.06
     recipe:
       shape:
-        - " O "
-        - " N "
-        - " I "
+        - " V "
+        - " D "
+        - " A "
       ingredients:
-        O: OBSIDIAN
-        N: NETHERITE_SCRAP
-        I: IRON_BLOCK
+        V: VOID_CRYSTAL
+        D: DRAGON_SCALE
+        A: ABYSSAL_METAL
 
   abyss_claymore_5:
     display_name: "&4&lThe World Breaker"
@@ -1589,13 +1085,13 @@ weapons:
         bonus_multiplier: 1.50
     recipe:
       shape:
-        - "NNN"
-        - "NON"
-        - " I "
+        - "RAR"
+        - "APA"
+        - " P "
       ingredients:
-        N: NETHERITE_BLOCK
-        O: CRYING_OBSIDIAN
-        I: IRON_BLOCK
+        R: REALITY_SHARD
+        A: ABYSSAL_METAL
+        P: PURE_NETHERITE
 
 
   # ── PLAGUE DAGGER SERIES (Assassin / Attack-Speed) ────────────────────────
@@ -1620,11 +1116,11 @@ weapons:
     passives: []
     recipe:
       shape:
-        - " I "
+        - " R "
         - " S "
         - "   "
       ingredients:
-        I: IRON_NUGGET
+        R: REFINED_IRON
         S: STICK
 
   toxic_dagger_2:
@@ -1647,11 +1143,11 @@ weapons:
     recipe:
       shape:
         - " S "
-        - " G "
+        - " A "
         - "   "
       ingredients:
-        S: SPIDER_EYE
-        G: GOLD_INGOT
+        S: SHADOW_ESSENCE
+        A: ARCANE_DUST
 
   toxic_dagger_3:
     display_name: "&aViper Fang"
@@ -1680,12 +1176,12 @@ weapons:
         percent: 0.12
     recipe:
       shape:
-        - " F "
-        - " D "
+        - " M "
+        - " V "
         - "   "
       ingredients:
-        F: FERMENTED_SPIDER_EYE
-        D: DIAMOND
+        M: MAGMA_FRAGMENT
+        V: VOID_CRYSTAL
 
   toxic_dagger_4:
     display_name: "&2Plague Carver"
@@ -1735,12 +1231,12 @@ weapons:
         bonus_multiplier: 2.0
     recipe:
       shape:
-        - " P "
-        - " E "
+        - " D "
+        - " C "
         - " S "
       ingredients:
-        P: POISONOUS_POTATO
-        E: EMERALD
+        D: DRAGON_SCALE
+        C: CELESTIAL_SHARD
         S: STICK
 
   toxic_dagger_5:
@@ -1811,12 +1307,12 @@ weapons:
         bonus_multiplier: 1.35
     recipe:
       shape:
-        - "NDN"
-        - "XPX"
+        - "RFR"
+        - "SAS"
         - " S "
       ingredients:
-        N: NETHERITE_INGOT
-        D: DRAGON_BREATH
-        X: FERMENTED_SPIDER_EYE
-        P: POISONOUS_POTATO
+        R: REALITY_SHARD
+        F: FROST_CRYSTAL
+        S: SHADOW_ESSENCE
+        A: ABYSSAL_METAL
         S: STICK

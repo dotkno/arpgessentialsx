@@ -137,6 +137,9 @@ public final class RelicCastListener implements Listener {
     // ── Helpers ───────────────────────────────────────────────────────────────
 
     private void startCooldown(Player player, String cooldownKey, Relic relic) {
+        // Start boss bar cooldown
+        plugin.getBossBarCooldownManager().startCooldown(player, relic.getDisplayName(), relic.getCooldown());
+
         BukkitRunnable task = new BukkitRunnable() {
             @Override
             public void run() {
